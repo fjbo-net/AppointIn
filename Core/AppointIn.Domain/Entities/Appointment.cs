@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AppointIn.Domain.Interfaces;
+
 namespace AppointIn.Domain.Entities
 {
-	public class Appointment
+	public class Appointment:IEntity
 	{
 		public int Id { get; set; }
 		public int CustomerId { get; set; }

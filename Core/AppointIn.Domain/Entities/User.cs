@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AppointIn.Domain.Interfaces;
+
 namespace AppointIn.Domain.Entities
 {
-	public class User
+	public class User:IEntity
 	{
 		public int Id { get; set; }
 		public string Username { get; set; }
