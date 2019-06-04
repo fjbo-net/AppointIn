@@ -55,5 +55,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AppointIn.Domain\AppointIn.Domain.csproj">
+      <Project>{b6918a37-4841-47ed-a32d-1759cbdaa947}</Project>
+      <Name>AppointIn.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

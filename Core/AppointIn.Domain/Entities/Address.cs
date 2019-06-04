@@ -13,7 +13,7 @@ namespace AppointIn.Domain.Entities
 		public int Id { get; set; }
 		public string StreetName { get; set; }
 		public string BuildingOrInterior { get; set; }
-		public int CityId { get; set; }
+		public City City { get; set; }
 		public string PostalCode { get; set; }
 		public string Phone { get; set; }
 		public DateTime CreateDate { get; set; }

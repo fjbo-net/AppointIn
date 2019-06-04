@@ -11,7 +11,7 @@ namespace AppointIn.Domain.Entities
 	public class Appointment:IEntity
 	{
 		public int Id { get; set; }
-		public int CustomerId { get; set; }
+		public Customer Customer { get; set; }
 		public int UserId { get; set; }
 		public string Title { get; set; }
 		public string Description { get; set; }
