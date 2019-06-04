@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using AppointIn.Domain.Interfaces;
+using AppointIn.Domain.Repositories;
+
+namespace AppointIn.Data.Repositories
+{
+	internal class GenericRepository<TypeOfEntity, TypeOfKey> : IRepository<TypeOfEntity, TypeOfKey> where TypeOfEntity : class, IEntity<TypeOfKey>
+	{
+		protected readonly Context _context;
+		protected DbSet<TypeOfEntity> _entityDbSet;
+
+
+		public GenericRepository(Context context)
+		{
+			_context = context;
+			_entityDbSet = context.Set<TypeOfEntity>();
+		}
+
+
+		public void Delete(TypeOfKey id) => Delete(GetById(id));
+		public void Delete(TypeOfEntity entity)
+		{
+			_entityDbSet.Remove(entity);
+			_context.Entry(entity).State = EntityState.Deleted;
+		}
+		public IEnumerable<TypeOfEntity> GetAll() => _entityDbSet.ToList();
+		public TypeOfEntity GetById(TypeOfKey id) => _entityDbSet.Find(id);
+		public TypeOfEntity Insert(TypeOfEntity entity) => _entityDbSet.Add(entity);
+	}
+}

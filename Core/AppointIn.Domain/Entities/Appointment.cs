@@ -8,7 +8,7 @@ using AppointIn.Domain.Interfaces;
 
 namespace AppointIn.Domain.Entities
 {
-	public class Appointment:IEntity
+	public class Appointment:IEntity<int>
 	{
 		public int Id { get; set; }
 		public Customer Customer { get; set; }

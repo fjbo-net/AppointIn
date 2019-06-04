@@ -8,7 +8,7 @@ using AppointIn.Domain.Interfaces;
 
 namespace AppointIn.Domain.Entities
 {
-	public class User:IEntity
+	public class User:IEntity<int>
 	{
 		public int Id { get; set; }
 		public string Username { get; set; }

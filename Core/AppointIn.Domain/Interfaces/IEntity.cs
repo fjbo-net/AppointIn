@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AppointIn.Domain.Interfaces
 {
-	public interface IEntity
+	public interface IEntity<TypeOfKey>
 	{
-		 int Id { get; }
+		int Id { get; }
 	}
 }

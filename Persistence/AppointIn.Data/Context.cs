@@ -9,7 +9,7 @@ using AppointIn.Domain.Entities;
 
 namespace AppointIn.Data
 {
-	public class Context:DbContext
+	public class Context : DbContext
 	{
 		public Context()
 		{
@@ -22,5 +22,11 @@ namespace AppointIn.Data
 		public DbSet<Country> Countries { get; set; }
 		public DbSet<Customer> Customers { get; set; }
 		public DbSet<User> Users { get; set; }
+
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			// Entity Configurations here
+			// model.Builder.Configurations.Add(new EntityConfiguration());
+		}
 	}
 }
