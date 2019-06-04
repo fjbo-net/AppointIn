@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using AppointIn.Domain.Entities;
+using AppointIn.Data.EntityConfigurations;
 
 namespace AppointIn.Data
 {
@@ -25,8 +26,12 @@ namespace AppointIn.Data
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			// Entity Configurations here
-			// model.Builder.Configurations.Add(new EntityConfiguration());
+			modelBuilder.Configurations.Add(new AddressConfig());
+			modelBuilder.Configurations.Add(new AppointmentConfig());
+			modelBuilder.Configurations.Add(new CityConfig());
+			modelBuilder.Configurations.Add(new CountryConfig());
+			modelBuilder.Configurations.Add(new CustomerConfig());
+			modelBuilder.Configurations.Add(new UserConfig());
 		}
 	}
 }

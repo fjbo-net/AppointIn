@@ -49,7 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="EntityConfigurations\AddressConfig.cs" />
+    <Compile Include="EntityConfigurations\AppointmentConfig.cs" />
+    <Compile Include="EntityConfigurations\CityConfig.cs" />
+    <Compile Include="EntityConfigurations\CountryConfig.cs" />
+    <Compile Include="EntityConfigurations\CustomerConfig.cs" />
+    <Compile Include="EntityConfigurations\UserConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -61,5 +69,6 @@
       <Name>AppointIn.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

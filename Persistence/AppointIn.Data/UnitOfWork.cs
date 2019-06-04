@@ -13,6 +13,12 @@ namespace AppointIn.Data
 {
 	public class UnitOfWork : IUnitOfWork
 	{
+		public UnitOfWork()
+		{
+			_context = new Context();
+		}
+
+
 		#region Context
 		private Context _context;
 
