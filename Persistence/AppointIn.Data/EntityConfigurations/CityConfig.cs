@@ -11,14 +11,13 @@ namespace AppointIn.Data.EntityConfigurations
 		{
 			Property(city => city.Id)
 				.IsRequired()
-				.HasColumnName("cityId")
-				.HasColumnType("int(1,999999999");
+				.HasColumnName("cityId");
 
 			Property(city => city.Name)
 				.IsRequired()
 				.HasColumnName("city")
 				.HasMaxLength(50);
-
+			
 			Property(city => city.CreateDate)
 				.IsRequired()
 				.HasColumnName("createDate");
@@ -30,14 +29,16 @@ namespace AppointIn.Data.EntityConfigurations
 
 			Property(city => city.LastUpdate)
 				.HasColumnName("lastUpdate")
-				.IsConcurrencyToken()
-				.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+				.IsRowVersion();
 
 			Property(city => city.LastUpdateBy)
 				.IsRequired()
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);
 
+
+			HasRequired(city => city.Country);
+			
 			ToTable("city");
 		}
 	}

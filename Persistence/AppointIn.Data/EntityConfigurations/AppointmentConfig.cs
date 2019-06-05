@@ -11,8 +11,7 @@ namespace AppointIn.Data.EntityConfigurations
 		{
 			Property(appointment => appointment.Id)
 				.IsRequired()
-				.HasColumnName("appointmentId")
-				.HasColumnType("int(1,999999999)");
+				.HasColumnName("appointmentId");
 
 
 			
@@ -21,23 +20,22 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("title")
 				.HasMaxLength(255);
 
-
 			Property(appointment => appointment.Description)
 				.HasColumnName("description")
-				.HasColumnType("text");
+				.HasColumnType("TEXT");
 
 			Property(appointment => appointment.Location)
 				.HasColumnName("location")
-				.HasColumnType("text");
+				.HasColumnType("TEXT");
 
 			Property(appointment => appointment.Contact)
 				.IsRequired()
 				.HasColumnName("contact")
-				.HasColumnType("text");
+				.HasColumnType("TEXT");
 
 			Property(appointment => appointment.Type)
 				.HasColumnName("type")
-				.HasColumnType("text");
+				.HasColumnType("TEXT");
 
 			Property(appointment => appointment.Url)
 				.HasColumnName("url")
@@ -60,13 +58,16 @@ namespace AppointIn.Data.EntityConfigurations
 
 			Property(appointment => appointment.LastUpdate)
 				.HasColumnName("lastUpdate")
-				.IsConcurrencyToken()
-				.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+				.IsRowVersion();
 
 			Property(appointment => appointment.LastUpdateBy)
 				.IsRequired()
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);
+
+
+			HasRequired(appointment => appointment.Customer);
+			HasRequired(appointment => appointment.User);
 
 			ToTable("appointment");
 		}

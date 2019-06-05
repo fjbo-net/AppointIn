@@ -12,7 +12,7 @@ namespace AppointIn.Domain.Entities
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
-		public int AddressId { get; set; }
+		public Address Address { get; set; }
 		public bool IsActive { get; set; }
 		public DateTime CreateDate { get; set; }
 		public string CreatedBy { get; set; }

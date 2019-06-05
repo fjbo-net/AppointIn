@@ -11,8 +11,7 @@ namespace AppointIn.Data.EntityConfigurations
 		{
 			Property(user => user.Id)
 				.IsRequired()
-				.HasColumnName("userId")
-				.HasColumnType("int(1,999999999");
+				.HasColumnName("userId");
 
 			Property(user => user.Username)
 				.IsRequired()
@@ -39,8 +38,7 @@ namespace AppointIn.Data.EntityConfigurations
 
 			Property(user => user.LastUpdate)
 				.HasColumnName("lastUpdate")
-				.IsConcurrencyToken()
-				.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+				.IsRowVersion();
 
 			Property(user => user.LastUpdateBy)
 				.IsRequired()

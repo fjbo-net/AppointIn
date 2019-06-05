@@ -23,8 +23,6 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("address2")
 				.HasMaxLength(50);
 
-
-
 			Property(address => address.PostalCode)
 				.IsRequired()
 				.HasColumnName("postalCode")
@@ -46,14 +44,14 @@ namespace AppointIn.Data.EntityConfigurations
 
 			Property(address => address.LastUpdate)
 				.HasColumnName("lastUpdate")
-				.IsConcurrencyToken()
-				.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+				.IsRowVersion();
 
 			Property(address => address.LastUpdateBy)
 				.IsRequired()
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);
 
+			HasRequired(address => address.City);
 
 			ToTable("address");
 		}

@@ -11,8 +11,7 @@ namespace AppointIn.Data.EntityConfigurations
 		{
 			Property(country => country.Id)
 				.IsRequired()
-				.HasColumnName("countryId")
-				.HasColumnType("int(1,999999999");
+				.HasColumnName("countryId");
 
 			Property(country => country.Name)
 				.IsRequired()
@@ -30,8 +29,7 @@ namespace AppointIn.Data.EntityConfigurations
 
 			Property(country => country.LastUpdate)
 				.HasColumnName("lastUpdate")
-				.IsConcurrencyToken()
-				.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+				.IsRowVersion();
 
 			Property(country => country.LasUpdateBy)
 				.IsRequired()

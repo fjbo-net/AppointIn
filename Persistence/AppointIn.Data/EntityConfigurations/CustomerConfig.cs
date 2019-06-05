@@ -11,8 +11,7 @@ namespace AppointIn.Data.EntityConfigurations
 		{
 			Property(customer => customer.Id)
 				.IsRequired()
-				.HasColumnName("customerId")
-				.HasColumnType("int(1,999999999)");
+				.HasColumnName("customerId");
 
 			Property(customer => customer.Name)
 				.IsRequired()
@@ -34,13 +33,14 @@ namespace AppointIn.Data.EntityConfigurations
 
 			Property(customer => customer.LastUpdate)
 				.HasColumnName("lastUpdate")
-				.IsConcurrencyToken()
-				.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+				.IsRowVersion();
 
 			Property(customer => customer.LastUpdateBy)
 				.IsRequired()
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);
+
+			HasRequired(customer => customer.Address);
 
 			ToTable("customer");
 		}
