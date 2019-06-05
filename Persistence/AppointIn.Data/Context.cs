@@ -12,7 +12,7 @@ namespace AppointIn.Data
 {
 	public class Context : DbContext
 	{
-		public Context()
+		public Context() : base(ConnectionSettings.ConnectionString)
 		{
 			Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
 		}
