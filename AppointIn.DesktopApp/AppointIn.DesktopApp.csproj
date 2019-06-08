@@ -96,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppointIn.TestDataSeed\AppointIn.TestDataSeed.csproj">
+      <Project>{280f46ad-6900-409e-9037-8ceb55756087}</Project>
+      <Name>AppointIn.TestDataSeed</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\AppointIn.Core\AppointIn.Core.csproj">
       <Project>{c54b19ae-f419-416f-b431-315653347865}</Project>
       <Name>AppointIn.Core</Name>
@@ -108,6 +112,9 @@
       <Project>{087500ea-abba-4252-b8fc-15a4a9789c55}</Project>
       <Name>AppointIn.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

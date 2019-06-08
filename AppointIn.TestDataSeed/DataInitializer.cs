@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointIn.Domain.Interfaces
+using AppointIn.Domain.Entities;
+
+namespace AppointIn.TestDataSeed
 {
-	public interface IEntity<TypeOfKey>
+	public static partial class DataInitializer
 	{
-		TypeOfKey Id { get; }
+		
 	}
 }

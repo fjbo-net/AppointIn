@@ -31,6 +31,6 @@ namespace AppointIn.Data.Repositories
 		}
 		public IEnumerable<TypeOfEntity> GetAll() => _entityDbSet.ToList();
 		public TypeOfEntity GetById(TypeOfKey id) => _entityDbSet.Find(id);
-		public TypeOfEntity Insert(TypeOfEntity entity) => _entityDbSet.Add(entity);
+		public void Insert(TypeOfEntity entity) => _entityDbSet.Add(entity);
 	}
 }

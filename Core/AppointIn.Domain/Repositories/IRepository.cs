@@ -14,6 +14,6 @@ namespace AppointIn.Domain.Repositories
 		void Delete(TypeOfEntity entity);
 		IEnumerable<TypeOfEntity> GetAll();
 		TypeOfEntity GetById(TypeOfKey id);
-		TypeOfEntity Insert(TypeOfEntity entity);
+		void Insert(TypeOfEntity entity);
 	}
 }

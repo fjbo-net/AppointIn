@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointIn.Domain.Interfaces
+namespace AppointIn.Core
 {
-	public interface IEntity<TypeOfKey>
+	public static class AppConfig
 	{
-		TypeOfKey Id { get; }
+		internal static string LogDirectory = "Logs";
 	}
 }
