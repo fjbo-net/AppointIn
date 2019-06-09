@@ -16,6 +16,6 @@ namespace AppointIn.Domain
 		IRepository<City,int> Cities { get; }
 		IRepository<Country,int> Countries { get; }
 		IRepository<Customer,int> Customers { get; }
-		IRepository<User,int> Users { get; }
+		IUserRepository Users { get; }
 	}
 }

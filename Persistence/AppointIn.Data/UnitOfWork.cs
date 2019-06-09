@@ -77,12 +77,12 @@ namespace AppointIn.Data
 			}
 		}
 
-		public IRepository<User, int> _users;
-		public IRepository<User, int> Users
+		public IUserRepository _users;
+		public IUserRepository Users
 		{
 			get
 			{
-				if (_users == null) _users = new GenericRepository<User, int>(_context);
+				if (_users == null) _users = new UserRepository(_context);
 				return _users;
 			}
 		}

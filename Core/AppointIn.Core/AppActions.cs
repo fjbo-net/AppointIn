@@ -10,7 +10,7 @@ namespace AppointIn.Core
 	public static class AppActions
 	{
 		#region Properties
-		internal static Action<Exception> ErrorHandler = (exception)
+		public static Action<Exception> ErrorHandler = (exception)
 			=> Console.WriteLine($"Error '{exception.GetType().ToString()}' encountered: \n{exception.Message} \n {exception.StackTrace}");
 		#endregion
 

@@ -19,6 +19,14 @@ namespace AppointIn.DesktopApp
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			Core.AppActions.ErrorHandler = (exception) =>
+			{
+				MessageBox.Show(
+					text: $"Error '{exception.GetType().ToString()}' encountered: \n{exception.Message} \n {exception.StackTrace}",
+					caption: "Error Encountered",
+					buttons: MessageBoxButtons.OK,
+					icon: MessageBoxIcon.Error);
+			};
 			Application.Run(new Dashboard());
 		}
 	}

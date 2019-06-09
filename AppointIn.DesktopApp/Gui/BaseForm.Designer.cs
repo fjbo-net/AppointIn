@@ -39,7 +39,7 @@
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MinimumSize = new System.Drawing.Size(400, 400);
 			this.Name = "BaseForm";
-			this.Opacity = 0.96D;
+			this.Opacity = 0.97D;
 			this.Text = "BaseForm";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.ResumeLayout(false);

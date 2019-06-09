@@ -28,9 +28,21 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.SuspendLayout();
+			// 
+			// Dashboard
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = global::AppointIn.DesktopApp.Properties.Resources.White_Abstract_Wallpapers_Gallery_89_Plus_PIC_WPW405898_1_1_;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(384, 361);
+			this.DoubleBuffered = true;
+			this.Location = new System.Drawing.Point(0, 0);
+			this.Name = "Dashboard";
 			this.Text = "Dashboard";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion

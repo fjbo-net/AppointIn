@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Data;
 using AppointIn.Domain.Entities;
 
 namespace AppointIn.DesktopApp.Gui.Forms
@@ -43,21 +44,26 @@ namespace AppointIn.DesktopApp.Gui.Forms
 
 		private void Login()
 		{
-			var mockRepository = new TestDataSeed.DataInitializer.UserMockRepository(TestDataSeed.DataInitializer.GetUsers());
-			var loginResult = Core.User.Actions.UserActions.LogUserIn(mockRepository, usernameTextbox.Text, passwordTextbox.Text);
-
-			if(loginResult.Value != null)
+			using (var unitOfWork = new UnitOfWork())
 			{
-				User = loginResult.Value;
-				DialogResult = DialogResult.OK;
-				Close();
-			} else
-			{
-				var message = new StringBuilder();
+				var repository = unitOfWork.Users;
 
-				foreach (var resultMessage in loginResult.Messages) message.Append(resultMessage);
+				var loginResult = Core.User.Actions.UserActions.LogUserIn(repository, usernameTextbox.Text, passwordTextbox.Text);
 
-				MessageBox.Show(message.ToString(), "Could not login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				if (loginResult.Value != null)
+				{
+					User = loginResult.Value;
+					DialogResult = DialogResult.OK;
+					Close();
+				}
+				else
+				{
+					var message = new StringBuilder();
+
+					foreach (var resultMessage in loginResult.Messages) message.Append(resultMessage);
+
+					MessageBox.Show(message.ToString(), "Could not login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 		}
 		#endregion

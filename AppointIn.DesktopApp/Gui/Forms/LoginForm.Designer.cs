@@ -56,7 +56,7 @@
 			this.usernameLabel.Name = "usernameLabel";
 			this.usernameLabel.Size = new System.Drawing.Size(360, 22);
 			this.usernameLabel.TabIndex = 1;
-			this.usernameLabel.Text = "username";
+			this.usernameLabel.Text = "usernameLabel";
 			this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// passwordTextbox
@@ -81,7 +81,7 @@
 			this.passwordLabel.Name = "passwordLabel";
 			this.passwordLabel.Size = new System.Drawing.Size(360, 22);
 			this.passwordLabel.TabIndex = 1;
-			this.passwordLabel.Text = "password";
+			this.passwordLabel.Text = "passwordLabel";
 			this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// LoginButton
