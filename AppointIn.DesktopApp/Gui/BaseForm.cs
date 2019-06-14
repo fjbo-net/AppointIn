@@ -43,6 +43,7 @@ namespace AppointIn.DesktopApp.Gui
 		protected virtual void Init()
 		{
 			InitializeVisualStyles();
+			LocalizeText();
 		}
 
 		protected virtual void InitializeVisualStyles()
@@ -51,6 +52,11 @@ namespace AppointIn.DesktopApp.Gui
 
 			BackColor = ColorPalette.BackgroundColor;
 			ForeColor = ColorPalette.TextColor;
+		}
+
+		public virtual void LocalizeText(string cultureName = "")
+		{
+
 		}
 		#endregion
 	}

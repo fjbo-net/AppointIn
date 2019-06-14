@@ -21,7 +21,6 @@ namespace AppointIn.DesktopApp.Gui.Forms
 
 			using (var loginForm = new LoginForm())
 			{
-
 				loginForm.ShowDialog();
 
 				if (loginForm.DialogResult != DialogResult.OK)
@@ -43,6 +42,11 @@ namespace AppointIn.DesktopApp.Gui.Forms
 		{
 			base.InitializeVisualStyles();
 			InitializeComponent();
+		}
+
+		public override void LocalizeText(string cultureName = "")
+		{
+			Text = Resources.DashboardFormStrings.Title;
 		}
 		#endregion
 	}

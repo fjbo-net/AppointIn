@@ -29,15 +29,15 @@ namespace AppointIn.Core.User.Actions
 
 						var logLoginResult = LogLogin(user.Username);
 
-						messages.Add("User has been successfully logged in.");
+						messages.Add(Resources.UserStrings.LoginSuccessMessage);
 					}
 					else
 					{
-						messages.Add("Password is invalid.");
+						messages.Add(Resources.UserStrings.LoginInvalidPasswordMessage);
 					}
 				} else
 				{
-					messages.Add("Username is invalid.");
+					messages.Add(string.Format(Resources.UserStrings.LoginInvalidUsernameMessage, username));
 				}
 
 				return new Result<Domain.Entities.User>

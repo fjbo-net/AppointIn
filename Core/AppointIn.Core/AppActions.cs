@@ -18,7 +18,7 @@ namespace AppointIn.Core
 		#region Methods
 		internal static string GetLogPath()
 		{
-			if (!File.Exists(AppConfig.LogDirectory)) File.Create(AppConfig.LogDirectory);
+			if (!Directory.Exists(AppConfig.LogDirectory)) Directory.CreateDirectory(AppConfig.LogDirectory);
 			return AppConfig.LogDirectory;
 		}
 

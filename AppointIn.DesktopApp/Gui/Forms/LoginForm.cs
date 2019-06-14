@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Globalization;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -34,11 +36,40 @@ namespace AppointIn.DesktopApp.Gui.Forms
 			LoginButton.Click += (sender, e) => Login();
 		}
 
+		protected override void Init()
+		{
+			InitializeVisualStyles();
+
+			LocalizeText("es");
+		}
+
 		protected override void InitializeVisualStyles()
 		{
 			base.InitializeVisualStyles();
 
 			InitializeComponent();
+		}
+
+		public override void LocalizeText(string cultureName = "")
+		{
+			base.LocalizeText();
+
+			if(!string.IsNullOrEmpty(cultureName) && !string.IsNullOrWhiteSpace(cultureName))
+			{
+				Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cultureName);
+
+				var parent = this.Owner;
+
+				if (parent is BaseForm) ((BaseForm)parent).LocalizeText(cultureName);
+			}
+
+			Text = Resources.LoginFormStrings.Title;
+
+			usernameLabel.Text = Resources.LoginFormStrings.UsernameLabelText;
+			passwordLabel.Text = Resources.LoginFormStrings.PasswordLabelText;
+			LoginButton.Text = Resources.LoginFormStrings.LoginButtonText;
+
+			
 		}
 
 

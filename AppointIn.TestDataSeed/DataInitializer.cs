@@ -10,6 +10,6 @@ namespace AppointIn.TestDataSeed
 {
 	public static partial class DataInitializer
 	{
-		
+		public static bool DataSeedDatabase() => false;
 	}
 }

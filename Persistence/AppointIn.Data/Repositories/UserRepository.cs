@@ -14,6 +14,6 @@ namespace AppointIn.Data.Repositories
 
 		}
 
-		public User GetByUsername(string username) => _entityDbSet.Where(user => user.Username == username).Single();
+		public User GetByUsername(string username) => _entityDbSet.Where(user => user.Username == username).SingleOrDefault();
 	}
 }

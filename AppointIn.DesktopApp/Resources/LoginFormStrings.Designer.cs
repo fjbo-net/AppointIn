@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AppointIn.DesktopApp.Properties {
+namespace AppointIn.DesktopApp.Resources {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace AppointIn.DesktopApp.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class LoginFormStrings {
+    public class LoginFormStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace AppointIn.DesktopApp.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Properties.LoginFormStrings", typeof(LoginFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.LoginFormStrings", typeof(LoginFormStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace AppointIn.DesktopApp.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,20 +61,38 @@ namespace AppointIn.DesktopApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log in.
+        /// </summary>
+        public static string LoginButtonText {
+            get {
+                return ResourceManager.GetString("LoginButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to password.
         /// </summary>
-        internal static string LoginFormPasswordLabelText {
+        public static string PasswordLabelText {
             get {
-                return ResourceManager.GetString("LoginFormPasswordLabelText", resourceCulture);
+                return ResourceManager.GetString("PasswordLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to username.
         /// </summary>
-        internal static string LoginFormUsernameLabelText {
+        public static string UsernameLabelText {
             get {
-                return ResourceManager.GetString("LoginFormUsernameLabelText", resourceCulture);
+                return ResourceManager.GetString("UsernameLabelText", resourceCulture);
             }
         }
     }

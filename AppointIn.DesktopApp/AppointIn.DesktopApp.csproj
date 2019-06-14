@@ -83,9 +83,25 @@
     <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\LoginFormString.es.resx" />
-    <EmbeddedResource Include="Properties\LoginFormStrings.resx">
+    <EmbeddedResource Include="Resources\BaseFormStrings.es.resx" />
+    <EmbeddedResource Include="Resources\BaseFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DashboardFormStrings.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DashboardFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DashboardFormStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DashboardFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LoginFormStrings.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LoginFormStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LoginFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -93,7 +109,27 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\LoginFormStrings.Designer.cs">
+    <Compile Include="Resources\BaseFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DashboardFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DashboardFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DashboardFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DashboardFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LoginFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LoginFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginFormStrings.resx</DependentUpon>

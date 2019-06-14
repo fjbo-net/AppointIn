@@ -90,9 +90,9 @@
 			this.LoginButton.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.LoginButton.ForeColor = System.Drawing.SystemColors.Control;
-			this.LoginButton.Location = new System.Drawing.Point(0, 129);
+			this.LoginButton.Location = new System.Drawing.Point(0, 119);
 			this.LoginButton.Name = "LoginButton";
-			this.LoginButton.Size = new System.Drawing.Size(384, 32);
+			this.LoginButton.Size = new System.Drawing.Size(384, 42);
 			this.LoginButton.TabIndex = 2;
 			this.LoginButton.Text = "Log In";
 			this.LoginButton.UseVisualStyleBackColor = false;
@@ -102,6 +102,7 @@
 			this.AcceptButton = this.LoginButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = null;
 			this.ClientSize = new System.Drawing.Size(384, 161);
 			this.Controls.Add(this.LoginButton);
 			this.Controls.Add(this.passwordLabel);

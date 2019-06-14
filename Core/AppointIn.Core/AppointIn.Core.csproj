@@ -44,10 +44,21 @@
     <Compile Include="AppActions.cs" />
     <Compile Include="AppConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\UserStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Result.cs" />
     <Compile Include="User\Actions\UserActions.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\UserStrings.es.resx" />
+    <EmbeddedResource Include="Resources\UserStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppointIn.Domain\AppointIn.Domain.csproj">
       <Project>{b6918a37-4841-47ed-a32d-1759cbdaa947}</Project>
