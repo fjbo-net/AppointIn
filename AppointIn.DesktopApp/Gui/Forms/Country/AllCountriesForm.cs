@@ -18,7 +18,15 @@ namespace AppointIn.DesktopApp.Gui
 
 
 		#region Properties
-		public static AllCountriesForm SharedInstance = new AllCountriesForm();
+		private static AllCountriesForm sharedInstance;
+		public static AllCountriesForm SharedInstance
+		{
+			get
+			{
+				if (sharedInstance == null) sharedInstance = new AllCountriesForm();
+				return sharedInstance;
+			}
+		}
 		#endregion
 
 
@@ -28,6 +36,14 @@ namespace AppointIn.DesktopApp.Gui
 			base.Init();
 
 			InitializeComponent();
+			LocalizeText();
+		}
+
+		public override void LocalizeText(string cultureName = "")
+		{
+			base.LocalizeText(cultureName);
+
+			Text = Resources.AllCountriesFormStrings.Title;
 		}
 		#endregion
 	}

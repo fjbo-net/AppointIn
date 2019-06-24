@@ -147,6 +147,8 @@
     <Compile Include="Gui\Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Interfaces\ILocalizable.cs" />
+    <Compile Include="Gui\Localizables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Gui\Controls\ActionButton.resx">
@@ -191,6 +193,14 @@
     <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllCountriesFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllCountriesFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllCountriesFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllCountriesFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\BaseFormStrings.es.resx" />
     <EmbeddedResource Include="Resources\BaseFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -203,6 +213,14 @@
     <EmbeddedResource Include="Resources\CountryDataPanelStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CountryDataPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CountryFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CountryFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DashboardFormStrings.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -225,6 +243,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Resources\AllCountriesFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCountriesFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AllCountriesFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCountriesFormStrings.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\BaseFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -239,6 +267,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CountryDataPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CountryFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CountryFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryFormStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\DashboardFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>

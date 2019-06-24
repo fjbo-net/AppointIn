@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.Domain.Entities;
+using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui
 {
-	public partial class CountryForm : BaseForm
+	public partial class CountryForm : BaseForm, ILocalizable
 	{
 		public CountryForm()
 		{
-			AttachEvents();
+			Localizables.All.Add(this);
+			Localizables.TargetCulture = "en";
 		}
 
 
@@ -48,6 +50,15 @@ namespace AppointIn.DesktopApp.Gui
 			base.Init();
 
 			InitializeComponent();
+		}
+
+		public override void LocalizeText(string cultureName = "")
+		{
+			base.LocalizeText();
+
+			Text = Resources.CountryFormStrings.Title;
+			if(SaveActionButton != null) SaveActionButton.Text = Resources.CountryFormStrings.SaveButtonText;
+			if(CancelActionButton != null) CancelActionButton.Text = Resources.CountryFormStrings.CancelButtonText;
 		}
 
 		public void Reset() => DataPanel.Reset();
