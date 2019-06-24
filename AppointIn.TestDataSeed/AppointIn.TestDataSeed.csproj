@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataInitializer.Country.cs" />
     <Compile Include="DataInitializer.cs" />
     <Compile Include="DataInitializer.User.cs" />
+    <Compile Include="Exceptions\DataNotInitializedException.cs" />
     <Compile Include="GenericMockRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,6 +52,10 @@
     <ProjectReference Include="..\Core\AppointIn.Domain\AppointIn.Domain.csproj">
       <Project>{b6918a37-4841-47ed-a32d-1759cbdaa947}</Project>
       <Name>AppointIn.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\AppointIn.Data\AppointIn.Data.csproj">
+      <Project>{087500ea-abba-4252-b8fc-15a4a9789c55}</Project>
+      <Name>AppointIn.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -31,7 +31,7 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("lastUpdate")
 				.IsRowVersion();
 
-			Property(country => country.LasUpdateBy)
+			Property(country => country.LastUpdateBy)
 				.IsRequired()
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);

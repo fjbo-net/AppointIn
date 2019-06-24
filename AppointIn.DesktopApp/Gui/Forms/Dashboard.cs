@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using AppointIn.Domain.Entities;
 
-namespace AppointIn.DesktopApp.Gui.Forms
+namespace AppointIn.DesktopApp.Gui
 {
 	public partial class Dashboard : BaseForm
 	{
@@ -27,17 +27,61 @@ namespace AppointIn.DesktopApp.Gui.Forms
 				{
 					Load += (sender, e) => Close();
 				}
+
+				User = loginForm.User;
 			}
+			
+			CustomersForm = new AllCustomersForm();
 		}
 		#endregion
 
 
 		#region Properties
-		private User User;
+		private User _user;
+		private User User
+		{
+			get => _user;
+			set
+			{
+				_user = value;
+				Username = _user != null ? _user.Username : string.Empty;
+			}
+		}
+
+		internal static string Username { get; private set; }
+
+		protected AllCustomersForm CustomersForm;
 		#endregion
 
 
 		#region Methods
+		protected override void AttachEvents()
+		{
+			base.AttachEvents();
+
+			actionButton1.Click += (sender, e) =>
+			{
+				if (CustomersForm.Visible)
+				{
+					CustomersForm.Focus();
+					return;
+				}
+
+				CustomersForm.Visible = true;
+			};
+
+			ManageCountriesButton.Click += (sender, e) =>
+			{
+				if (AllCountriesForm.SharedInstance.Visible)
+				{
+					AllCountriesForm.SharedInstance.Focus();
+					return;
+				}
+
+				AllCountriesForm.SharedInstance.Visible = true;
+			};
+		}
+
 		protected override void InitializeVisualStyles()
 		{
 			base.InitializeVisualStyles();

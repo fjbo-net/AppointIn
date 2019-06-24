@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AppointIn.Data;
 using AppointIn.Domain.Entities;
 
 namespace AppointIn.TestDataSeed
@@ -18,9 +19,9 @@ namespace AppointIn.TestDataSeed
 				Username = "test",
 				Password = "test",
 				CreateDate = DateTime.Now,
-				CreatedBy = "System",
+				CreatedBy = "DataInitializer",
 				IsActive = true,
-				LastUpdateBy = "System"
+				LastUpdateBy = "DataInitializer"
 			},
 			
 			new User()
@@ -29,12 +30,15 @@ namespace AppointIn.TestDataSeed
 				Username = "fjbo",
 				Password = "MyPass123",
 				CreateDate = DateTime.Now,
-				CreatedBy = "System",
+				CreatedBy = "DataInitializer",
 				IsActive = true,
-				LastUpdateBy = "System"
+				LastUpdateBy = "DataInitializer"
 			}
 		};
 
+
+		public static bool DataBaseHasInitializedUsers(UnitOfWork segmentOfWork)
+			=> segmentOfWork.Users.GetAll().Any();
 
 		public static ICollection<User> GetUsers() => Users;
 

@@ -13,7 +13,7 @@ namespace AppointIn.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201906080127302_Initial"; }
+            get { return "201906182016234_Initial"; }
         }
         
         string IMigrationMetadata.Source

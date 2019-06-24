@@ -57,9 +57,9 @@
     <Compile Include="EntityConfigurations\CountryConfig.cs" />
     <Compile Include="EntityConfigurations\CustomerConfig.cs" />
     <Compile Include="EntityConfigurations\UserConfig.cs" />
-    <Compile Include="Migrations\201906080127302_Initial.cs" />
-    <Compile Include="Migrations\201906080127302_Initial.Designer.cs">
-      <DependentUpon>201906080127302_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201906182016234_Initial.cs" />
+    <Compile Include="Migrations\201906182016234_Initial.Designer.cs">
+      <DependentUpon>201906182016234_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,8 +78,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906080127302_Initial.resx">
-      <DependentUpon>201906080127302_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906182016234_Initial.resx">
+      <DependentUpon>201906182016234_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

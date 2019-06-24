@@ -53,13 +53,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gui\BaseForm.cs">
+    <Compile Include="Gui\Controls\ActionButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\ActionButton.Designer.cs">
+      <DependentUpon>ActionButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gui\BaseForm.Designer.cs">
+    <Compile Include="Gui\Controls\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\ColorPalette.cs" />
+    <Compile Include="Gui\Controls\Country\CountryDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Country\CountryDataPanel.Designer.cs">
+      <DependentUpon>CountryDataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\CrudPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\CrudPanel.Designer.cs">
+      <DependentUpon>CrudPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\DashboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\DashboardControl.Designer.cs">
+      <DependentUpon>DashboardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\ExtendedDateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\ExtendedDateTimePicker.Designer.cs">
+      <DependentUpon>ExtendedDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\ExtendedTextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\ExtendedTextbox.Designer.cs">
+      <DependentUpon>ExtendedTextbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\SubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\SubForm.Designer.cs">
+      <DependentUpon>SubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Extensions\CountryExtensions.cs" />
+    <Compile Include="Gui\Extensions\CustomerExtensions.cs" />
+    <Compile Include="Gui\FontStyles.cs" />
+    <Compile Include="Gui\Forms\Country\AllCountriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Country\AllCountriesForm.Designer.cs">
+      <DependentUpon>AllCountriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\Country\CountryCrudPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Country\CountryCrudPanel.Designer.cs">
+      <DependentUpon>CountryCrudPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Forms\Country\CountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Country\CountryForm.Designer.cs">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Forms\Customers\AllCustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Customers\AllCustomersForm.Designer.cs">
+      <DependentUpon>AllCustomersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\Customer\CustomerCrudPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Customer\CustomerCrudPanel.Designer.cs">
+      <DependentUpon>CustomerCrudPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Forms\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,8 +149,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Gui\BaseForm.resx">
+    <EmbeddedResource Include="Gui\Controls\ActionButton.resx">
+      <DependentUpon>ActionButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Country\CountryDataPanel.resx">
+      <DependentUpon>CountryDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\CrudPanel.resx">
+      <DependentUpon>CrudPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\DashboardControl.resx">
+      <DependentUpon>DashboardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\ExtendedDateTimePicker.resx">
+      <DependentUpon>ExtendedDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\ExtendedTextbox.resx">
+      <DependentUpon>ExtendedTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Country\AllCountriesForm.resx">
+      <DependentUpon>AllCountriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Country\CountryCrudPanel.resx">
+      <DependentUpon>CountryCrudPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Country\CountryForm.resx">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Customers\AllCustomersForm.resx">
+      <DependentUpon>AllCustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Customer\CustomerCrudPanel.resx">
+      <DependentUpon>CustomerCrudPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -87,6 +195,14 @@
     <EmbeddedResource Include="Resources\BaseFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BaseFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CountryDataPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryDataPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CountryDataPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryDataPanelStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DashboardFormStrings.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -113,6 +229,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CountryDataPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryDataPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CountryDataPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryDataPanelStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\DashboardFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -177,5 +303,6 @@
   <ItemGroup>
     <None Include="Resources\White-Abstract-Wallpapers-Gallery-89-Plus-PIC-WPW405898-1[1].png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

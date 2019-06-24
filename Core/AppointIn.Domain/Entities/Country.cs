@@ -15,6 +15,6 @@ namespace AppointIn.Domain.Entities
 		public DateTime CreateDate { get; set; }
 		public string CreatedBy { get; set; }
 		public Byte[] LastUpdate { get; set; }
-		public string LasUpdateBy { get; set; }
+		public string LastUpdateBy { get; set; }
 	}
 }

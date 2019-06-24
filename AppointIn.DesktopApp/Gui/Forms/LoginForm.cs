@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using AppointIn.Data;
 using AppointIn.Domain.Entities;
 
-namespace AppointIn.DesktopApp.Gui.Forms
+namespace AppointIn.DesktopApp.Gui
 {
 	public partial class LoginForm : BaseForm
 	{
@@ -26,12 +26,12 @@ namespace AppointIn.DesktopApp.Gui.Forms
 
 
 		#region Properties
-		User User = null;
+		internal User User = null;
 		#endregion
 
 
 		#region Methods
-		private void AttachEvents()
+		protected override void AttachEvents()
 		{
 			LoginButton.Click += (sender, e) => Login();
 		}

@@ -1,4 +1,4 @@
-﻿namespace AppointIn.DesktopApp.Gui.Forms
+﻿namespace AppointIn.DesktopApp.Gui
 {
 	partial class LoginForm
 	{
@@ -104,11 +104,11 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = null;
 			this.ClientSize = new System.Drawing.Size(384, 161);
+			this.Controls.Add(this.usernameTextbox);
 			this.Controls.Add(this.LoginButton);
 			this.Controls.Add(this.passwordLabel);
 			this.Controls.Add(this.passwordTextbox);
 			this.Controls.Add(this.usernameLabel);
-			this.Controls.Add(this.usernameTextbox);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Location = new System.Drawing.Point(0, 0);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

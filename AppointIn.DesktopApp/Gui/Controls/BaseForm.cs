@@ -40,10 +40,16 @@ namespace AppointIn.DesktopApp.Gui
 
 
 		#region Methods
+		protected virtual void AttachEvents()
+		{
+
+		}
+
 		protected virtual void Init()
 		{
 			InitializeVisualStyles();
 			LocalizeText();
+			AttachEvents();
 		}
 
 		protected virtual void InitializeVisualStyles()

@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.DesktopApp.Gui;
-using AppointIn.DesktopApp.Gui.Forms;
+
+using AppointIn.Data;
+using AppointIn.TestDataSeed;
 
 namespace AppointIn.DesktopApp
 {
@@ -17,6 +19,20 @@ namespace AppointIn.DesktopApp
 		[STAThread]
 		static void Main()
 		{
+
+			using (var workSegment = new UnitOfWork()) {
+				if (DataInitializer.NeedsDataInitialization(workSegment))
+				{
+					var dialogResult = MessageBox.Show(
+						"There is no data currently initialized. That is that the DataBase currently has no data. Would you like to seed data on the database for demo purposes?",
+						"Empty Database found",
+						MessageBoxButtons.YesNo,
+						MessageBoxIcon.Exclamation);
+
+					if(dialogResult == DialogResult.Yes) DataInitializer.DataSeedDatabase(workSegment);
+				}
+			}
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Core.AppActions.ErrorHandler = (exception) =>
