@@ -22,14 +22,14 @@ namespace AppointIn.DesktopApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class BaseFormStrings {
+    internal class LocalizablesStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal BaseFormStrings() {
+        internal LocalizablesStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AppointIn.DesktopApp.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.BaseFormStrings", typeof(BaseFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.LocalizablesStrings", typeof(LocalizablesStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,20 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel.
+        ///   Looks up a localized string similar to English.
         /// </summary>
-        internal static string CancelButtonText {
+        internal static string en {
             get {
-                return ResourceManager.GetString("CancelButtonText", resourceCulture);
+                return ResourceManager.GetString("en", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Form &quot;{0}&quot; needs to implement &apos;{1}&apos; method..
+        ///   Looks up a localized string similar to Spanish.
         /// </summary>
-        internal static string LocalizeTextNotImplementedMessage {
+        internal static string es {
             get {
-                return ResourceManager.GetString("LocalizeTextNotImplementedMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save.
-        /// </summary>
-        internal static string SaveButtonText {
-            get {
-                return ResourceManager.GetString("SaveButtonText", resourceCulture);
+                return ResourceManager.GetString("es", resourceCulture);
             }
         }
     }

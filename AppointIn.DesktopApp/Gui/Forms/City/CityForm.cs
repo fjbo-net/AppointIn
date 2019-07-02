@@ -13,22 +13,22 @@ using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui
 {
-	public partial class CountryForm : BaseForm, ILocalizable
+	public partial class CityForm : BaseForm, ILocalizable
 	{
-		public CountryForm()
+		public CityForm()
 		{
 			Localizables.All.Add(this);
+
 			AttachEvents();
 		}
 
-
 		#region Properties
-		public Country Country {
-			get => DataPanel.Country;
-			set => DataPanel.Country = value;
+		public City City
+		{
+			get => DataPanel.City;
+			set => DataPanel.City = value;
 		}
 		#endregion
-
 
 		#region Methods
 		protected override void AttachEvents()
@@ -54,11 +54,11 @@ namespace AppointIn.DesktopApp.Gui
 
 		public override void LocalizeText(string cultureName = "")
 		{
-			base.LocalizeText();
+			base.LocalizeText(cultureName);
 
-			Text = Resources.CountryFormStrings.Title;
-			if(SaveActionButton != null) SaveActionButton.Text = Resources.CountryFormStrings.SaveButtonText;
-			if(CancelActionButton != null) CancelActionButton.Text = Resources.CountryFormStrings.CancelButtonText;
+			Text = Resources.CityFormStrings.Title;
+			if (SaveActionButton != null) SaveActionButton.Text = Resources.BaseFormStrings.SaveButtonText;
+			if (CancelActionButton != null) CancelActionButton.Text = Resources.BaseFormStrings.CancelButtonText;
 		}
 
 		public void Reset() => DataPanel.Reset();

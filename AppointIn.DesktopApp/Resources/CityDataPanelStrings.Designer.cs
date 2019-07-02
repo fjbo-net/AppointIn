@@ -22,14 +22,14 @@ namespace AppointIn.DesktopApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class BaseFormStrings {
+    internal class CityDataPanelStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal BaseFormStrings() {
+        internal CityDataPanelStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AppointIn.DesktopApp.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.BaseFormStrings", typeof(BaseFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.CityDataPanelStrings", typeof(CityDataPanelStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,65 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel.
+        ///   Looks up a localized string similar to Country.
         /// </summary>
-        internal static string CancelButtonText {
+        internal static string CountryLabelText {
             get {
-                return ResourceManager.GetString("CancelButtonText", resourceCulture);
+                return ResourceManager.GetString("CountryLabelText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Form &quot;{0}&quot; needs to implement &apos;{1}&apos; method..
+        ///   Looks up a localized string similar to Create Date.
         /// </summary>
-        internal static string LocalizeTextNotImplementedMessage {
+        internal static string CreateDateLabelText {
             get {
-                return ResourceManager.GetString("LocalizeTextNotImplementedMessage", resourceCulture);
+                return ResourceManager.GetString("CreateDateLabelText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save.
+        ///   Looks up a localized string similar to Created By.
         /// </summary>
-        internal static string SaveButtonText {
+        internal static string CreatedByLabelText {
             get {
-                return ResourceManager.GetString("SaveButtonText", resourceCulture);
+                return ResourceManager.GetString("CreatedByLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        internal static string IdLabelText {
+            get {
+                return ResourceManager.GetString("IdLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Update By.
+        /// </summary>
+        internal static string LastUpdateByLabelText {
+            get {
+                return ResourceManager.GetString("LastUpdateByLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Update.
+        /// </summary>
+        internal static string LastUpdateLabelText {
+            get {
+                return ResourceManager.GetString("LastUpdateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string NameLabelText {
+            get {
+                return ResourceManager.GetString("NameLabelText", resourceCulture);
             }
         }
     }

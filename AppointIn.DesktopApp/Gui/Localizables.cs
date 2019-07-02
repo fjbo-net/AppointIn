@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppointIn.DesktopApp.Gui
 {
@@ -24,5 +25,13 @@ namespace AppointIn.DesktopApp.Gui
 				LocalizeAll(value);
 			}
 		}
+
+		internal static Dictionary<string, string> SupportedLanguages { get; } = new Dictionary<string, string>()
+		{
+			{ "en", Resources.LocalizablesStrings.en },
+			{ "es", Resources.LocalizablesStrings.es }
+		};
+
+		internal static BindingSource LanguagesBindingSource = new BindingSource(SupportedLanguages, null);
 	}
 }

@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="LocalizeTextNotImplementedMessage" xml:space="preserve">
     <value>El formulario '{0}' necesita implementar el método '{1}'.</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Guardar</value>
   </data>
 </root>

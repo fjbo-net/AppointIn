@@ -32,7 +32,6 @@
 			// 
 			// BaseForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::AppointIn.DesktopApp.Properties.Resources.White_Abstract_Wallpapers_Gallery_89_Plus_PIC_WPW405898_1_1_;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

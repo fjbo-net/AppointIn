@@ -78,6 +78,7 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			TextBox.KeyPress += FilterKeyPresses;
 		}
+		
 		protected void Init()
 		{
 			InitializeComponent();

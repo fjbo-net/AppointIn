@@ -59,6 +59,12 @@
     <Compile Include="Gui\Controls\ActionButton.Designer.cs">
       <DependentUpon>ActionButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Controls\Address\AddressDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Address\AddressDataPanel.Designer.cs">
+      <DependentUpon>AddressDataPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Controls\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,18 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\ColorPalette.cs" />
+    <Compile Include="Gui\Controls\City\CityCrudPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\City\CityCrudPanel.Designer.cs">
+      <DependentUpon>CityCrudPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\City\CityDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\City\CityDataPanel.Designer.cs">
+      <DependentUpon>CityDataPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Controls\Country\CountryDataPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,6 +101,12 @@
     </Compile>
     <Compile Include="Gui\Controls\DashboardControl.Designer.cs">
       <DependentUpon>DashboardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\ExtendedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\ExtendedComboBox.Designer.cs">
+      <DependentUpon>ExtendedComboBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\Controls\ExtendedDateTimePicker.cs">
       <SubType>UserControl</SubType>
@@ -102,9 +126,23 @@
     <Compile Include="Gui\Controls\SubForm.Designer.cs">
       <DependentUpon>SubForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Extensions\CityExtensions.cs" />
+    <Compile Include="Gui\Extensions\ComboboxExtensions.cs" />
     <Compile Include="Gui\Extensions\CountryExtensions.cs" />
     <Compile Include="Gui\Extensions\CustomerExtensions.cs" />
     <Compile Include="Gui\FontStyles.cs" />
+    <Compile Include="Gui\Forms\City\AllCitiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\City\AllCitiesForm.Designer.cs">
+      <DependentUpon>AllCitiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Forms\City\CityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\City\CityForm.Designer.cs">
+      <DependentUpon>CityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Forms\Country\AllCountriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,8 +192,17 @@
     <EmbeddedResource Include="Gui\Controls\ActionButton.resx">
       <DependentUpon>ActionButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Address\AddressDataPanel.resx">
+      <DependentUpon>AddressDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\City\CityCrudPanel.resx">
+      <DependentUpon>CityCrudPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\City\CityDataPanel.resx">
+      <DependentUpon>CityDataPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\Country\CountryDataPanel.resx">
       <DependentUpon>CountryDataPanel.cs</DependentUpon>
@@ -166,11 +213,20 @@
     <EmbeddedResource Include="Gui\Controls\DashboardControl.resx">
       <DependentUpon>DashboardControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\ExtendedComboBox.resx">
+      <DependentUpon>ExtendedComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\ExtendedDateTimePicker.resx">
       <DependentUpon>ExtendedDateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\ExtendedTextbox.resx">
       <DependentUpon>ExtendedTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\City\AllCitiesForm.resx">
+      <DependentUpon>AllCitiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\City\CityForm.resx">
+      <DependentUpon>CityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\Country\AllCountriesForm.resx">
       <DependentUpon>AllCountriesForm.cs</DependentUpon>
@@ -206,6 +262,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BaseFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CityDataPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CityDataPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CityDataPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CityDataPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CityFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CityFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CityFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CityFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\CountryDataPanelStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CountryDataPanelStrings.es.Designer.cs</LastGenOutput>
@@ -229,6 +301,11 @@
     <EmbeddedResource Include="Resources\DashboardFormStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DashboardFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LocalizablesStrings.es.resx" />
+    <EmbeddedResource Include="Resources\LocalizablesStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizablesStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LoginFormStrings.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -257,6 +334,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CityDataPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityDataPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CityDataPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityDataPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CityFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CityFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityFormStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\CountryDataPanelStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -287,6 +384,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DashboardFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LocalizablesStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizablesStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\LoginFormStrings.es.Designer.cs">
       <AutoGen>True</AutoGen>

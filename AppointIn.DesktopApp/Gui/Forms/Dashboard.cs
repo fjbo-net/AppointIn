@@ -80,6 +80,17 @@ namespace AppointIn.DesktopApp.Gui
 
 				AllCountriesForm.SharedInstance.Visible = true;
 			};
+
+			ManageCitiesButton.Click += (sender, e) =>
+			{
+				if(AllCitiesForm.SharedInstance.Visible)
+				{
+					AllCitiesForm.SharedInstance.Focus();
+					return;
+				}
+
+				AllCitiesForm.SharedInstance.Visible = true;
+			};
 		}
 
 		protected override void InitializeVisualStyles()

@@ -23,14 +23,14 @@ namespace AppointIn.Data.Repositories
 		}
 
 
-		public void Delete(TypeOfKey id) => Delete(GetById(id));
-		public void Delete(TypeOfEntity entity)
+		public virtual void Delete(TypeOfKey id) => Delete(GetById(id));
+		public virtual void Delete(TypeOfEntity entity)
 		{
 			_entityDbSet.Remove(entity);
 			_context.Entry(entity).State = EntityState.Deleted;
 		}
-		public IEnumerable<TypeOfEntity> GetAll() => _entityDbSet.ToList();
-		public TypeOfEntity GetById(TypeOfKey id) => _entityDbSet.Find(id);
-		public void Insert(TypeOfEntity entity) => _entityDbSet.Add(entity);
+		public virtual IEnumerable<TypeOfEntity> GetAll() => _entityDbSet.ToList();
+		public virtual TypeOfEntity GetById(TypeOfKey id) => _entityDbSet.Find(id);
+		public virtual void Insert(TypeOfEntity entity) => _entityDbSet.Add(entity);
 	}
 }
