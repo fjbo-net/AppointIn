@@ -233,6 +233,9 @@
     <EmbeddedResource Include="Gui\Forms\City\CityForm.resx">
       <DependentUpon>CityForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\AddressCrudPanelStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AddressCrudPanelStrings.es.Designer.cs</LastGenOutput>

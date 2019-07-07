@@ -61,6 +61,15 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string LanguageLabelText {
+            get {
+                return ResourceManager.GetString("LanguageLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string LoginButtonText {
@@ -70,7 +79,7 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to password.
+        ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string PasswordLabelText {
             get {
@@ -88,7 +97,7 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to username.
+        ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string UsernameLabelText {
             get {

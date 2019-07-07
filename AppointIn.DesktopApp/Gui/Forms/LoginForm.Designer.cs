@@ -33,6 +33,8 @@
 			this.passwordTextbox = new System.Windows.Forms.TextBox();
 			this.passwordLabel = new System.Windows.Forms.Label();
 			this.LoginButton = new System.Windows.Forms.Button();
+			this.LanguageLabel = new System.Windows.Forms.Label();
+			this.LanguageCombobox = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// usernameTextbox
@@ -44,7 +46,6 @@
 			this.usernameTextbox.Name = "usernameTextbox";
 			this.usernameTextbox.Size = new System.Drawing.Size(360, 19);
 			this.usernameTextbox.TabIndex = 0;
-			this.usernameTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// usernameLabel
 			// 
@@ -57,7 +58,7 @@
 			this.usernameLabel.Size = new System.Drawing.Size(360, 22);
 			this.usernameLabel.TabIndex = 1;
 			this.usernameLabel.Text = "usernameLabel";
-			this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// passwordTextbox
 			// 
@@ -68,7 +69,6 @@
 			this.passwordTextbox.Name = "passwordTextbox";
 			this.passwordTextbox.Size = new System.Drawing.Size(360, 19);
 			this.passwordTextbox.TabIndex = 1;
-			this.passwordTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.passwordTextbox.UseSystemPasswordChar = true;
 			// 
 			// passwordLabel
@@ -82,7 +82,7 @@
 			this.passwordLabel.Size = new System.Drawing.Size(360, 22);
 			this.passwordLabel.TabIndex = 1;
 			this.passwordLabel.Text = "passwordLabel";
-			this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// LoginButton
 			// 
@@ -90,30 +90,56 @@
 			this.LoginButton.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.LoginButton.ForeColor = System.Drawing.SystemColors.Control;
-			this.LoginButton.Location = new System.Drawing.Point(0, 119);
+			this.LoginButton.Location = new System.Drawing.Point(0, 194);
 			this.LoginButton.Name = "LoginButton";
 			this.LoginButton.Size = new System.Drawing.Size(384, 42);
 			this.LoginButton.TabIndex = 2;
 			this.LoginButton.Text = "Log In";
 			this.LoginButton.UseVisualStyleBackColor = false;
 			// 
+			// LanguageLabel
+			// 
+			this.LanguageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.LanguageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.LanguageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+			this.LanguageLabel.Location = new System.Drawing.Point(12, 103);
+			this.LanguageLabel.Name = "LanguageLabel";
+			this.LanguageLabel.Size = new System.Drawing.Size(360, 22);
+			this.LanguageLabel.TabIndex = 1;
+			this.LanguageLabel.Text = "languageLabel";
+			this.LanguageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// LanguageCombobox
+			// 
+			this.LanguageCombobox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.LanguageCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.LanguageCombobox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.LanguageCombobox.FormattingEnabled = true;
+			this.LanguageCombobox.Location = new System.Drawing.Point(12, 128);
+			this.LanguageCombobox.Name = "LanguageCombobox";
+			this.LanguageCombobox.Size = new System.Drawing.Size(360, 28);
+			this.LanguageCombobox.TabIndex = 3;
+			// 
 			// LoginForm
 			// 
 			this.AcceptButton = this.LoginButton;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = null;
-			this.ClientSize = new System.Drawing.Size(384, 161);
+			this.ClientSize = new System.Drawing.Size(384, 236);
+			this.Controls.Add(this.LanguageCombobox);
 			this.Controls.Add(this.usernameTextbox);
 			this.Controls.Add(this.LoginButton);
+			this.Controls.Add(this.LanguageLabel);
 			this.Controls.Add(this.passwordLabel);
 			this.Controls.Add(this.passwordTextbox);
 			this.Controls.Add(this.usernameLabel);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Location = new System.Drawing.Point(0, 0);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.MaximumSize = new System.Drawing.Size(400, 200);
-			this.MinimumSize = new System.Drawing.Size(400, 200);
+			this.MaximumSize = new System.Drawing.Size(400, 275);
+			this.MinimumSize = new System.Drawing.Size(400, 275);
 			this.Name = "LoginForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";
@@ -130,5 +156,7 @@
 		private System.Windows.Forms.TextBox passwordTextbox;
 		private System.Windows.Forms.Label passwordLabel;
 		private System.Windows.Forms.Button LoginButton;
+		private System.Windows.Forms.Label LanguageLabel;
+		private System.Windows.Forms.ComboBox LanguageCombobox;
 	}
 }

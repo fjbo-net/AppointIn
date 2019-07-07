@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 using AppointIn.Data;
 using AppointIn.Domain.Entities;
+using AppointIn.DesktopApp.Gui.Extensions;
 
 namespace AppointIn.DesktopApp.Gui
 {
@@ -34,13 +35,20 @@ namespace AppointIn.DesktopApp.Gui
 		protected override void AttachEvents()
 		{
 			LoginButton.Click += (sender, e) => Login();
+
+			LanguageCombobox.SelectedIndexChanged += (sender, e) =>
+			{
+				LocalizeText(LanguageCombobox.SelectedValue.ToString());
+			};
 		}
 
 		protected override void Init()
 		{
 			InitializeVisualStyles();
 
-			LocalizeText("es");
+			SyncData();
+
+			Localize();
 		}
 
 		protected override void InitializeVisualStyles()
@@ -48,6 +56,24 @@ namespace AppointIn.DesktopApp.Gui
 			base.InitializeVisualStyles();
 
 			InitializeComponent();
+		}
+
+		private void Localize()
+		{
+			LanguageCombobox.SelectedIndex = 0;
+
+			var currentCulture = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName.ToLower();
+
+			foreach(KeyValuePair<string,string> item in LanguageCombobox.Items)
+			{
+				if(item.Key.Equals(currentCulture, StringComparison.OrdinalIgnoreCase))
+				{
+					LocalizeText(currentCulture);
+					return;
+				}
+			}
+
+			LocalizeText(LanguageCombobox.SelectedValue.ToString());
 		}
 
 		public override void LocalizeText(string cultureName = "")
@@ -67,6 +93,7 @@ namespace AppointIn.DesktopApp.Gui
 
 			usernameLabel.Text = Resources.LoginFormStrings.UsernameLabelText;
 			passwordLabel.Text = Resources.LoginFormStrings.PasswordLabelText;
+			LanguageLabel.Text = Resources.LoginFormStrings.LanguageLabelText;
 			LoginButton.Text = Resources.LoginFormStrings.LoginButtonText;
 
 			
@@ -93,6 +120,16 @@ namespace AppointIn.DesktopApp.Gui
 
 				MessageBox.Show(message.ToString(), "Could not login", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		private void SyncData()
+		{
+			var languages = new Dictionary<string, string>() {
+				{"en", "English"},
+				{"es", "Español"}
+			};
+
+			LanguageCombobox.Bind(languages);
 		}
 		#endregion
 	}

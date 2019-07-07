@@ -5,9 +5,9 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 {
 	public static class ComboboxExtensions
 	{
-		public static void BindToDictionary(this ComboBox combobox, Dictionary<string, string> dictionary)
+		public static void Bind(this ComboBox combobox, Dictionary<string, string> dictionary)
 		{
-			combobox.DataSource = dictionary;
+			combobox.DataSource = new BindingSource(dictionary, null);
 			combobox.DisplayMember = "Value";
 			combobox.ValueMember = "Key";
 		}
