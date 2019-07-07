@@ -10,25 +10,23 @@ using System.Windows.Forms;
 
 namespace AppointIn.DesktopApp.Gui
 {
-	public partial class AllCountriesForm : SubForm
+	public partial class AllAddressesForm : SubForm
 	{
-		public AllCountriesForm()
+		public AllAddressesForm()
 		{
 		}
 
-
 		#region Properties
-		private static AllCountriesForm sharedInstance;
-		public static AllCountriesForm SharedInstance
+		private static AllAddressesForm sharedInstance;
+		public static AllAddressesForm SharedInstance
 		{
 			get
 			{
-				if (sharedInstance == null) sharedInstance = new AllCountriesForm();
+				if (sharedInstance == null) sharedInstance = new AllAddressesForm();
 				return sharedInstance;
 			}
 		}
 		#endregion
-
 
 		#region Methods
 		protected override void Init()
@@ -43,9 +41,7 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.LocalizeText(cultureName);
 
-			Text = Resources.AllCountriesFormStrings.Title;
-
-			if(CountriesCrudPanel != null) CountriesCrudPanel.LocalizeText(cultureName);
+			if(CrudPanel != null) CrudPanel.LocalizeText(cultureName);
 		}
 		#endregion
 	}

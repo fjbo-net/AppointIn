@@ -91,6 +91,17 @@ namespace AppointIn.DesktopApp.Gui
 
 				AllCitiesForm.SharedInstance.Visible = true;
 			};
+
+			ManageAddressesButton.Click += (sender, e) =>
+			{
+				if (AllAddressesForm.SharedInstance.Visible)
+				{
+					AllAddressesForm.SharedInstance.Focus();
+					return;
+				}
+
+				AllAddressesForm.SharedInstance.Visible = true;
+			};
 		}
 
 		protected override void InitializeVisualStyles()

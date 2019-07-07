@@ -18,8 +18,8 @@ namespace AppointIn.TestDataSeed
 		});
 
 		
-		public static bool DataBaseHasInitializedCountries(UnitOfWork segmentOfWork)
-			=> segmentOfWork.Countries.GetAll().Any();
+		public static bool DataBaseHasInitializedCountries()
+			=> UnitOfWork.Data.Countries.GetAll().Any();
 
 		public static Country GenerateCountry(int id, string name) => new Country()
 		{

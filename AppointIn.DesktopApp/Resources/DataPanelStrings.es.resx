@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CreateDateLabelText" xml:space="preserve">
+    <value>Creado En</value>
+  </data>
+  <data name="CreatedByLabelText" xml:space="preserve">
+    <value>Creado Por</value>
+  </data>
+  <data name="IdLabelText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="LastUpdateByLabelText" xml:space="preserve">
+    <value>Última Actualización Por</value>
+  </data>
+  <data name="LastUpdateLabelText" xml:space="preserve">
+    <value>Última Actualización En</value>
+  </data>
 </root>

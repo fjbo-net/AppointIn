@@ -13,9 +13,19 @@ namespace AppointIn.Data
 {
 	public class UnitOfWork : IUnitOfWork
 	{
-		public UnitOfWork()
+		private UnitOfWork()
 		{
 			_context = new Context();
+		}
+
+		private static UnitOfWork _instance;
+		public static UnitOfWork Data
+		{
+			get
+			{
+				if (_instance == null) _instance = new UnitOfWork();
+				return _instance;
+			}
 		}
 
 

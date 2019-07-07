@@ -14,11 +14,13 @@ using AppointIn.DesktopApp.Gui.Extensions;
 
 namespace AppointIn.DesktopApp.Gui
 {
-	public partial class CityDataPanel : UserControl
+	public partial class CityDataPanel : UserControl, Interfaces.ILocalizable, Interfaces.ISyncable
 	{
 		public CityDataPanel()
 		{
 			Init();
+
+			Localizables.All.Add(this);
 		}
 
 		#region Properties
@@ -56,13 +58,11 @@ namespace AppointIn.DesktopApp.Gui
 
 		private void BindGui()
 		{
+			SyncData();
+
 			IdExtendedTextBox.Text = _city.Id.ToString();
 			NameExtendedTextBox.Text = _city.Name;
-			using (var workSegment = new UnitOfWork()) {
-				var countries = workSegment.Countries;
-
-				CountryExtendedComboBox.ComboBox.Bind(countries.GetAll(), "Name");
-			}
+			CountryExtendedComboBox.ComboBox.SelectedItem = _city.Country;
 			CreateDateDateTimePicker.Value = _city.CreateDate;
 			CreatedByExtendedTextBox.Text = _city.CreatedBy;
 			LastUpdateByExtendedTextBox.Text = _city.LastUpdateBy;
@@ -75,19 +75,25 @@ namespace AppointIn.DesktopApp.Gui
 			Reset();
 		}
 
-		internal void LocalizeText()
+		public void LocalizeText(string culture = "")
 		{
-			IdExtendedTextBox.LabelText = Resources.CityDataPanelStrings.IdLabelText;
+			IdExtendedTextBox.LabelText = Resources.DataPanelStrings.IdLabelText;
 			NameExtendedTextBox.LabelText = Resources.CityDataPanelStrings.NameLabelText;
 			CountryExtendedComboBox.LabelText = Resources.CityDataPanelStrings.CountryLabelText;
-			CreateDateDateTimePicker.LabelText = Resources.CityDataPanelStrings.CreateDateLabelText;
-			LastUpdateByExtendedTextBox.LabelText = Resources.CityDataPanelStrings.LastUpdateByLabelText;
+			CreatedByExtendedTextBox.LabelText = Resources.DataPanelStrings.CreatedByLabelText;
+			CreateDateDateTimePicker.LabelText = Resources.DataPanelStrings.CreateDateLabelText;
+			LastUpdateByExtendedTextBox.LabelText = Resources.DataPanelStrings.LastUpdateByLabelText;
 		}
 
 		public void Reset() => City = new City() {
 			CreateDate = DateTime.Now,
 			CreatedBy = Dashboard.Username
 		};
+
+		public void SyncData()
+		{
+			CountryExtendedComboBox.ComboBox.Bind(UnitOfWork.Data.Countries.GetAll(), "Name");
+		}
 		#endregion
 	}
 }

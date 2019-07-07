@@ -1,6 +1,6 @@
 ﻿namespace AppointIn.DesktopApp.Gui
 {
-	partial class CityForm
+	partial class AddressForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,10 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.DataPanel = new AppointIn.DesktopApp.Gui.CityDataPanel();
-			this.SaveActionButton = new AppointIn.DesktopApp.Gui.ActionButton();
+			this.DataPanel = new AppointIn.DesktopApp.Gui.Controls.AddressDataPanel();
 			this.ButtonsPanel = new System.Windows.Forms.Panel();
 			this.CancelActionButton = new AppointIn.DesktopApp.Gui.ActionButton();
+			this.SaveActionButton = new AppointIn.DesktopApp.Gui.ActionButton();
 			this.ButtonsPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -44,17 +44,6 @@
 			this.DataPanel.Padding = new System.Windows.Forms.Padding(10);
 			this.DataPanel.Size = new System.Drawing.Size(484, 361);
 			this.DataPanel.TabIndex = 0;
-			// 
-			// SaveActionButton
-			// 
-			this.SaveActionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.SaveActionButton.AutoSize = true;
-			this.SaveActionButton.Location = new System.Drawing.Point(378, 10);
-			this.SaveActionButton.Name = "SaveActionButton";
-			this.SaveActionButton.Size = new System.Drawing.Size(94, 28);
-			this.SaveActionButton.TabIndex = 0;
-			this.SaveActionButton.Text = "SaveButton";
-			this.SaveActionButton.UseVisualStyleBackColor = true;
 			// 
 			// ButtonsPanel
 			// 
@@ -70,14 +59,25 @@
 			// 
 			this.CancelActionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.CancelActionButton.AutoSize = true;
-			this.CancelActionButton.Location = new System.Drawing.Point(265, 10);
+			this.CancelActionButton.Location = new System.Drawing.Point(248, 10);
 			this.CancelActionButton.Name = "CancelActionButton";
-			this.CancelActionButton.Size = new System.Drawing.Size(107, 28);
+			this.CancelActionButton.Size = new System.Drawing.Size(109, 28);
 			this.CancelActionButton.TabIndex = 0;
 			this.CancelActionButton.Text = "CancelButton";
 			this.CancelActionButton.UseVisualStyleBackColor = true;
 			// 
-			// CityForm
+			// SaveActionButton
+			// 
+			this.SaveActionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.SaveActionButton.AutoSize = true;
+			this.SaveActionButton.Location = new System.Drawing.Point(363, 10);
+			this.SaveActionButton.Name = "SaveActionButton";
+			this.SaveActionButton.Size = new System.Drawing.Size(109, 28);
+			this.SaveActionButton.TabIndex = 0;
+			this.SaveActionButton.Text = "SaveButton";
+			this.SaveActionButton.UseVisualStyleBackColor = true;
+			// 
+			// AddressForm
 			// 
 			this.AcceptButton = this.SaveActionButton;
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,8 +86,8 @@
 			this.Controls.Add(this.ButtonsPanel);
 			this.Controls.Add(this.DataPanel);
 			this.Location = new System.Drawing.Point(0, 0);
-			this.Name = "CityForm";
-			this.Text = "CityForm";
+			this.Name = "AddressForm";
+			this.Text = "AddressForm";
 			this.ButtonsPanel.ResumeLayout(false);
 			this.ButtonsPanel.PerformLayout();
 			this.ResumeLayout(false);
@@ -96,9 +96,9 @@
 
 		#endregion
 
-		private CityDataPanel DataPanel;
-		private ActionButton SaveActionButton;
+		private Controls.AddressDataPanel DataPanel;
 		private System.Windows.Forms.Panel ButtonsPanel;
 		private ActionButton CancelActionButton;
+		private ActionButton SaveActionButton;
 	}
 }

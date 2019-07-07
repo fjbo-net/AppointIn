@@ -25,5 +25,9 @@ namespace AppointIn.Domain.Entities
 		public string CreatedBy { get; set; }
 		public byte[] LastUpdate { get; set; }
 		public string LastUpdateBy { get; set; }
+
+		#region Navigation Properties
+		//public virtual ICollection<City> 
+		#endregion
 	}
 }

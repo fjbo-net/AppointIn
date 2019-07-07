@@ -120,21 +120,6 @@
   <data name="CountryLabelText" xml:space="preserve">
     <value>Pais</value>
   </data>
-  <data name="CreateDateLabelText" xml:space="preserve">
-    <value>Creado en</value>
-  </data>
-  <data name="CreatedByLabelText" xml:space="preserve">
-    <value>Creado por</value>
-  </data>
-  <data name="IdLabelText" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="LastUpdateByLabelText" xml:space="preserve">
-    <value>Actualizado por</value>
-  </data>
-  <data name="LastUpdateLabelText" xml:space="preserve">
-    <value>Ultima Actualización</value>
-  </data>
   <data name="NameLabelText" xml:space="preserve">
     <value>Nombre</value>
   </data>

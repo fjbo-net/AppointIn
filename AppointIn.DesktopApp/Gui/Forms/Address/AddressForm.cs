@@ -1,40 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 using AppointIn.Domain.Entities;
-using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui
 {
-	public partial class CountryForm : BaseForm, ILocalizable
+	public partial class AddressForm : BaseForm, Interfaces.ILocalizable
 	{
-		public CountryForm()
+		public AddressForm()
 		{
 			Localizables.All.Add(this);
+
 			AttachEvents();
 		}
 
-
 		#region Properties
-		public Country Country {
-			get => DataPanel.Country;
-			set => DataPanel.Country = value;
+		public Address Address
+		{
+			get => DataPanel.Address;
+			set => DataPanel.Address = value;
 		}
 		#endregion
-
 
 		#region Methods
 		protected override void AttachEvents()
 		{
 			base.AttachEvents();
-
+			
 			if(SaveActionButton != null)
 			{
 				SaveActionButton.Click += (sender, e) =>
@@ -56,14 +47,14 @@ namespace AppointIn.DesktopApp.Gui
 
 		public override void LocalizeText(string cultureName = "")
 		{
-			base.LocalizeText();
+			base.LocalizeText(cultureName);
 
-			Text = Resources.CountryFormStrings.Title;
+			Text = Resources.AddressFormStrings.Title;
 
 			if (DataPanel != null) DataPanel.LocalizeText(cultureName);
 
-			if(SaveActionButton != null) SaveActionButton.Text = Resources.CountryFormStrings.SaveButtonText;
-			if(CancelActionButton != null) CancelActionButton.Text = Resources.CountryFormStrings.CancelButtonText;
+			if (SaveActionButton != null) SaveActionButton.Text = Resources.BaseFormStrings.SaveButtonText;
+			if (CancelActionButton != null) CancelActionButton.Text = Resources.BaseFormStrings.CancelButtonText;
 		}
 
 		public void Reset() => DataPanel.Reset();

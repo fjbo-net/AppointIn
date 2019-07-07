@@ -12,10 +12,14 @@ namespace AppointIn.Domain.Entities
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
-		public Country Country { get; set; }
+		public int CountryId { get; set; }
 		public DateTime CreateDate { get; set; }
 		public string CreatedBy { get; set; }
 		public byte[] LastUpdate { get; set; }
 		public string LastUpdateBy { get; set; }
+
+		#region Navigation Properties
+		public virtual Country Country { get; set; }
+		#endregion
 	}
 }

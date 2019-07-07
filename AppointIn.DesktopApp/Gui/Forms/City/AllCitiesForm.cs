@@ -40,6 +40,8 @@ namespace AppointIn.DesktopApp.Gui
 		public override void LocalizeText(string cultureName = "")
 		{
 			base.LocalizeText(cultureName);
+
+			if(cityCrudPanel1 != null) cityCrudPanel1.LocalizeText(cultureName);
 		}
 		#endregion
 	}

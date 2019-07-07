@@ -59,6 +59,12 @@
     <Compile Include="Gui\Controls\ActionButton.Designer.cs">
       <DependentUpon>ActionButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Controls\Address\AddressCrudPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Address\AddressCrudPanel.Designer.cs">
+      <DependentUpon>AddressCrudPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Controls\Address\AddressDataPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,11 +132,24 @@
     <Compile Include="Gui\Controls\SubForm.Designer.cs">
       <DependentUpon>SubForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Extensions\AddressExtensions.cs" />
     <Compile Include="Gui\Extensions\CityExtensions.cs" />
     <Compile Include="Gui\Extensions\ComboboxExtensions.cs" />
     <Compile Include="Gui\Extensions\CountryExtensions.cs" />
     <Compile Include="Gui\Extensions\CustomerExtensions.cs" />
     <Compile Include="Gui\FontStyles.cs" />
+    <Compile Include="Gui\Forms\Address\AddressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Address\AddressForm.Designer.cs">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Forms\Address\AllAddressesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Address\AllAddressesForm.Designer.cs">
+      <DependentUpon>AllAddressesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Forms\City\AllCitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +205,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\Interfaces\ILocalizable.cs" />
+    <Compile Include="Gui\Interfaces\ISyncable.cs" />
     <Compile Include="Gui\Localizables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,56 +218,41 @@
     <EmbeddedResource Include="Gui\Controls\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Controls\City\CityCrudPanel.resx">
-      <DependentUpon>CityCrudPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\City\CityDataPanel.resx">
       <DependentUpon>CityDataPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Controls\Country\CountryDataPanel.resx">
-      <DependentUpon>CountryDataPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\CrudPanel.resx">
       <DependentUpon>CrudPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Controls\DashboardControl.resx">
-      <DependentUpon>DashboardControl.cs</DependentUpon>
+    <EmbeddedResource Include="Gui\Controls\Customer\CustomerCrudPanel.resx">
+      <DependentUpon>CustomerCrudPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\ExtendedComboBox.resx">
       <DependentUpon>ExtendedComboBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Controls\ExtendedDateTimePicker.resx">
-      <DependentUpon>ExtendedDateTimePicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Controls\ExtendedTextbox.resx">
-      <DependentUpon>ExtendedTextbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Forms\City\AllCitiesForm.resx">
-      <DependentUpon>AllCitiesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\City\CityForm.resx">
       <DependentUpon>CityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Forms\Country\AllCountriesForm.resx">
-      <DependentUpon>AllCountriesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Resources\AddressCrudPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddressCrudPanelStrings.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Controls\Country\CountryCrudPanel.resx">
-      <DependentUpon>CountryCrudPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Resources\AddressCrudPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddressCrudPanelStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Forms\Country\CountryForm.resx">
-      <DependentUpon>CountryForm.cs</DependentUpon>
+    <EmbeddedResource Include="Resources\AddressDataPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddressDataPanelStrings.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Forms\Customers\AllCustomersForm.resx">
-      <DependentUpon>AllCustomersForm.cs</DependentUpon>
+    <EmbeddedResource Include="Resources\AddressDataPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddressDataPanelStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Controls\Customer\CustomerCrudPanel.resx">
-      <DependentUpon>CustomerCrudPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Forms\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Resources\AddressFormStrings.es.resx" />
+    <EmbeddedResource Include="Resources\AddressFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AddressFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AllCountriesFormStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -261,6 +266,14 @@
     <EmbeddedResource Include="Resources\BaseFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BaseFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CityCrudPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CityCrudPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CityCrudPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CityCrudPanelStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\CityDataPanelStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -278,6 +291,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CityFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CountryCrudPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryCrudPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CountryCrudPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryCrudPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\CountryDataPanelStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CountryDataPanelStrings.es.Designer.cs</LastGenOutput>
@@ -294,6 +315,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CountryFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CrudPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CrudPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CrudPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CrudPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\DashboardFormStrings.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DashboardFormStrings.es.Designer.cs</LastGenOutput>
@@ -301,6 +330,14 @@
     <EmbeddedResource Include="Resources\DashboardFormStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DashboardFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DataPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DataPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DataPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DataPanelStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizablesStrings.es.resx" />
     <EmbeddedResource Include="Resources\LocalizablesStrings.resx">
@@ -320,6 +357,31 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Resources\AddressCrudPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddressCrudPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AddressCrudPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddressCrudPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AddressDataPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddressDataPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AddressDataPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddressDataPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AddressFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddressFormStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\AllCountriesFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -334,6 +396,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CityCrudPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityCrudPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CityCrudPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityCrudPanelStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\CityDataPanelStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -355,6 +427,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CityFormStrings.es.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\CountryCrudPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryCrudPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CountryCrudPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryCrudPanelStrings.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\CountryDataPanelStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -375,6 +457,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CountryFormStrings.es.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\CrudPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrudPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CrudPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrudPanelStrings.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\DashboardFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -384,6 +476,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DashboardFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DataPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DataPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataPanelStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\LocalizablesStrings.Designer.cs">
       <AutoGen>True</AutoGen>

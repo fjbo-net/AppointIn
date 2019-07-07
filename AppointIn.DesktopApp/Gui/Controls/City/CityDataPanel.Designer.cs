@@ -28,39 +28,23 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.IdExtendedTextBox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
-			this.NameExtendedTextBox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
-			this.CountryExtendedComboBox = new AppointIn.DesktopApp.Gui.ExtendedComboBox();
 			this.CreateDateDateTimePicker = new AppointIn.DesktopApp.Gui.ExtendedDateTimePicker();
-			this.CreatedByExtendedTextBox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
+			this.CountryExtendedComboBox = new AppointIn.DesktopApp.Gui.ExtendedComboBox();
 			this.LastUpdateByExtendedTextBox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
+			this.CreatedByExtendedTextBox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
+			this.NameExtendedTextBox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
+			this.IdExtendedTextBox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
 			this.SuspendLayout();
 			// 
-			// IdExtendedTextBox
+			// CreateDateDateTimePicker
 			// 
-			this.IdExtendedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.IdExtendedTextBox.BackColor = System.Drawing.Color.Transparent;
-			this.IdExtendedTextBox.LabelText = "IdLabel";
-			this.IdExtendedTextBox.Location = new System.Drawing.Point(13, 30);
-			this.IdExtendedTextBox.Name = "IdExtendedTextBox";
-			this.IdExtendedTextBox.Readonly = false;
-			this.IdExtendedTextBox.Size = new System.Drawing.Size(314, 20);
-			this.IdExtendedTextBox.TabIndex = 0;
-			this.IdExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Int;
-			// 
-			// NameExtendedTextBox
-			// 
-			this.NameExtendedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.NameExtendedTextBox.BackColor = System.Drawing.Color.Transparent;
-			this.NameExtendedTextBox.LabelText = "NameLabel";
-			this.NameExtendedTextBox.Location = new System.Drawing.Point(13, 56);
-			this.NameExtendedTextBox.Name = "NameExtendedTextBox";
-			this.NameExtendedTextBox.Readonly = false;
-			this.NameExtendedTextBox.Size = new System.Drawing.Size(314, 20);
-			this.NameExtendedTextBox.TabIndex = 0;
-			this.NameExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
+			this.CreateDateDateTimePicker.BackColor = System.Drawing.Color.Transparent;
+			this.CreateDateDateTimePicker.LabelText = "CreateDateLabel";
+			this.CreateDateDateTimePicker.Location = new System.Drawing.Point(13, 108);
+			this.CreateDateDateTimePicker.Name = "CreateDateDateTimePicker";
+			this.CreateDateDateTimePicker.Size = new System.Drawing.Size(314, 20);
+			this.CreateDateDateTimePicker.TabIndex = 3;
+			this.CreateDateDateTimePicker.Value = new System.DateTime(2019, 6, 29, 19, 49, 22, 963);
 			// 
 			// CountryExtendedComboBox
 			// 
@@ -71,17 +55,20 @@
 			this.CountryExtendedComboBox.Location = new System.Drawing.Point(13, 82);
 			this.CountryExtendedComboBox.Name = "CountryExtendedComboBox";
 			this.CountryExtendedComboBox.Size = new System.Drawing.Size(314, 20);
-			this.CountryExtendedComboBox.TabIndex = 1;
+			this.CountryExtendedComboBox.TabIndex = 2;
 			// 
-			// CreateDateDateTimePicker
+			// LastUpdateByExtendedTextBox
 			// 
-			this.CreateDateDateTimePicker.BackColor = System.Drawing.Color.Transparent;
-			this.CreateDateDateTimePicker.LabelText = "CreateDateLabel";
-			this.CreateDateDateTimePicker.Location = new System.Drawing.Point(13, 108);
-			this.CreateDateDateTimePicker.Name = "CreateDateDateTimePicker";
-			this.CreateDateDateTimePicker.Size = new System.Drawing.Size(314, 20);
-			this.CreateDateDateTimePicker.TabIndex = 2;
-			this.CreateDateDateTimePicker.Value = new System.DateTime(2019, 6, 29, 19, 49, 22, 963);
+			this.LastUpdateByExtendedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.LastUpdateByExtendedTextBox.BackColor = System.Drawing.Color.Transparent;
+			this.LastUpdateByExtendedTextBox.LabelText = "LastUpdateByLabel";
+			this.LastUpdateByExtendedTextBox.Location = new System.Drawing.Point(13, 160);
+			this.LastUpdateByExtendedTextBox.Name = "LastUpdateByExtendedTextBox";
+			this.LastUpdateByExtendedTextBox.Readonly = true;
+			this.LastUpdateByExtendedTextBox.Size = new System.Drawing.Size(314, 20);
+			this.LastUpdateByExtendedTextBox.TabIndex = 5;
+			this.LastUpdateByExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// CreatedByExtendedTextBox
 			// 
@@ -93,21 +80,34 @@
 			this.CreatedByExtendedTextBox.Name = "CreatedByExtendedTextBox";
 			this.CreatedByExtendedTextBox.Readonly = true;
 			this.CreatedByExtendedTextBox.Size = new System.Drawing.Size(314, 20);
-			this.CreatedByExtendedTextBox.TabIndex = 0;
+			this.CreatedByExtendedTextBox.TabIndex = 4;
 			this.CreatedByExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
-			// LastUpdateByExtendedTextBox
+			// NameExtendedTextBox
 			// 
-			this.LastUpdateByExtendedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.NameExtendedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.LastUpdateByExtendedTextBox.BackColor = System.Drawing.Color.Transparent;
-			this.LastUpdateByExtendedTextBox.LabelText = "LastUpdateByLabel";
-			this.LastUpdateByExtendedTextBox.Location = new System.Drawing.Point(13, 160);
-			this.LastUpdateByExtendedTextBox.Name = "LastUpdateByExtendedTextBox";
-			this.LastUpdateByExtendedTextBox.Readonly = false;
-			this.LastUpdateByExtendedTextBox.Size = new System.Drawing.Size(314, 20);
-			this.LastUpdateByExtendedTextBox.TabIndex = 0;
-			this.LastUpdateByExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
+			this.NameExtendedTextBox.BackColor = System.Drawing.Color.Transparent;
+			this.NameExtendedTextBox.LabelText = "NameLabel";
+			this.NameExtendedTextBox.Location = new System.Drawing.Point(13, 56);
+			this.NameExtendedTextBox.Name = "NameExtendedTextBox";
+			this.NameExtendedTextBox.Readonly = false;
+			this.NameExtendedTextBox.Size = new System.Drawing.Size(314, 20);
+			this.NameExtendedTextBox.TabIndex = 1;
+			this.NameExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
+			// 
+			// IdExtendedTextBox
+			// 
+			this.IdExtendedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.IdExtendedTextBox.BackColor = System.Drawing.Color.Transparent;
+			this.IdExtendedTextBox.LabelText = "IdLabel";
+			this.IdExtendedTextBox.Location = new System.Drawing.Point(13, 30);
+			this.IdExtendedTextBox.Name = "IdExtendedTextBox";
+			this.IdExtendedTextBox.Readonly = true;
+			this.IdExtendedTextBox.Size = new System.Drawing.Size(314, 20);
+			this.IdExtendedTextBox.TabIndex = 0;
+			this.IdExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Int;
 			// 
 			// CityDataPanel
 			// 

@@ -37,8 +37,8 @@ namespace AppointIn.TestDataSeed
 		};
 
 
-		public static bool DataBaseHasInitializedUsers(UnitOfWork segmentOfWork)
-			=> segmentOfWork.Users.GetAll().Any();
+		public static bool DataBaseHasInitializedUsers()
+			=> UnitOfWork.Data.Users.GetAll().Any();
 
 		public static ICollection<User> GetUsers() => Users;
 

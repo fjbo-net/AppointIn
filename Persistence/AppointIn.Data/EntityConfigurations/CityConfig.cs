@@ -17,6 +17,10 @@ namespace AppointIn.Data.EntityConfigurations
 				.IsRequired()
 				.HasColumnName("city")
 				.HasMaxLength(50);
+
+			Property(city => city.CountryId)
+				.IsRequired()
+				.HasColumnName("countryId");
 			
 			Property(city => city.CreateDate)
 				.IsRequired()
@@ -36,8 +40,9 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);
 
-
 			HasRequired(city => city.Country);
+
+			HasKey(city => city.Id);
 			
 			ToTable("city");
 		}

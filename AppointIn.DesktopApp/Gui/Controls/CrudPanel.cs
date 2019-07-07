@@ -88,6 +88,11 @@ namespace AppointIn.DesktopApp.Gui
 			SyncListView();
 		}
 
+		public virtual void LocalizeText(string culture = "")
+		{
+
+		}
+
 		protected void RefreshAll()
 		{
 			foreach (var instance in Instances) instance.ReloadData();

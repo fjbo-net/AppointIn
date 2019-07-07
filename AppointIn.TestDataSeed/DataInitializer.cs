@@ -13,27 +13,27 @@ namespace AppointIn.TestDataSeed
 	{
 		public static string Username { get; } = "DataInitializer";
 
-		public static bool DataSeedDatabase(UnitOfWork workSegment)
+		public static bool DataSeedDatabase()
 		{
 			try
 			{
-				if (!DataBaseHasInitializedUsers(workSegment))
+				if (!DataBaseHasInitializedUsers())
 				{
 					foreach (var user in GetUsers())
 					{
-						workSegment.Users.Insert(user);
+						UnitOfWork.Data.Users.Insert(user);
 					}
 				}
 
-				if (!DataBaseHasInitializedCountries(workSegment))
+				if (!DataBaseHasInitializedCountries())
 				{
 					foreach (var country in GetCountries())
 					{
-						workSegment.Countries.Insert(country);
+						UnitOfWork.Data.Countries.Insert(country);
 					}
 				}
 
-				workSegment.Save();
+				UnitOfWork.Data.Save();
 
 				return true;
 
@@ -47,8 +47,8 @@ namespace AppointIn.TestDataSeed
 			}
 		}
 
-		public static bool NeedsDataInitialization(UnitOfWork segmentOfWork) 
-			=> !(DataBaseHasInitializedCountries(segmentOfWork) 
-				&& DataBaseHasInitializedUsers(segmentOfWork));
+		public static bool NeedsDataInitialization() 
+			=> !(DataBaseHasInitializedCountries() 
+				&& DataBaseHasInitializedUsers());
 	}
 }

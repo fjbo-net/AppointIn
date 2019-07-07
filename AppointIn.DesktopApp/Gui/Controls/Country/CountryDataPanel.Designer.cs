@@ -45,7 +45,7 @@
 			this.CreateDateExtendedDateTimePicker.Location = new System.Drawing.Point(13, 82);
 			this.CreateDateExtendedDateTimePicker.Name = "CreateDateExtendedDateTimePicker";
 			this.CreateDateExtendedDateTimePicker.Size = new System.Drawing.Size(315, 20);
-			this.CreateDateExtendedDateTimePicker.TabIndex = 1;
+			this.CreateDateExtendedDateTimePicker.TabIndex = 2;
 			this.CreateDateExtendedDateTimePicker.Value = new System.DateTime(2019, 6, 20, 10, 44, 2, 978);
 			// 
 			// LastUpdateByExtendedTextbox
@@ -58,7 +58,7 @@
 			this.LastUpdateByExtendedTextbox.Name = "LastUpdateByExtendedTextbox";
 			this.LastUpdateByExtendedTextbox.Readonly = true;
 			this.LastUpdateByExtendedTextbox.Size = new System.Drawing.Size(318, 20);
-			this.LastUpdateByExtendedTextbox.TabIndex = 0;
+			this.LastUpdateByExtendedTextbox.TabIndex = 4;
 			this.LastUpdateByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// CreatedByExtendedTextbox
@@ -71,7 +71,7 @@
 			this.CreatedByExtendedTextbox.Name = "CreatedByExtendedTextbox";
 			this.CreatedByExtendedTextbox.Readonly = true;
 			this.CreatedByExtendedTextbox.Size = new System.Drawing.Size(318, 20);
-			this.CreatedByExtendedTextbox.TabIndex = 0;
+			this.CreatedByExtendedTextbox.TabIndex = 3;
 			this.CreatedByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// NameExtendedTextbox
@@ -84,7 +84,7 @@
 			this.NameExtendedTextbox.Name = "NameExtendedTextbox";
 			this.NameExtendedTextbox.Readonly = false;
 			this.NameExtendedTextbox.Size = new System.Drawing.Size(318, 20);
-			this.NameExtendedTextbox.TabIndex = 0;
+			this.NameExtendedTextbox.TabIndex = 1;
 			this.NameExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// IdExtendedTextbox

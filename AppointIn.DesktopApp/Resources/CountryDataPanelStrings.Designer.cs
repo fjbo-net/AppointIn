@@ -61,51 +61,6 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Date.
-        /// </summary>
-        internal static string CreateDateLabelText {
-            get {
-                return ResourceManager.GetString("CreateDateLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Created By.
-        /// </summary>
-        internal static string CreatedByLabelText {
-            get {
-                return ResourceManager.GetString("CreatedByLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ID.
-        /// </summary>
-        internal static string IdLabelText {
-            get {
-                return ResourceManager.GetString("IdLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last Update By.
-        /// </summary>
-        internal static string LastUpdateByLabelText {
-            get {
-                return ResourceManager.GetString("LastUpdateByLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last Update.
-        /// </summary>
-        internal static string LastUpdateLabelText {
-            get {
-                return ResourceManager.GetString("LastUpdateLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string NameLabelText {

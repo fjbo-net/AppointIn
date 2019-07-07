@@ -23,6 +23,10 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("address2")
 				.HasMaxLength(50);
 
+			Property(address => address.CityId)
+				.IsRequired()
+				.HasColumnName("cityId");
+
 			Property(address => address.PostalCode)
 				.IsRequired()
 				.HasColumnName("postalCode")
@@ -52,6 +56,8 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasMaxLength(40);
 
 			HasRequired(address => address.City);
+
+			HasKey(address => address.Id);
 
 			ToTable("address");
 		}

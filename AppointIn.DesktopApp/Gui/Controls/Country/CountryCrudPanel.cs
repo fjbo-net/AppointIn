@@ -13,11 +13,12 @@ using AppointIn.DesktopApp.Gui.Extensions;
 
 namespace AppointIn.DesktopApp.Gui.Controls
 {
-	public partial class CountryCrudPanel : CrudPanel
+	public partial class CountryCrudPanel : CrudPanel, Interfaces.ILocalizable
 	{
 		public CountryCrudPanel() : base()
 		{
 			CountryCrudPanels.Add(this);
+			Localizables.All.Add(this);
 
 			LoadData();
 		}
@@ -40,19 +41,16 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				LastUpdateBy = Dashboard.Username
 			};
 
-			CountryForm.Text = "Add Country";
+			CountryForm.Text = Resources.CountryFormStrings.TitleAdd;
 			var result = CountryForm.ShowDialog();
 
 			if(result == DialogResult.OK)
 			{
-				using(var workSegment = new UnitOfWork())
-				{
-					var repository = workSegment.Countries;
+				var repository = UnitOfWork.Data.Countries;
 
-					repository.Insert(CountryForm.Country);
+				repository.Insert(CountryForm.Country);
 
-					workSegment.Save();
-				}
+				UnitOfWork.Data.Save();
 			}
 
 			RefreshAll();
@@ -62,28 +60,25 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		{
 			if (!HasSelection) return;
 
-			CountryForm.Text = "Edit Country";
+			CountryForm.Text = Resources.CountryFormStrings.TitleEdit;
 			
-			using(var workSegment = new UnitOfWork())
+			var repository = UnitOfWork.Data.Countries;
+
+			if(int.TryParse(ListView.SelectedItems[0].Text, out int countryId))
 			{
-				var repository = workSegment.Countries;
+				CountryForm.Country = repository.GetById(countryId);
 
-				if(int.TryParse(ListView.SelectedItems[0].Text, out int countryId))
+				var result = CountryForm.ShowDialog();
+
+				if (result == DialogResult.OK)
 				{
-					CountryForm.Country = repository.GetById(countryId);
+					var country = CountryForm.Country;
 
-					var result = CountryForm.ShowDialog();
+					country.LastUpdateBy = Dashboard.Username;
 
-					if (result == DialogResult.OK)
-					{
-						var country = CountryForm.Country;
-
-						country.LastUpdateBy = Dashboard.Username;
-
-						workSegment.Save();
+					UnitOfWork.Data.Save();
 						
-						CountryForm.Reset();
-					}
+					CountryForm.Reset();
 				}
 			}
 
@@ -97,6 +92,22 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			InitializeComponent();
 		}
 
+		public override void LocalizeText(string culture = "")
+		{
+			Text = Resources.CountryCrudPanelStrings.Title;
+
+			CountryIdColumnHeader.Text = Resources.DataPanelStrings.IdLabelText;
+			CountryNameColumnHeader.Text = Resources.CountryDataPanelStrings.NameLabelText;
+			CountryCreateDateColumnHeader.Text = Resources.DataPanelStrings.CreateDateLabelText;
+			CountryCreatedByColumnHeader.Text = Resources.DataPanelStrings.CreatedByLabelText;
+			CountryLastUpdateColumnHeader.Text = Resources.DataPanelStrings.LastUpdateLabelText;
+			CountryLastUpdateByColumnHeader.Text = Resources.DataPanelStrings.LastUpdateByLabelText;
+
+			AddButton.Text = Resources.CrudPanelStrings.AddButtonText;
+			EditButton.Text = Resources.CrudPanelStrings.EditButtonText;
+			RemoveButton.Text = Resources.CrudPanelStrings.RemoveButtonText;
+		}
+
 		public override void Remove()
 		{
 			if(ListView.SelectedItems.Count > 0)
@@ -105,17 +116,14 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				{
 					if(int.TryParse(item.Text, out int countryId))
 					{
-						using (var segmentOfWork = new UnitOfWork())
-						{
-							segmentOfWork.Countries.Delete(countryId);
+						UnitOfWork.Data.Countries.Delete(countryId);
 
-							segmentOfWork.Save();
-						}
+						UnitOfWork.Data.Save();
 					}
 				}
 			}
 
-			ReloadData();
+			RefreshAll();
 		}
 
 		protected override void SetupListView()
@@ -124,14 +132,11 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 		protected override void SyncListView()
 		{
-			using(var workSegment = new UnitOfWork())
-			{
-				var repository = workSegment.Countries;
+			var repository = UnitOfWork.Data.Countries;
 
-				foreach(var country in repository.GetAll())
-				{
-					ListView.Items.Add(country.ToListViewItem());
-				}
+			foreach(var country in repository.GetAll())
+			{
+				ListView.Items.Add(country.ToListViewItem());
 			}
 
 			UpdateGui();

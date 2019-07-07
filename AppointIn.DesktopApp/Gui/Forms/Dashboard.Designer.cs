@@ -33,6 +33,7 @@
 			this.actionButton1 = new AppointIn.DesktopApp.Gui.ActionButton();
 			this.ManageCountriesButton = new AppointIn.DesktopApp.Gui.ActionButton();
 			this.ManageCitiesButton = new AppointIn.DesktopApp.Gui.ActionButton();
+			this.ManageAddressesButton = new AppointIn.DesktopApp.Gui.ActionButton();
 			this.groupBox1.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
@@ -91,12 +92,23 @@
 			this.ManageCitiesButton.Text = "Manage Cities";
 			this.ManageCitiesButton.UseVisualStyleBackColor = true;
 			// 
+			// ManageAddressesButton
+			// 
+			this.ManageAddressesButton.AutoSize = true;
+			this.ManageAddressesButton.Location = new System.Drawing.Point(15, 112);
+			this.ManageAddressesButton.Name = "ManageAddressesButton";
+			this.ManageAddressesButton.Size = new System.Drawing.Size(145, 28);
+			this.ManageAddressesButton.TabIndex = 2;
+			this.ManageAddressesButton.Text = "Manage Addresses";
+			this.ManageAddressesButton.UseVisualStyleBackColor = true;
+			// 
 			// Dashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::AppointIn.DesktopApp.Properties.Resources.White_Abstract_Wallpapers_Gallery_89_Plus_PIC_WPW405898_1_1_;
 			this.ClientSize = new System.Drawing.Size(384, 361);
+			this.Controls.Add(this.ManageAddressesButton);
 			this.Controls.Add(this.ManageCitiesButton);
 			this.Controls.Add(this.ManageCountriesButton);
 			this.Controls.Add(this.groupBox1);
@@ -118,5 +130,6 @@
 		private ActionButton actionButton1;
 		private ActionButton ManageCountriesButton;
 		private ActionButton ManageCitiesButton;
+		private ActionButton ManageAddressesButton;
 	}
 }

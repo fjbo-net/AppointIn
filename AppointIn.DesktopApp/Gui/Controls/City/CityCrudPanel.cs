@@ -37,19 +37,16 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				LastUpdateBy = Dashboard.Username
 			};
 
-			CityForm.Text = "Add City";
+			CityForm.Text = Resources.CityFormStrings.TitleAdd;
 			var result = CityForm.ShowDialog();
 
 			if (result == DialogResult.OK)
 			{
-				using(var workSegment = new Data.UnitOfWork())
-				{
-					var repository = workSegment.Cities;
+				var repository = Data.UnitOfWork.Data.Cities;
 
-					repository.Insert(CityForm.City);
+				repository.Insert(CityForm.City);
 
-					workSegment.Save();
-				}
+				Data.UnitOfWork.Data.Save();
 			}
 
 			RefreshAll();
@@ -59,28 +56,23 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		{
 			if (!HasSelection) return;
 
-			CityForm.Text = "Edit City";
+			CityForm.Text = Resources.CityFormStrings.TitleEdit;
 
-			using(var workSegment = new Data.UnitOfWork())
+			if(int.TryParse(ListView.SelectedItems[0].Text, out int cityId))
 			{
-				var repository = workSegment.Cities;
+				CityForm.City = Data.UnitOfWork.Data.Cities.GetById(cityId);
 
-				if(int.TryParse(ListView.SelectedItems[0].Text, out int cityId))
+				var result = CityForm.ShowDialog();
+
+				if(result == DialogResult.OK)
 				{
-					CityForm.City = repository.GetById(cityId);
+					var city = CityForm.City;
 
-					var result = CityForm.ShowDialog();
+					city.LastUpdateBy = Dashboard.Username;
 
-					if(result == DialogResult.OK)
-					{
-						var city = CityForm.City;
+					Data.UnitOfWork.Data.Save();
 
-						city.LastUpdateBy = Dashboard.Username;
-
-						workSegment.Save();
-
-						CityForm.Reset();
-					}
+					CityForm.Reset();
 				}
 			}
 
@@ -95,15 +87,21 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			LocalizeText();
 		}
 
-		public virtual void LocalizeText(string cultureName = "")
+		public override void LocalizeText(string cultureName = "")
 		{
-			IdColumnHeader.Text = Resources.CityDataPanelStrings.IdLabelText;
+			Text = Resources.CityCrudPanelStrings.Title;
+
+			IdColumnHeader.Text = Resources.DataPanelStrings.IdLabelText;
 			NameColumnHeader.Text = Resources.CityDataPanelStrings.NameLabelText;
 			CountryColumnHeader.Text = Resources.CityDataPanelStrings.CountryLabelText;
-			CreateDateColumnHeader.Text = Resources.CityDataPanelStrings.CreateDateLabelText;
-			CreatedByColumnHeader.Text = Resources.CityDataPanelStrings.CreatedByLabelText;
-			LastUpdateByColumHeader.Text = Resources.CityDataPanelStrings.LastUpdateByLabelText;
-			LastUpdateColumnHeader.Text = Resources.CityDataPanelStrings.LastUpdateLabelText;
+			CreateDateColumnHeader.Text = Resources.DataPanelStrings.CreateDateLabelText;
+			CreatedByColumnHeader.Text = Resources.DataPanelStrings.CreatedByLabelText;
+			LastUpdateByColumHeader.Text = Resources.DataPanelStrings.LastUpdateByLabelText;
+			LastUpdateColumnHeader.Text = Resources.DataPanelStrings.LastUpdateLabelText;
+
+			AddButton.Text = Resources.CrudPanelStrings.AddButtonText;
+			EditButton.Text = Resources.CrudPanelStrings.EditButtonText;
+			RemoveButton.Text = Resources.CrudPanelStrings.RemoveButtonText;
 		}
 
 		public override void Remove()
@@ -114,29 +112,21 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				{
 					if(int.TryParse(item.Text, out int countryId))
 					{
-						using (var segmentOfWork = new Data.UnitOfWork())
-						{
-							segmentOfWork.Cities.Delete(countryId);
+						Data.UnitOfWork.Data.Cities.Delete(countryId);
 
-							segmentOfWork.Save();
-						}
+						Data.UnitOfWork.Data.Save();
 					}
 				}
 			}
 
-			ReloadData();
+			RefreshAll();
 		}
 
 		protected override void SyncListView()
 		{
-			using(var workSegment = new Data.UnitOfWork())
+			foreach(var city in Data.UnitOfWork.Data.Cities.GetAll())
 			{
-				var repository = workSegment.Cities;
-
-				foreach(var city in repository.GetAll())
-				{
-					ListView.Items.Add(city.ToListViewItem());
-				}
+				ListView.Items.Add(city.ToListViewItem());
 			}
 
 			UpdateGui();

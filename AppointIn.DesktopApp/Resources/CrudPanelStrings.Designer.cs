@@ -22,14 +22,14 @@ namespace AppointIn.DesktopApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class CityFormStrings {
+    internal class CrudPanelStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CityFormStrings() {
+        internal CrudPanelStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AppointIn.DesktopApp.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.CityFormStrings", typeof(CityFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.CrudPanelStrings", typeof(CrudPanelStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,29 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CIty.
+        ///   Looks up a localized string similar to Add New.
         /// </summary>
-        internal static string Title {
+        internal static string AddButtonText {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("AddButtonText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New City.
+        ///   Looks up a localized string similar to Edit.
         /// </summary>
-        internal static string TitleAdd {
+        internal static string EditButtonText {
             get {
-                return ResourceManager.GetString("TitleAdd", resourceCulture);
+                return ResourceManager.GetString("EditButtonText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit City.
+        ///   Looks up a localized string similar to Remove.
         /// </summary>
-        internal static string TitleEdit {
+        internal static string RemoveButtonText {
             get {
-                return ResourceManager.GetString("TitleEdit", resourceCulture);
+                return ResourceManager.GetString("RemoveButtonText", resourceCulture);
             }
         }
     }

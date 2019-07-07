@@ -75,26 +75,23 @@ namespace AppointIn.DesktopApp.Gui
 
 		private void Login()
 		{
-			using (var unitOfWork = new UnitOfWork())
+			var repository = UnitOfWork.Data.Users;
+
+			var loginResult = Core.User.Actions.UserActions.LogUserIn(repository, usernameTextbox.Text, passwordTextbox.Text);
+
+			if (loginResult.Value != null)
 			{
-				var repository = unitOfWork.Users;
+				User = loginResult.Value;
+				DialogResult = DialogResult.OK;
+				Close();
+			}
+			else
+			{
+				var message = new StringBuilder();
 
-				var loginResult = Core.User.Actions.UserActions.LogUserIn(repository, usernameTextbox.Text, passwordTextbox.Text);
+				foreach (var resultMessage in loginResult.Messages) message.Append(resultMessage);
 
-				if (loginResult.Value != null)
-				{
-					User = loginResult.Value;
-					DialogResult = DialogResult.OK;
-					Close();
-				}
-				else
-				{
-					var message = new StringBuilder();
-
-					foreach (var resultMessage in loginResult.Messages) message.Append(resultMessage);
-
-					MessageBox.Show(message.ToString(), "Could not login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
+				MessageBox.Show(message.ToString(), "Could not login", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		#endregion

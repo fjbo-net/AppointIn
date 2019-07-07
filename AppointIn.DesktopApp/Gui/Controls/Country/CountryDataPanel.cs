@@ -12,11 +12,13 @@ using AppointIn.Domain.Entities;
 
 namespace AppointIn.DesktopApp.Gui
 {
-	public partial class CountryDataPanel : UserControl
+	public partial class CountryDataPanel : UserControl, Interfaces.ILocalizable
 	{
 		public CountryDataPanel()
 		{
 			Init();
+
+			Localizables.All.Add(this);
 		}
 
 
@@ -63,13 +65,13 @@ namespace AppointIn.DesktopApp.Gui
 			LastUpdateByExtendedTextbox.Text = _country.LastUpdateBy;
 		}
 
-		internal void LocalizeText()
+		public void LocalizeText(string culture = "")
 		{
-			IdExtendedTextbox.LabelText = Resources.CountryDataPanelStrings.IdLabelText;
+			IdExtendedTextbox.LabelText = Resources.DataPanelStrings.IdLabelText;
 			NameExtendedTextbox.LabelText = Resources.CountryDataPanelStrings.NameLabelText;
-			CreateDateExtendedDateTimePicker.LabelText = Resources.CountryDataPanelStrings.CreateDateLabelText;
-			CreatedByExtendedTextbox.LabelText = Resources.CountryDataPanelStrings.CreatedByLabelText;
-			LastUpdateByExtendedTextbox.LabelText = Resources.CountryDataPanelStrings.LastUpdateByLabelText;
+			CreateDateExtendedDateTimePicker.LabelText = Resources.DataPanelStrings.CreateDateLabelText;
+			CreatedByExtendedTextbox.LabelText = Resources.DataPanelStrings.CreatedByLabelText;
+			LastUpdateByExtendedTextbox.LabelText = Resources.DataPanelStrings.LastUpdateByLabelText;
 		}
 
 		private void Init()

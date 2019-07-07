@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 using AppointIn.Domain.Entities;
 using AppointIn.DesktopApp.Gui.Interfaces;
@@ -50,6 +42,8 @@ namespace AppointIn.DesktopApp.Gui
 			base.Init();
 
 			InitializeComponent();
+
+			LocalizeText();
 		}
 
 		public override void LocalizeText(string cultureName = "")
@@ -57,6 +51,9 @@ namespace AppointIn.DesktopApp.Gui
 			base.LocalizeText(cultureName);
 
 			Text = Resources.CityFormStrings.Title;
+
+			if (DataPanel != null) DataPanel.LocalizeText(cultureName);
+
 			if (SaveActionButton != null) SaveActionButton.Text = Resources.BaseFormStrings.SaveButtonText;
 			if (CancelActionButton != null) CancelActionButton.Text = Resources.BaseFormStrings.CancelButtonText;
 		}

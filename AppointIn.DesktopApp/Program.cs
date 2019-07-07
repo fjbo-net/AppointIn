@@ -20,17 +20,15 @@ namespace AppointIn.DesktopApp
 		static void Main()
 		{
 
-			using (var workSegment = new UnitOfWork()) {
-				if (DataInitializer.NeedsDataInitialization(workSegment))
-				{
-					var dialogResult = MessageBox.Show(
-						"There is no data currently initialized. That is that the DataBase currently has no data. Would you like to seed data on the database for demo purposes?",
-						"Empty Database found",
-						MessageBoxButtons.YesNo,
-						MessageBoxIcon.Exclamation);
+			if (DataInitializer.NeedsDataInitialization())
+			{
+				var dialogResult = MessageBox.Show(
+					"There is no data currently initialized. That is that the DataBase currently has no data. Would you like to seed data on the database for demo purposes?",
+					"Empty Database found",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.Exclamation);
 
-					if(dialogResult == DialogResult.Yes) DataInitializer.DataSeedDatabase(workSegment);
-				}
+				if(dialogResult == DialogResult.Yes) DataInitializer.DataSeedDatabase();
 			}
 
 			Application.EnableVisualStyles();
