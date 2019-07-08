@@ -82,7 +82,7 @@ namespace AppointIn.Data
 		{
 			get
 			{
-				if (_customers == null) new GenericRepository<Customer, int>(_context);
+				if (_customers == null) _customers = new GenericRepository<Customer, int>(_context);
 				return _customers;
 			}
 		}

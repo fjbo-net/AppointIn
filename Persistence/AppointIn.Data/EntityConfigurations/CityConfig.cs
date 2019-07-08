@@ -42,9 +42,9 @@ namespace AppointIn.Data.EntityConfigurations
 
 			HasRequired(city => city.Country);
 
-			HasMany(city => city.Addresses)
-				.WithRequired(address => address.City)
-				.HasForeignKey(address => address.Id);
+			//HasMany(city => city.Addresses)
+			//	.WithRequired(address => address.City)
+			//	.HasForeignKey(address => address.Id);
 
 			HasKey(city => city.Id);
 			

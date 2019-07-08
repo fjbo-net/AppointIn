@@ -57,9 +57,9 @@ namespace AppointIn.Data.EntityConfigurations
 
 			HasRequired(address => address.City);
 
-			HasMany(address => address.Customers)
-				.WithRequired(customer => customer.Address)
-				.HasForeignKey(customer => customer.Id);
+			//HasMany(address => address.Customers)
+			//	.WithRequired(customer => customer.Address)
+			//	.HasForeignKey(customer => customer.Id);
 
 			HasKey(address => address.Id);
 

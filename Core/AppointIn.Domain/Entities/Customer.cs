@@ -21,7 +21,7 @@ namespace AppointIn.Domain.Entities
 
 		#region Navigation Properties
 		public virtual Address Address { get; set; }
-		public virtual ICollection<Appointment> Appointments { get; set; }
+		//public virtual ICollection<Appointment> Appointments { get; set; }
 		#endregion
 	}
 }

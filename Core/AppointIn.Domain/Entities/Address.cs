@@ -23,7 +23,7 @@ namespace AppointIn.Domain.Entities
 
 		#region Navigation Properties
 		public virtual City City { get; set; }
-		public virtual ICollection<Customer> Customers { get; set; }
+		//public virtual ICollection<Customer> Customers { get; set; }
 		#endregion
 	}
 }

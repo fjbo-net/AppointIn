@@ -18,7 +18,7 @@ namespace AppointIn.Domain.Entities
 		public string LastUpdateBy { get; set; }
 
 		#region Navigation Properties
-		public virtual ICollection<City> Cities { get; set; } = new HashSet<City>();
+		//public virtual ICollection<City> Cities { get; set; } = new HashSet<City>();
 		#endregion
 	}
 }

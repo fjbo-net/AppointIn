@@ -16,12 +16,34 @@ namespace AppointIn.DesktopApp.Gui
 		{
 		}
 
+		#region Properties
+		private static AllCustomersForm sharedInstance;
+		public static AllCustomersForm SharedInstance
+		{
+			get
+			{
+				if (sharedInstance == null) sharedInstance = new AllCustomersForm();
+				return sharedInstance;
+			}
+		}
+		#endregion
+
 		#region Methods
 		protected override void Init()
 		{
 			base.Init();
 
 			InitializeComponent();
+			LocalizeText();
+		}
+
+		public override void LocalizeText(string cultureName = "")
+		{
+			base.LocalizeText(cultureName);
+
+			Text = Resources.AllCustomersFormStrings.Title;
+
+			if (CrudPanel != null) CrudPanel.LocalizeText(cultureName);
 		}
 		#endregion
 	}

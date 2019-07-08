@@ -36,9 +36,11 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);
 
-			HasMany(country => country.Cities)
-				.WithRequired(city => city.Country)
-				.HasForeignKey(city => city.CountryId);
+			HasKey(country => country.Id);
+
+			//HasMany(country => country.Cities)
+			//	.WithRequired(city => city.Country)
+			//	.HasForeignKey(city => city.CountryId);
 
 			ToTable("country");
 		}

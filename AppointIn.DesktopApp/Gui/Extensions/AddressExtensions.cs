@@ -29,5 +29,16 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 
 			return new ListViewItem(items);
 		}
+
+		public static string AsString(this Address address)
+		{
+			if (!string.IsNullOrWhiteSpace(address.StreetName)
+				&& !string.IsNullOrWhiteSpace(address.City.Name)
+				&& !string.IsNullOrWhiteSpace(address.City.Country.Name))
+			{
+				return $"{address.StreetName}{(!string.IsNullOrWhiteSpace(address.BuildingOrInterior) ? $" {address.BuildingOrInterior}" : string.Empty )}, {address.City.Name}, {address.City.Country.Name}";
+			}
+			return "[Empty]";
+		}
 	}
 }

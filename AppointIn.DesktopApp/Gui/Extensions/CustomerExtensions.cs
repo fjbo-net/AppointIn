@@ -16,8 +16,12 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 			{
 				customer.Id.ToString(),
 				customer.Name,
-				customer.Address.ToString(),
-				customer.CreateDate.ToLocalTime().ToLongDateString()
+				customer.Address.AsString(),
+				customer.IsActive ? "Active" : "Inactive",
+				customer.CreateDate.ToLocalTime().ToLongDateString(),
+				customer.CreatedBy,
+				customer.LastUpdate.ToString(),
+				customer.LastUpdateBy
 			};
 
 			return new ListViewItem(items);

@@ -46,9 +46,9 @@ namespace AppointIn.Data.EntityConfigurations
 
 			HasRequired(customer => customer.Address);
 
-			HasMany(customer => customer.Appointments)
-				.WithRequired(appointment => appointment.Customer)
-				.HasForeignKey(appointment => appointment.Id);
+			//HasMany(customer => customer.Appointments)
+			//	.WithRequired(appointment => appointment.Customer)
+			//	.HasForeignKey(appointment => appointment.Id);
 
 			HasKey(customer => customer.Id);
 

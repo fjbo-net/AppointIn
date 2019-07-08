@@ -31,7 +31,11 @@
 			this.IdColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.NameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.AddressColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ActiveColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.CreateDateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.CreatedByColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.LastUpdateColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.LastUpdateByColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
 			// 
 			// ListView
@@ -40,24 +44,47 @@
             this.IdColumnHeader,
             this.NameColumnHeader,
             this.AddressColumnHeader,
-            this.CreateDateColumnHeader});
+            this.ActiveColumnHeader,
+            this.CreateDateColumnHeader,
+            this.CreatedByColumnHeader,
+            this.LastUpdateColumnHeader,
+            this.LastUpdateByColumnHeader});
 			this.ListView.Size = new System.Drawing.Size(386, 336);
 			// 
 			// IdColumnHeader
 			// 
-			this.IdColumnHeader.Text = "Id";
+			this.IdColumnHeader.Text = "IdColumn";
+			this.IdColumnHeader.Width = 96;
 			// 
 			// NameColumnHeader
 			// 
-			this.NameColumnHeader.Text = "Name";
+			this.NameColumnHeader.Text = "NameColumn";
+			this.NameColumnHeader.Width = 96;
 			// 
 			// AddressColumnHeader
 			// 
-			this.AddressColumnHeader.Text = "Address";
+			this.AddressColumnHeader.Text = "AddressColumn";
+			this.AddressColumnHeader.Width = 96;
+			// 
+			// ActiveColumnHeader
+			// 
+			this.ActiveColumnHeader.Text = "ActiveColumn";
 			// 
 			// CreateDateColumnHeader
 			// 
-			this.CreateDateColumnHeader.Text = "Create Date";
+			this.CreateDateColumnHeader.Text = "CreateDateColumn";
+			// 
+			// CreatedByColumnHeader
+			// 
+			this.CreatedByColumnHeader.Text = "CreatedByColumn";
+			// 
+			// LastUpdateColumnHeader
+			// 
+			this.LastUpdateColumnHeader.Text = "LastUpdateColumn";
+			// 
+			// LastUpdateByColumnHeader
+			// 
+			this.LastUpdateByColumnHeader.Text = "LastUpdateByColumn";
 			// 
 			// CustomerCrudPanel
 			// 
@@ -71,9 +98,13 @@
 
 		#endregion
 
-		protected System.Windows.Forms.ColumnHeader IdColumnHeader;
-		protected System.Windows.Forms.ColumnHeader NameColumnHeader;
-		protected System.Windows.Forms.ColumnHeader AddressColumnHeader;
-		protected System.Windows.Forms.ColumnHeader CreateDateColumnHeader;
+		private System.Windows.Forms.ColumnHeader ActiveColumnHeader;
+		private System.Windows.Forms.ColumnHeader CreateDateColumnHeader;
+		private System.Windows.Forms.ColumnHeader CreatedByColumnHeader;
+		private System.Windows.Forms.ColumnHeader LastUpdateColumnHeader;
+		private System.Windows.Forms.ColumnHeader LastUpdateByColumnHeader;
+		private System.Windows.Forms.ColumnHeader IdColumnHeader;
+		private System.Windows.Forms.ColumnHeader NameColumnHeader;
+		private System.Windows.Forms.ColumnHeader AddressColumnHeader;
 	}
 }

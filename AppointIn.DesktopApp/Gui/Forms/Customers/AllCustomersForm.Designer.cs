@@ -28,26 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.customerCrudPanel1 = new AppointIn.DesktopApp.Gui.Controls.CustomerCrudPanel();
+			this.CrudPanel = new AppointIn.DesktopApp.Gui.Controls.CustomerCrudPanel();
 			this.SuspendLayout();
 			// 
-			// customerCrudPanel1
+			// CrudPanel
 			// 
-			this.customerCrudPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.customerCrudPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.customerCrudPanel1.Location = new System.Drawing.Point(0, 0);
-			this.customerCrudPanel1.Name = "customerCrudPanel1";
-			this.customerCrudPanel1.Padding = new System.Windows.Forms.Padding(14);
-			this.customerCrudPanel1.Size = new System.Drawing.Size(384, 361);
-			this.customerCrudPanel1.TabIndex = 0;
-			this.customerCrudPanel1.Text = "All Customers";
+			this.CrudPanel.BackColor = System.Drawing.Color.Transparent;
+			this.CrudPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.CrudPanel.Location = new System.Drawing.Point(0, 0);
+			this.CrudPanel.Name = "CrudPanel";
+			this.CrudPanel.Padding = new System.Windows.Forms.Padding(14);
+			this.CrudPanel.Size = new System.Drawing.Size(384, 361);
+			this.CrudPanel.TabIndex = 0;
+			this.CrudPanel.Text = "All Customers";
 			// 
 			// AllCustomersForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(384, 361);
-			this.Controls.Add(this.customerCrudPanel1);
+			this.Controls.Add(this.CrudPanel);
 			this.Location = new System.Drawing.Point(0, 0);
 			this.Name = "AllCustomersForm";
 			this.Text = "All Customers";
@@ -57,6 +56,6 @@
 
 		#endregion
 
-		private AppointIn.DesktopApp.Gui.Controls.CustomerCrudPanel customerCrudPanel1;
+		private AppointIn.DesktopApp.Gui.Controls.CustomerCrudPanel CrudPanel;
 	}
 }

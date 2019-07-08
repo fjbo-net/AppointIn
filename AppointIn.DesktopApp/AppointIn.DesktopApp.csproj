@@ -102,6 +102,12 @@
     <Compile Include="Gui\Controls\CrudPanel.Designer.cs">
       <DependentUpon>CrudPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Controls\Customer\CustomerDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Customer\CustomerDataPanel.Designer.cs">
+      <DependentUpon>CustomerDataPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Controls\DashboardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     <Compile Include="Gui\Controls\Customer\CustomerCrudPanel.Designer.cs">
       <DependentUpon>CustomerCrudPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Forms\Customers\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Customers\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Forms\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,11 +239,20 @@
     <EmbeddedResource Include="Gui\Controls\Customer\CustomerCrudPanel.resx">
       <DependentUpon>CustomerCrudPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Customer\CustomerDataPanel.resx">
+      <DependentUpon>CustomerDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\ExtendedComboBox.resx">
       <DependentUpon>ExtendedComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\City\CityForm.resx">
       <DependentUpon>CityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Customers\AllCustomersForm.resx">
+      <DependentUpon>AllCustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Customers\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -264,6 +285,14 @@
     <EmbeddedResource Include="Resources\AllCountriesFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AllCountriesFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllCustomersFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllCustomersFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllCustomersFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllCustomersFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\BaseFormStrings.es.resx" />
     <EmbeddedResource Include="Resources\BaseFormStrings.resx">
@@ -325,6 +354,27 @@
     <EmbeddedResource Include="Resources\CrudPanelStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CrudPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CustomerCrudPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerCrudPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CustomerCrudPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerCrudPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CustomerDataPanelStrings.es.resx" />
+    <EmbeddedResource Include="Resources\CustomerDataPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerDataPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CustomerFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CustomerFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DashboardFormStrings.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -394,6 +444,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AllCountriesFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AllCustomersFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCustomersFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AllCustomersFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCustomersFormStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\BaseFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -469,6 +529,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrudPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CustomerCrudPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerCrudPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CustomerCrudPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerCrudPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CustomerDataPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerDataPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CustomerFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CustomerFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerFormStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\DashboardFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
