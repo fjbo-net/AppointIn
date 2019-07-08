@@ -102,6 +102,17 @@ namespace AppointIn.DesktopApp.Gui
 
 				AllAddressesForm.SharedInstance.Visible = true;
 			};
+
+			ManageAppointmentsButton.Click += (sender, e) =>
+			{
+				if (AllAppointmentsForm.SharedInstance.Visible)
+				{
+					AllAppointmentsForm.SharedInstance.Focus();
+					return;
+				}
+
+				AllAppointmentsForm.SharedInstance.Visible = true;
+			};
 		}
 
 		protected override void InitializeVisualStyles()

@@ -71,6 +71,18 @@
     <Compile Include="Gui\Controls\Address\AddressDataPanel.Designer.cs">
       <DependentUpon>AddressDataPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Controls\Appointment\AppointmentCrudPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Appointment\AppointmentCrudPanel.Designer.cs">
+      <DependentUpon>AppointmentCrudPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\Appointment\AppointmentDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Appointment\AppointmentDataPanel.Designer.cs">
+      <DependentUpon>AppointmentDataPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Controls\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,7 @@
       <DependentUpon>SubForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\Extensions\AddressExtensions.cs" />
+    <Compile Include="Gui\Extensions\AppointmentExtensions.cs" />
     <Compile Include="Gui\Extensions\CityExtensions.cs" />
     <Compile Include="Gui\Extensions\ComboboxExtensions.cs" />
     <Compile Include="Gui\Extensions\CountryExtensions.cs" />
@@ -155,6 +168,18 @@
     </Compile>
     <Compile Include="Gui\Forms\Address\AllAddressesForm.Designer.cs">
       <DependentUpon>AllAddressesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Forms\Appointment\AllAppointmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Appointment\AllAppointmentsForm.Designer.cs">
+      <DependentUpon>AllAppointmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Forms\Appointment\AppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Appointment\AppointmentForm.Designer.cs">
+      <DependentUpon>AppointmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gui\Forms\City\AllCitiesForm.cs">
       <SubType>Form</SubType>
@@ -227,6 +252,12 @@
     <EmbeddedResource Include="Gui\Controls\Address\AddressDataPanel.resx">
       <DependentUpon>AddressDataPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Appointment\AppointmentCrudPanel.resx">
+      <DependentUpon>AppointmentCrudPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Appointment\AppointmentDataPanel.resx">
+      <DependentUpon>AppointmentDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +276,15 @@
     <EmbeddedResource Include="Gui\Controls\ExtendedComboBox.resx">
       <DependentUpon>ExtendedComboBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\ExtendedTextbox.resx">
+      <DependentUpon>ExtendedTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Appointment\AllAppointmentsForm.resx">
+      <DependentUpon>AllAppointmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Appointment\AppointmentForm.resx">
+      <DependentUpon>AppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\City\CityForm.resx">
       <DependentUpon>CityForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\Customers\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -293,6 +336,30 @@
     <EmbeddedResource Include="Resources\AllCustomersFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AllCustomersFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentCrudPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentCrudPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentCrudPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentCrudPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentDataPanelStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentDataPanelStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentDataPanelStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentDataPanelStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\BaseFormStrings.es.resx" />
     <EmbeddedResource Include="Resources\BaseFormStrings.resx">
@@ -454,6 +521,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AllCustomersFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppointmentCrudPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentCrudPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppointmentCrudPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentCrudPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppointmentDataPanelStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentDataPanelStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppointmentDataPanelStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentDataPanelStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppointmentFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppointmentFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentFormStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\BaseFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>

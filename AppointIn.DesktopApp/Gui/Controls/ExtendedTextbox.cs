@@ -45,10 +45,30 @@ namespace AppointIn.DesktopApp.Gui
 		[Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		[EditorBrowsable(EditorBrowsableState.Always)]
+		public bool MultiLine
+		{
+			get => TextBox.Multiline;
+			set => TextBox.Multiline = value;
+		}
+
+		[Bindable(true)]
+		[Browsable(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		[EditorBrowsable(EditorBrowsableState.Always)]
 		public bool Readonly
 		{
 			get => TextBox.ReadOnly;
 			set => TextBox.ReadOnly = value;
+		}
+
+		[Bindable(true)]
+		[Browsable(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		[EditorBrowsable(EditorBrowsableState.Always)]
+		public ScrollBars ScrollBars
+		{
+			get => TextBox.ScrollBars;
+			set => TextBox.ScrollBars = value;
 		}
 
 		[Bindable(true)]

@@ -40,7 +40,7 @@
 			this.Label.Size = new System.Drawing.Size(150, 20);
 			this.Label.TabIndex = 0;
 			this.Label.Text = "label1";
-			this.Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.Label.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// TextBox
 			// 
