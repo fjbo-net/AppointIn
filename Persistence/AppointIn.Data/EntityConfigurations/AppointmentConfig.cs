@@ -13,7 +13,13 @@ namespace AppointIn.Data.EntityConfigurations
 				.IsRequired()
 				.HasColumnName("appointmentId");
 
+			Property(appointment => appointment.CustomerId)
+				.IsRequired()
+				.HasColumnName("customerId");
 
+			Property(appointment => appointment.UserId)
+				.IsRequired()
+				.HasColumnName("userId");
 			
 			Property(appointment => appointment.Title)
 				.IsRequired()
@@ -68,6 +74,8 @@ namespace AppointIn.Data.EntityConfigurations
 
 			HasRequired(appointment => appointment.Customer);
 			HasRequired(appointment => appointment.User);
+
+			HasKey(appointment => appointment.Id);
 
 			ToTable("appointment");
 		}

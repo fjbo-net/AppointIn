@@ -45,6 +45,10 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("lastUpdateBy")
 				.HasMaxLength(40);
 
+			HasMany(user => user.Appointments)
+				.WithRequired(appointment => appointment.User)
+				.HasForeignKey(appointment => appointment.Id);
+
 			ToTable("user");
 		}
 	}

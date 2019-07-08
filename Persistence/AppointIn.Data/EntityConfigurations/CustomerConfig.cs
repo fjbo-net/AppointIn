@@ -18,6 +18,10 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasColumnName("customerName")
 				.HasMaxLength(45);
 
+			Property(customer => customer.AddressId)
+				.IsRequired()
+				.HasColumnName("addressId");
+
 			Property(customer => customer.IsActive)
 				.IsRequired()
 				.HasColumnName("active");
@@ -41,6 +45,12 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasMaxLength(40);
 
 			HasRequired(customer => customer.Address);
+
+			HasMany(customer => customer.Appointments)
+				.WithRequired(appointment => appointment.Customer)
+				.HasForeignKey(appointment => appointment.Id);
+
+			HasKey(customer => customer.Id);
 
 			ToTable("customer");
 		}

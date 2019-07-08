@@ -12,11 +12,16 @@ namespace AppointIn.Domain.Entities
 	{
 		public int Id { get; set; }
 		public string Name { get; set; }
-		public Address Address { get; set; }
+		public int AddressId { get; set; }
 		public bool IsActive { get; set; }
 		public DateTime CreateDate { get; set; }
 		public string CreatedBy { get; set; }
 		public byte[] LastUpdate { get; set; }
 		public string LastUpdateBy { get; set; }
+
+		#region Navigation Properties
+		public virtual Address Address { get; set; }
+		public virtual ICollection<Appointment> Appointments { get; set; }
+		#endregion
 	}
 }

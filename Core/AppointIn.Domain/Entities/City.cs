@@ -20,6 +20,7 @@ namespace AppointIn.Domain.Entities
 
 		#region Navigation Properties
 		public virtual Country Country { get; set; }
+		public virtual ICollection<Address> Addresses { get; set; }
 		#endregion
 	}
 }

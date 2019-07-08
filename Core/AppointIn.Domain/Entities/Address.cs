@@ -8,7 +8,7 @@ using AppointIn.Domain.Interfaces;
 
 namespace AppointIn.Domain.Entities
 {
-	public class Address:IEntity<int>
+	public class Address : IEntity<int>
 	{
 		public int Id { get; set; }
 		public string StreetName { get; set; }
@@ -23,6 +23,7 @@ namespace AppointIn.Domain.Entities
 
 		#region Navigation Properties
 		public virtual City City { get; set; }
+		public virtual ICollection<Customer> Customers { get; set; }
 		#endregion
 	}
 }

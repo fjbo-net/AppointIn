@@ -11,8 +11,8 @@ namespace AppointIn.Domain.Entities
 	public class Appointment:IEntity<int>
 	{
 		public int Id { get; set; }
-		public Customer Customer { get; set; }
-		public User User { get; set; }
+		public int CustomerId { get; set; }
+		public int UserId { get; set; }
 		public string Title { get; set; }
 		public string Description { get; set; }
 		public string Location { get; set; }
@@ -27,7 +27,8 @@ namespace AppointIn.Domain.Entities
 		public string LastUpdateBy { get; set; }
 
 		#region Navigation Properties
-		//public virtual ICollection<City> 
+		public virtual Customer Customer { get; set; }
+		public virtual User User { get; set; }
 		#endregion
 	}
 }
