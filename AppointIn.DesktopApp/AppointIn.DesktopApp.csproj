@@ -83,6 +83,12 @@
     <Compile Include="Gui\Controls\Appointment\AppointmentDataPanel.Designer.cs">
       <DependentUpon>AppointmentDataPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Controls\Appointment\UpcomingAppointmentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\Appointment\UpcomingAppointmentsControl.Designer.cs">
+      <DependentUpon>UpcomingAppointmentsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Controls\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     <EmbeddedResource Include="Gui\Controls\Appointment\AppointmentDataPanel.resx">
       <DependentUpon>AppointmentDataPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Appointment\UpcomingAppointmentsControl.resx">
+      <DependentUpon>UpcomingAppointmentsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +329,24 @@
     <EmbeddedResource Include="Resources\AddressFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AddressFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllAdressesFormStrings.es.resx" />
+    <EmbeddedResource Include="Resources\AllAdressesFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllAdressesFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllAppointmentsFormStrings.es.resx" />
+    <EmbeddedResource Include="Resources\AllAppointmentsFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllAppointmentsFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllCitiesFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllCitiesFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AllCitiesFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AllCitiesFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AllCountriesFormStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -444,11 +471,11 @@
       <LastGenOutput>CustomerFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DashboardFormStrings.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>DashboardFormStrings.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DashboardFormStrings.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>DashboardFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DataPanelStrings.es.resx">
@@ -501,6 +528,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddressFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AllAdressesFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllAdressesFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AllAppointmentsFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllAppointmentsFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AllCitiesFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCitiesFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AllCitiesFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCitiesFormStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\AllCountriesFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -59,7 +59,7 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.AttachEvents();
 
-			actionButton1.Click += (sender, e) =>
+			ManageCustomersMenuItem.Click += (sender, e) =>
 			{
 				if (CustomersForm.Visible)
 				{
@@ -70,7 +70,7 @@ namespace AppointIn.DesktopApp.Gui
 				CustomersForm.Visible = true;
 			};
 
-			ManageCountriesButton.Click += (sender, e) =>
+			ManageCountriesMenuItem.Click += (sender, e) =>
 			{
 				if (AllCountriesForm.SharedInstance.Visible)
 				{
@@ -81,7 +81,7 @@ namespace AppointIn.DesktopApp.Gui
 				AllCountriesForm.SharedInstance.Visible = true;
 			};
 
-			ManageCitiesButton.Click += (sender, e) =>
+			ManageCitiesMenuItem.Click += (sender, e) =>
 			{
 				if(AllCitiesForm.SharedInstance.Visible)
 				{
@@ -92,7 +92,7 @@ namespace AppointIn.DesktopApp.Gui
 				AllCitiesForm.SharedInstance.Visible = true;
 			};
 
-			ManageAddressesButton.Click += (sender, e) =>
+			ManageAddressesMenuItem.Click += (sender, e) =>
 			{
 				if (AllAddressesForm.SharedInstance.Visible)
 				{
@@ -103,7 +103,7 @@ namespace AppointIn.DesktopApp.Gui
 				AllAddressesForm.SharedInstance.Visible = true;
 			};
 
-			ManageAppointmentsButton.Click += (sender, e) =>
+			ManageAppointmentsMenuItem.Click += (sender, e) =>
 			{
 				if (AllAppointmentsForm.SharedInstance.Visible)
 				{
@@ -119,11 +119,20 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.InitializeVisualStyles();
 			InitializeComponent();
+
+			LocalizeText();
 		}
 
 		public override void LocalizeText(string cultureName = "")
 		{
 			Text = Resources.DashboardFormStrings.Title;
+
+			ManageRecordsMenuButton.Text = Resources.DashboardFormStrings.ManageRecordsMenuButtonText;
+			ManageCountriesMenuItem.Text = Resources.DashboardFormStrings.ManageCountriesMenuButtonText;
+			ManageCitiesMenuItem.Text = Resources.DashboardFormStrings.ManageCitiesMenuButtonText;
+			ManageAddressesMenuItem.Text = Resources.DashboardFormStrings.ManageAddressesMenuButtonText;
+			ManageCustomersMenuItem.Text = Resources.DashboardFormStrings.ManageCustomersMenuButtonText;
+			ManageAppointmentsMenuItem.Text = Resources.DashboardFormStrings.ManageAppointmentsMenuButtonText;
 		}
 		#endregion
 	}

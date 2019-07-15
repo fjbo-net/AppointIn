@@ -41,6 +41,8 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.LocalizeText(cultureName);
 
+			Text = Resources.AllAdressesFormStrings.Title;
+
 			if(CrudPanel != null) CrudPanel.LocalizeText(cultureName);
 		}
 		#endregion
