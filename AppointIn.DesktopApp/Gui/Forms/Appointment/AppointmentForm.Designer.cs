@@ -84,7 +84,6 @@
 			// AppointmentForm
 			// 
 			this.AcceptButton = this.SaveActionButton;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.CancelActionButton;
 			this.ClientSize = new System.Drawing.Size(726, 500);

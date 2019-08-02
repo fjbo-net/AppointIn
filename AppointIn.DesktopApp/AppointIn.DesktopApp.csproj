@@ -285,6 +285,9 @@
     <EmbeddedResource Include="Gui\Controls\ExtendedComboBox.resx">
       <DependentUpon>ExtendedComboBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\ExtendedDateTimePicker.resx">
+      <DependentUpon>ExtendedDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\ExtendedTextbox.resx">
       <DependentUpon>ExtendedTextbox.cs</DependentUpon>
     </EmbeddedResource>
