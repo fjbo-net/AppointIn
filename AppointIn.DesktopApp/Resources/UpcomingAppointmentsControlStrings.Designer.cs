@@ -22,14 +22,14 @@ namespace AppointIn.DesktopApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class DashboardFormStrings {
+    internal class UpcomingAppointmentsControlStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal DashboardFormStrings() {
+        internal UpcomingAppointmentsControlStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AppointIn.DesktopApp.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.DashboardFormStrings", typeof(DashboardFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.UpcomingAppointmentsControlStrings", typeof(UpcomingAppointmentsControlStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,74 +61,38 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage Addresses.
+        ///   Looks up a localized string similar to This Month&apos;s Appointments.
         /// </summary>
-        internal static string ManageAddressesMenuButtonText {
+        internal static string MonthAppointmentCrudPanelText {
             get {
-                return ResourceManager.GetString("ManageAddressesMenuButtonText", resourceCulture);
+                return ResourceManager.GetString("MonthAppointmentCrudPanelText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage Appointments.
+        ///   Looks up a localized string similar to Month View.
         /// </summary>
-        internal static string ManageAppointmentsMenuButtonText {
+        internal static string MonthPageText {
             get {
-                return ResourceManager.GetString("ManageAppointmentsMenuButtonText", resourceCulture);
+                return ResourceManager.GetString("MonthPageText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage Cities.
+        ///   Looks up a localized string similar to This Week&apos;s Appointments.
         /// </summary>
-        internal static string ManageCitiesMenuButtonText {
+        internal static string WeekAppointmentCrudPanelText {
             get {
-                return ResourceManager.GetString("ManageCitiesMenuButtonText", resourceCulture);
+                return ResourceManager.GetString("WeekAppointmentCrudPanelText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage Countries.
+        ///   Looks up a localized string similar to Week View.
         /// </summary>
-        internal static string ManageCountriesMenuButtonText {
+        internal static string WeekPageText {
             get {
-                return ResourceManager.GetString("ManageCountriesMenuButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage Customers.
-        /// </summary>
-        internal static string ManageCustomersMenuButtonText {
-            get {
-                return ResourceManager.GetString("ManageCustomersMenuButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage Records.
-        /// </summary>
-        internal static string ManageRecordsMenuButtonText {
-            get {
-                return ResourceManager.GetString("ManageRecordsMenuButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dashboard.
-        /// </summary>
-        internal static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upcoming Appointments.
-        /// </summary>
-        internal static string UpcomingAppointmentsLabelText {
-            get {
-                return ResourceManager.GetString("UpcomingAppointmentsLabelText", resourceCulture);
+                return ResourceManager.GetString("WeekPageText", resourceCulture);
             }
         }
     }

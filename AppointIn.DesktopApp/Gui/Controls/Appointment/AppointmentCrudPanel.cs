@@ -25,6 +25,15 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 		#region Properties
 		protected static List<AppointmentCrudPanel> AppointmentCrudPanels = new List<AppointmentCrudPanel>();
 		protected AppointmentForm AppointmentForm = new AppointmentForm();
+		protected Func<IEnumerable<Domain.Entities.Appointment>> _dataSource = () => UnitOfWork.Data.Appointments.GetAll();
+		protected internal Func<IEnumerable<Domain.Entities.Appointment>> DataSource {
+			get => _dataSource;
+			set
+			{
+				_dataSource = value;
+				ReloadData();
+			}
+		}
 		#endregion
 
 		#region Methods
@@ -136,7 +145,7 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 
 		protected override void SyncListView()
 		{
-			foreach(var appointment in UnitOfWork.Data.Appointments.GetAll())
+			foreach(var appointment in DataSource())
 			{
 				ListView.Items.Add(appointment.ToListViewItem());
 			}

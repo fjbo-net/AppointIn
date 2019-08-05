@@ -138,4 +138,7 @@
   <data name="Title" xml:space="preserve">
     <value>Inicio</value>
   </data>
+  <data name="UpcomingAppointmentsLabelText" xml:space="preserve">
+    <value>Próximas Citas</value>
+  </data>
 </root>

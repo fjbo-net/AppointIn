@@ -48,9 +48,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.UpcomingAppointmentsGroupbox.BackColor = System.Drawing.Color.Transparent;
 			this.UpcomingAppointmentsGroupbox.Controls.Add(this.upcomingAppointmentsControl1);
-			this.UpcomingAppointmentsGroupbox.Location = new System.Drawing.Point(15, 27);
+			this.UpcomingAppointmentsGroupbox.Location = new System.Drawing.Point(15, 40);
 			this.UpcomingAppointmentsGroupbox.Name = "UpcomingAppointmentsGroupbox";
-			this.UpcomingAppointmentsGroupbox.Size = new System.Drawing.Size(354, 322);
+			this.UpcomingAppointmentsGroupbox.Size = new System.Drawing.Size(354, 309);
 			this.UpcomingAppointmentsGroupbox.TabIndex = 3;
 			this.UpcomingAppointmentsGroupbox.TabStop = false;
 			this.UpcomingAppointmentsGroupbox.Text = "UpcomingAppointmentsLabel";
@@ -61,14 +61,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.upcomingAppointmentsControl1.BackColor = System.Drawing.Color.Transparent;
-			this.upcomingAppointmentsControl1.Location = new System.Drawing.Point(7, 24);
-			this.upcomingAppointmentsControl1.Margin = new System.Windows.Forms.Padding(4);
+			this.upcomingAppointmentsControl1.Location = new System.Drawing.Point(8, 24);
+			this.upcomingAppointmentsControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.upcomingAppointmentsControl1.Name = "upcomingAppointmentsControl1";
-			this.upcomingAppointmentsControl1.Size = new System.Drawing.Size(344, 291);
+			this.upcomingAppointmentsControl1.Size = new System.Drawing.Size(344, 278);
 			this.upcomingAppointmentsControl1.TabIndex = 0;
 			// 
 			// menuStrip1
 			// 
+			this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ManageRecordsMenuButton});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -121,7 +122,6 @@
 			// 
 			// Dashboard
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::AppointIn.DesktopApp.Properties.Resources.White_Abstract_Wallpapers_Gallery_89_Plus_PIC_WPW405898_1_1_;
 			this.ClientSize = new System.Drawing.Size(384, 361);

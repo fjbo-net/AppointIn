@@ -38,7 +38,9 @@ namespace AppointIn.DesktopApp.Gui
 
 			LanguageCombobox.SelectedIndexChanged += (sender, e) =>
 			{
-				LocalizeText(LanguageCombobox.SelectedValue.ToString());
+				var selectedLanguage = LanguageCombobox.SelectedValue.ToString();
+				LocalizeText(selectedLanguage);
+				Localizables.LocalizeAll(selectedLanguage);
 			};
 		}
 
@@ -96,7 +98,7 @@ namespace AppointIn.DesktopApp.Gui
 			LanguageLabel.Text = Resources.LoginFormStrings.LanguageLabelText;
 			LoginButton.Text = Resources.LoginFormStrings.LoginButtonText;
 
-			
+			Localizables.LocalizeAll(cultureName);
 		}
 
 

@@ -31,8 +31,8 @@
 			this.TabControl = new System.Windows.Forms.TabControl();
 			this.MonthPage = new System.Windows.Forms.TabPage();
 			this.WeekPage = new System.Windows.Forms.TabPage();
-			this.appointmentCrudPanel1 = new AppointIn.DesktopApp.Gui.Controls.Appointment.AppointmentCrudPanel();
-			this.appointmentCrudPanel2 = new AppointIn.DesktopApp.Gui.Controls.Appointment.AppointmentCrudPanel();
+			this.MonthAppointmentCrudPanel = new AppointIn.DesktopApp.Gui.Controls.Appointment.AppointmentCrudPanel();
+			this.WeekAppointmentCrudPanel = new AppointIn.DesktopApp.Gui.Controls.Appointment.AppointmentCrudPanel();
 			this.TabControl.SuspendLayout();
 			this.MonthPage.SuspendLayout();
 			this.WeekPage.SuspendLayout();
@@ -51,7 +51,7 @@
 			// 
 			// MonthPage
 			// 
-			this.MonthPage.Controls.Add(this.appointmentCrudPanel1);
+			this.MonthPage.Controls.Add(this.MonthAppointmentCrudPanel);
 			this.MonthPage.Location = new System.Drawing.Point(4, 22);
 			this.MonthPage.Name = "MonthPage";
 			this.MonthPage.Padding = new System.Windows.Forms.Padding(3);
@@ -62,7 +62,7 @@
 			// 
 			// WeekPage
 			// 
-			this.WeekPage.Controls.Add(this.appointmentCrudPanel2);
+			this.WeekPage.Controls.Add(this.WeekAppointmentCrudPanel);
 			this.WeekPage.Location = new System.Drawing.Point(4, 22);
 			this.WeekPage.Name = "WeekPage";
 			this.WeekPage.Padding = new System.Windows.Forms.Padding(3);
@@ -71,27 +71,27 @@
 			this.WeekPage.Text = "WeekPage";
 			this.WeekPage.UseVisualStyleBackColor = true;
 			// 
-			// appointmentCrudPanel1
+			// MonthAppointmentCrudPanel
 			// 
-			this.appointmentCrudPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.appointmentCrudPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.appointmentCrudPanel1.Location = new System.Drawing.Point(3, 3);
-			this.appointmentCrudPanel1.Name = "appointmentCrudPanel1";
-			this.appointmentCrudPanel1.Padding = new System.Windows.Forms.Padding(7);
-			this.appointmentCrudPanel1.Size = new System.Drawing.Size(488, 261);
-			this.appointmentCrudPanel1.TabIndex = 0;
-			this.appointmentCrudPanel1.Text = "AppointmentsByMonth";
+			this.MonthAppointmentCrudPanel.BackColor = System.Drawing.Color.Transparent;
+			this.MonthAppointmentCrudPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MonthAppointmentCrudPanel.Location = new System.Drawing.Point(3, 3);
+			this.MonthAppointmentCrudPanel.Name = "MonthAppointmentCrudPanel";
+			this.MonthAppointmentCrudPanel.Padding = new System.Windows.Forms.Padding(7);
+			this.MonthAppointmentCrudPanel.Size = new System.Drawing.Size(488, 261);
+			this.MonthAppointmentCrudPanel.TabIndex = 0;
+			this.MonthAppointmentCrudPanel.Text = "AppointmentsByMonth";
 			// 
-			// appointmentCrudPanel2
+			// WeekAppointmentCrudPanel
 			// 
-			this.appointmentCrudPanel2.BackColor = System.Drawing.Color.Transparent;
-			this.appointmentCrudPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.appointmentCrudPanel2.Location = new System.Drawing.Point(3, 3);
-			this.appointmentCrudPanel2.Name = "appointmentCrudPanel2";
-			this.appointmentCrudPanel2.Padding = new System.Windows.Forms.Padding(7);
-			this.appointmentCrudPanel2.Size = new System.Drawing.Size(488, 261);
-			this.appointmentCrudPanel2.TabIndex = 0;
-			this.appointmentCrudPanel2.Text = "AppointmentsByWeek";
+			this.WeekAppointmentCrudPanel.BackColor = System.Drawing.Color.Transparent;
+			this.WeekAppointmentCrudPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.WeekAppointmentCrudPanel.Location = new System.Drawing.Point(3, 3);
+			this.WeekAppointmentCrudPanel.Name = "WeekAppointmentCrudPanel";
+			this.WeekAppointmentCrudPanel.Padding = new System.Windows.Forms.Padding(7);
+			this.WeekAppointmentCrudPanel.Size = new System.Drawing.Size(488, 261);
+			this.WeekAppointmentCrudPanel.TabIndex = 0;
+			this.WeekAppointmentCrudPanel.Text = "AppointmentsByWeek";
 			// 
 			// UpcomingAppointmentsControl
 			// 
@@ -113,7 +113,7 @@
 		private System.Windows.Forms.TabControl TabControl;
 		private System.Windows.Forms.TabPage MonthPage;
 		private System.Windows.Forms.TabPage WeekPage;
-		private AppointmentCrudPanel appointmentCrudPanel1;
-		private AppointmentCrudPanel appointmentCrudPanel2;
+		private AppointmentCrudPanel MonthAppointmentCrudPanel;
+		private AppointmentCrudPanel WeekAppointmentCrudPanel;
 	}
 }

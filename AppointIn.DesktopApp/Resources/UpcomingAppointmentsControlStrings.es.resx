@@ -117,28 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ManageAddressesMenuButtonText" xml:space="preserve">
-    <value>Manage Addresses</value>
+  <data name="MonthAppointmentCrudPanelText" xml:space="preserve">
+    <value>Citas Del Mes</value>
   </data>
-  <data name="ManageAppointmentsMenuButtonText" xml:space="preserve">
-    <value>Manage Appointments</value>
+  <data name="MonthPageText" xml:space="preserve">
+    <value>Ver Mes</value>
   </data>
-  <data name="ManageCitiesMenuButtonText" xml:space="preserve">
-    <value>Manage Cities</value>
+  <data name="WeekAppointmentCrudPanelText" xml:space="preserve">
+    <value>Citas De La Semana</value>
   </data>
-  <data name="ManageCountriesMenuButtonText" xml:space="preserve">
-    <value>Manage Countries</value>
-  </data>
-  <data name="ManageCustomersMenuButtonText" xml:space="preserve">
-    <value>Manage Customers</value>
-  </data>
-  <data name="ManageRecordsMenuButtonText" xml:space="preserve">
-    <value>Manage Records</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Dashboard</value>
-  </data>
-  <data name="UpcomingAppointmentsLabelText" xml:space="preserve">
-    <value>Upcoming Appointments</value>
+  <data name="WeekPageText" xml:space="preserve">
+    <value>Ver Semana</value>
   </data>
 </root>

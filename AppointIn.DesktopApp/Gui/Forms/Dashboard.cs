@@ -12,12 +12,13 @@ using AppointIn.Domain.Entities;
 
 namespace AppointIn.DesktopApp.Gui
 {
-	public partial class Dashboard : BaseForm
+	public partial class Dashboard : BaseForm, Interfaces.ILocalizable
 	{
 		#region Constructor
 		public Dashboard() : base()
 		{
 			this.Visible = false;
+			Localizables.All.Add(this);
 
 			using (var loginForm = new LoginForm())
 			{
@@ -133,6 +134,8 @@ namespace AppointIn.DesktopApp.Gui
 			ManageAddressesMenuItem.Text = Resources.DashboardFormStrings.ManageAddressesMenuButtonText;
 			ManageCustomersMenuItem.Text = Resources.DashboardFormStrings.ManageCustomersMenuButtonText;
 			ManageAppointmentsMenuItem.Text = Resources.DashboardFormStrings.ManageAppointmentsMenuButtonText;
+
+			UpcomingAppointmentsGroupbox.Text = Resources.DashboardFormStrings.UpcomingAppointmentsLabelText;
 		}
 		#endregion
 	}
