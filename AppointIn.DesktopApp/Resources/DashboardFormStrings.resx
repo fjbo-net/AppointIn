@@ -148,6 +148,6 @@
     <value>Upcoming Appointments</value>
   </data>
   <data name="UserScheduleReportMenuButtonText" xml:space="preserve">
-    <value>Schedule for User...</value>
+    <value>Schedule for Users...</value>
   </data>
 </root>

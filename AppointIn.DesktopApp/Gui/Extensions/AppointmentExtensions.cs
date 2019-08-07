@@ -24,8 +24,8 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				appointment.Contact,
 				appointment.Type,
 				appointment.Url,
-				appointment.Start.ToLocalTime().ToLongDateString(),
-				appointment.End.ToLocalTime().ToLongDateString(),
+				appointment.Start.ToLocalTime().ToShortDateAndTimeString(),
+				appointment.End.ToLocalTime().ToShortDateAndTimeString(),
 				appointment.CreateDate.ToLocalTime().ToLongDateString(),
 				appointment.CreatedBy,
 				appointment.LastUpdate.ToString(),
@@ -48,9 +48,9 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.ContactLabelText}: {appointment.Contact}");
 			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.TypeLabelText}: {appointment.Type}");
 			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.UrlLabelText}: {appointment.Url}");
-			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.StartLabelText}: {appointment.Start.ToLocalTime().ToLongDateString()}");
-			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.EndLabelText}: {appointment.End.ToLocalTime().ToLongDateString()}");
-			builder.AppendLine($"\t{Resources.DataPanelStrings.CreateDateLabelText}: {appointment.CreateDate.ToLocalTime().ToLongDateString()}");
+			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.StartLabelText}: {appointment.Start.ToLocalTime().ToLongDateAndTimeString()}");
+			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.EndLabelText}: {appointment.End.ToLocalTime().ToLongDateAndTimeString()}");
+			builder.AppendLine($"\t{Resources.DataPanelStrings.CreateDateLabelText}: {appointment.CreateDate.ToLocalTime().ToShortDateString()}");
 			builder.AppendLine($"\t{Resources.DataPanelStrings.CreatedByLabelText}: {appointment.CreatedBy}");
 			builder.AppendLine($"\t{Resources.DataPanelStrings.LastUpdateLabelText}: {appointment.LastUpdate}");
 			builder.AppendLine($"\t{Resources.DataPanelStrings.LastUpdateByLabelText}: {appointment.LastUpdateBy}");

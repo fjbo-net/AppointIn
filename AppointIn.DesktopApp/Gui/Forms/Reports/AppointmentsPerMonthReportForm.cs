@@ -57,17 +57,22 @@ namespace AppointIn.DesktopApp.Gui
 					&& appointment.Start <= dateRangeEnd
 					&& appointment.End >= dateRangeStart
 					&& appointment.End <= dateRangeEnd)
-				.OrderByDescending(appointment => appointment.Start);
+				.OrderBy(appointment => appointment.Start);
 
 			var builder = new StringBuilder();
 
-			if(appointments.Any())
+			builder.AppendLine($"{Resources.AppointmentsPerMonthReportFormStrings.Title}, {MonthDateTimePicker.Value.ToString("MMMM yyyy")}".ToUpper());
+			builder.AppendLine();
+
+			if (appointments.Any())
 			{
 				builder.AppendLine(string.Format(
 					Resources.AppointmentsPerMonthReportFormStrings.AppointmentsFoundMessage,
 					appointments.Count(),
 					appointments.Count() == 1 ? Resources.ReportFormStrings.AppointmentNounSingular.ToLower() : Resources.ReportFormStrings.AppointmentNounPlural.ToLower(),
-					MonthDateTimePicker.Value.ToLongDateString() ));
+					MonthDateTimePicker.Value.ToString("MMMM yyyy")));
+
+				builder.AppendLine();
 
 				foreach (var appointment in appointments) builder.AppendLine(appointment.ToLocalString());
 			} else

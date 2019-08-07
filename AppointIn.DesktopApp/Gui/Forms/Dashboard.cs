@@ -124,19 +124,11 @@ namespace AppointIn.DesktopApp.Gui
 
 		private void AttachReportsMenuEvents()
 		{
-			AppointmentsPerMonthReportMenuButton.Click += (sender, e) =>
-			{
-				//if (ReportForm.SharedInstance.Visible)
-				//{
-				//	ReportForm.SharedInstance.Focus();
-				//	return;
-				//}
+			AppointmentsPerMonthReportMenuButton.Click += (sender, e)
+				=> new AppointmentsPerMonthReportForm().Show();
 
-				//ReportForm.SharedInstance.Visible = true;
-				var reportForm = new AppointmentsPerMonthReportForm();
-
-				reportForm.Show();
-			};
+			UserScheduleReportMenuButton.Click += (sender, e)
+				=> new UserScheduleReportForm().Show();
 		}
 
 		protected override void InitializeVisualStyles()

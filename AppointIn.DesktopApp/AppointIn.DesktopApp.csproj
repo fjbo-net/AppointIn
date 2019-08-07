@@ -162,6 +162,7 @@
     <Compile Include="Gui\Extensions\ComboboxExtensions.cs" />
     <Compile Include="Gui\Extensions\CountryExtensions.cs" />
     <Compile Include="Gui\Extensions\CustomerExtensions.cs" />
+    <Compile Include="Gui\Extensions\DateTimeExtensions.cs" />
     <Compile Include="Gui\Extensions\UserExtensions.cs" />
     <Compile Include="Gui\FontStyles.cs" />
     <Compile Include="Gui\Forms\Address\AddressForm.cs">
@@ -260,6 +261,12 @@
     <Compile Include="Gui\Forms\Reports\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Forms\Reports\UserScheduleReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Reports\UserScheduleReportForm.Designer.cs">
+      <DependentUpon>UserScheduleReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Interfaces\ILocalizable.cs" />
     <Compile Include="Gui\Interfaces\ISyncable.cs" />
     <Compile Include="Gui\Localizables.cs" />
@@ -289,6 +296,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpcomingAppointmentsControlStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserScheduleReportFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserScheduleReportFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserScheduleReportFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserScheduleReportFormStrings.es.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Gui\Controls\ActionButton.resx">
       <DependentUpon>ActionButton.cs</DependentUpon>
@@ -355,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\Reports\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Reports\UserScheduleReportForm.resx">
+      <DependentUpon>UserScheduleReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AddressCrudPanelStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -806,6 +826,14 @@
     <EmbeddedResource Include="Resources\UpcomingAppointmentsControlStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UpcomingAppointmentsControlStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UserScheduleReportFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserScheduleReportFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UserScheduleReportFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserScheduleReportFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

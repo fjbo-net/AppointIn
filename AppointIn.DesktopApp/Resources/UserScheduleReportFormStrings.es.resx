@@ -117,37 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppointmentsPerMonthReportMenuButtonText" xml:space="preserve">
-    <value>Citas Por Mes...</value>
+  <data name="AppointmentsFoundForUserMessage" xml:space="preserve">
+    <value>{1} {2} programada(s) para el usuario "{0}":</value>
   </data>
-  <data name="ManageAddressesMenuButtonText" xml:space="preserve">
-    <value>Gestionar Direcciones</value>
+  <data name="DescriptionLabelText" xml:space="preserve">
+    <value>Citas agendadas para cada usuario:</value>
   </data>
-  <data name="ManageAppointmentsMenuButtonText" xml:space="preserve">
-    <value>Gestionar Citas</value>
+  <data name="EndLabelText" xml:space="preserve">
+    <value>Hasta:</value>
   </data>
-  <data name="ManageCitiesMenuButtonText" xml:space="preserve">
-    <value>Gestionar Ciudades</value>
+  <data name="NoAppointmentsFoundForUserMessage" xml:space="preserve">
+    <value>El usuario "{0}" no tiene ninguna cita programada.</value>
   </data>
-  <data name="ManageCountriesMenuButtonText" xml:space="preserve">
-    <value>Gestionar Países</value>
+  <data name="ReportDateRangeMessage" xml:space="preserve">
+    <value>de {0} a {1}.</value>
   </data>
-  <data name="ManageCustomersMenuButtonText" xml:space="preserve">
-    <value>Gestionar Clientes</value>
-  </data>
-  <data name="ManageRecordsMenuButtonText" xml:space="preserve">
-    <value>Gestionar Récords</value>
-  </data>
-  <data name="ReportsMenuButtonText" xml:space="preserve">
-    <value>Reportes</value>
+  <data name="StartLabelText" xml:space="preserve">
+    <value>De:</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Inicio</value>
-  </data>
-  <data name="UpcomingAppointmentsLabelText" xml:space="preserve">
-    <value>Próximas Citas</value>
-  </data>
-  <data name="UserScheduleReportMenuButtonText" xml:space="preserve">
-    <value>Agenda de los Usuarios...</value>
+    <value>Reporte: Agenda de los Usuarios</value>
   </data>
 </root>
