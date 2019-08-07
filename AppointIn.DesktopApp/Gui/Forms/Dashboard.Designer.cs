@@ -37,6 +37,9 @@
 			this.ManageAddressesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ManageCustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ManageAppointmentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ReportsMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+			this.AppointmentsPerMonthReportMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+			this.UserScheduleReportMenuButton = new System.Windows.Forms.ToolStripMenuItem();
 			this.UpcomingAppointmentsGroupbox.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -62,7 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.upcomingAppointmentsControl1.BackColor = System.Drawing.Color.Transparent;
 			this.upcomingAppointmentsControl1.Location = new System.Drawing.Point(8, 24);
-			this.upcomingAppointmentsControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.upcomingAppointmentsControl1.Margin = new System.Windows.Forms.Padding(4);
 			this.upcomingAppointmentsControl1.Name = "upcomingAppointmentsControl1";
 			this.upcomingAppointmentsControl1.Size = new System.Drawing.Size(344, 278);
 			this.upcomingAppointmentsControl1.TabIndex = 0;
@@ -71,7 +74,8 @@
 			// 
 			this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ManageRecordsMenuButton});
+            this.ManageRecordsMenuButton,
+            this.ReportsMenuButton});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(384, 24);
@@ -120,8 +124,30 @@
 			this.ManageAppointmentsMenuItem.Size = new System.Drawing.Size(214, 22);
 			this.ManageAppointmentsMenuItem.Text = "ManageAppointmentsText";
 			// 
+			// ReportsMenuButton
+			// 
+			this.ReportsMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AppointmentsPerMonthReportMenuButton,
+            this.UserScheduleReportMenuButton});
+			this.ReportsMenuButton.Name = "ReportsMenuButton";
+			this.ReportsMenuButton.Size = new System.Drawing.Size(80, 20);
+			this.ReportsMenuButton.Text = "ReportsText";
+			// 
+			// AppointmentsPerMonthReportMenuButton
+			// 
+			this.AppointmentsPerMonthReportMenuButton.Name = "AppointmentsPerMonthReportMenuButton";
+			this.AppointmentsPerMonthReportMenuButton.Size = new System.Drawing.Size(224, 22);
+			this.AppointmentsPerMonthReportMenuButton.Text = "AppointmentsPerMonthText";
+			// 
+			// UserScheduleReportMenuButton
+			// 
+			this.UserScheduleReportMenuButton.Name = "UserScheduleReportMenuButton";
+			this.UserScheduleReportMenuButton.Size = new System.Drawing.Size(224, 22);
+			this.UserScheduleReportMenuButton.Text = "UserScheduleText";
+			// 
 			// Dashboard
 			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::AppointIn.DesktopApp.Properties.Resources.White_Abstract_Wallpapers_Gallery_89_Plus_PIC_WPW405898_1_1_;
 			this.ClientSize = new System.Drawing.Size(384, 361);
@@ -149,5 +175,8 @@
 		private System.Windows.Forms.ToolStripMenuItem ManageAddressesMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem ManageCustomersMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem ManageAppointmentsMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ReportsMenuButton;
+		private System.Windows.Forms.ToolStripMenuItem AppointmentsPerMonthReportMenuButton;
+		private System.Windows.Forms.ToolStripMenuItem UserScheduleReportMenuButton;
 	}
 }

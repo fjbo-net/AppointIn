@@ -26,5 +26,8 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 
 			return new ListViewItem(items);
 		}
+
+		public static string AsString(this Customer customer)
+			=> $"{customer.Name} [{Resources.DataPanelStrings.IdLabelText}: {customer.Id}]";
 	}
 }

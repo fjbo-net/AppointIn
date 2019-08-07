@@ -60,6 +60,12 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.AttachEvents();
 
+			AttachManageRecordsMenuEvents();
+			AttachReportsMenuEvents();
+		}
+
+		private void AttachManageRecordsMenuEvents()
+		{
 			ManageCustomersMenuItem.Click += (sender, e) =>
 			{
 				if (CustomersForm.Visible)
@@ -84,7 +90,7 @@ namespace AppointIn.DesktopApp.Gui
 
 			ManageCitiesMenuItem.Click += (sender, e) =>
 			{
-				if(AllCitiesForm.SharedInstance.Visible)
+				if (AllCitiesForm.SharedInstance.Visible)
 				{
 					AllCitiesForm.SharedInstance.Focus();
 					return;
@@ -116,6 +122,23 @@ namespace AppointIn.DesktopApp.Gui
 			};
 		}
 
+		private void AttachReportsMenuEvents()
+		{
+			AppointmentsPerMonthReportMenuButton.Click += (sender, e) =>
+			{
+				//if (ReportForm.SharedInstance.Visible)
+				//{
+				//	ReportForm.SharedInstance.Focus();
+				//	return;
+				//}
+
+				//ReportForm.SharedInstance.Visible = true;
+				var reportForm = new AppointmentsPerMonthReportForm();
+
+				reportForm.Show();
+			};
+		}
+
 		protected override void InitializeVisualStyles()
 		{
 			base.InitializeVisualStyles();
@@ -134,6 +157,10 @@ namespace AppointIn.DesktopApp.Gui
 			ManageAddressesMenuItem.Text = Resources.DashboardFormStrings.ManageAddressesMenuButtonText;
 			ManageCustomersMenuItem.Text = Resources.DashboardFormStrings.ManageCustomersMenuButtonText;
 			ManageAppointmentsMenuItem.Text = Resources.DashboardFormStrings.ManageAppointmentsMenuButtonText;
+
+			ReportsMenuButton.Text = Resources.DashboardFormStrings.ReportsMenuButtonText;
+			AppointmentsPerMonthReportMenuButton.Text = Resources.DashboardFormStrings.AppointmentsPerMonthReportMenuButtonText;
+			UserScheduleReportMenuButton.Text = Resources.DashboardFormStrings.UserScheduleReportMenuButtonText;
 
 			UpcomingAppointmentsGroupbox.Text = Resources.DashboardFormStrings.UpcomingAppointmentsLabelText;
 		}

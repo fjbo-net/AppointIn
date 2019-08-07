@@ -162,6 +162,7 @@
     <Compile Include="Gui\Extensions\ComboboxExtensions.cs" />
     <Compile Include="Gui\Extensions\CountryExtensions.cs" />
     <Compile Include="Gui\Extensions\CustomerExtensions.cs" />
+    <Compile Include="Gui\Extensions\UserExtensions.cs" />
     <Compile Include="Gui\FontStyles.cs" />
     <Compile Include="Gui\Forms\Address\AddressForm.cs">
       <SubType>Form</SubType>
@@ -247,11 +248,38 @@
     <Compile Include="Gui\Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Forms\Reports\AppointmentsPerMonthReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Reports\AppointmentsPerMonthReportForm.Designer.cs">
+      <DependentUpon>AppointmentsPerMonthReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Forms\Reports\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Reports\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Interfaces\ILocalizable.cs" />
     <Compile Include="Gui\Interfaces\ISyncable.cs" />
     <Compile Include="Gui\Localizables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppointmentsPerMonthReportFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentsPerMonthReportFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppointmentsPerMonthReportFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentsPerMonthReportFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ReportFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportFormStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\UpcomingAppointmentsControlStrings.es.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -321,6 +349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Reports\AppointmentsPerMonthReportForm.resx">
+      <DependentUpon>AppointmentsPerMonthReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Reports\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AddressCrudPanelStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -400,6 +434,14 @@
     <EmbeddedResource Include="Resources\AppointmentFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppointmentFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentsPerMonthReportFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentsPerMonthReportFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppointmentsPerMonthReportFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppointmentsPerMonthReportFormStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\BaseFormStrings.es.resx" />
     <EmbeddedResource Include="Resources\BaseFormStrings.resx">
@@ -752,6 +794,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\ReportFormStrings.es.resx" />
+    <EmbeddedResource Include="Resources\ReportFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\UpcomingAppointmentsControlStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UpcomingAppointmentsControlStrings.es.Designer.cs</LastGenOutput>

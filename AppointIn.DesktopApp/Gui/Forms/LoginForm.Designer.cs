@@ -93,7 +93,7 @@
 			this.LoginButton.Location = new System.Drawing.Point(0, 194);
 			this.LoginButton.Name = "LoginButton";
 			this.LoginButton.Size = new System.Drawing.Size(384, 42);
-			this.LoginButton.TabIndex = 2;
+			this.LoginButton.TabIndex = 3;
 			this.LoginButton.Text = "Log In";
 			this.LoginButton.UseVisualStyleBackColor = false;
 			// 
@@ -120,7 +120,7 @@
 			this.LanguageCombobox.Location = new System.Drawing.Point(12, 128);
 			this.LanguageCombobox.Name = "LanguageCombobox";
 			this.LanguageCombobox.Size = new System.Drawing.Size(360, 28);
-			this.LanguageCombobox.TabIndex = 3;
+			this.LanguageCombobox.TabIndex = 2;
 			// 
 			// LoginForm
 			// 

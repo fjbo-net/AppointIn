@@ -117,37 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppointmentsPerMonthReportMenuButtonText" xml:space="preserve">
-    <value>Citas Por Mes...</value>
+  <data name="AppointmentsFoundMessage" xml:space="preserve">
+    <value>Hay {0} {1} en el mes de {2}</value>
   </data>
-  <data name="ManageAddressesMenuButtonText" xml:space="preserve">
-    <value>Gestionar Direcciones</value>
+  <data name="DateTimePickerLabelText" xml:space="preserve">
+    <value>Generar reporte para el mes de:</value>
   </data>
-  <data name="ManageAppointmentsMenuButtonText" xml:space="preserve">
-    <value>Gestionar Citas</value>
-  </data>
-  <data name="ManageCitiesMenuButtonText" xml:space="preserve">
-    <value>Gestionar Ciudades</value>
-  </data>
-  <data name="ManageCountriesMenuButtonText" xml:space="preserve">
-    <value>Gestionar Países</value>
-  </data>
-  <data name="ManageCustomersMenuButtonText" xml:space="preserve">
-    <value>Gestionar Clientes</value>
-  </data>
-  <data name="ManageRecordsMenuButtonText" xml:space="preserve">
-    <value>Gestionar Récords</value>
-  </data>
-  <data name="ReportsMenuButtonText" xml:space="preserve">
-    <value>Reportes</value>
+  <data name="NoAppointmentsFoundMessage" xml:space="preserve">
+    <value>No se encontró ninguna cita en el mes de {0}</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Inicio</value>
-  </data>
-  <data name="UpcomingAppointmentsLabelText" xml:space="preserve">
-    <value>Próximas Citas</value>
-  </data>
-  <data name="UserScheduleReportMenuButtonText" xml:space="preserve">
-    <value>Agenda del Usuario...</value>
+    <value>Reporte: Citas por Mes</value>
   </data>
 </root>

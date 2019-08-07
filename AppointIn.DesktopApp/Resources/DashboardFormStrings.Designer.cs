@@ -61,6 +61,15 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appointments per Month....
+        /// </summary>
+        internal static string AppointmentsPerMonthReportMenuButtonText {
+            get {
+                return ResourceManager.GetString("AppointmentsPerMonthReportMenuButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage Addresses.
         /// </summary>
         internal static string ManageAddressesMenuButtonText {
@@ -115,6 +124,15 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reports.
+        /// </summary>
+        internal static string ReportsMenuButtonText {
+            get {
+                return ResourceManager.GetString("ReportsMenuButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dashboard.
         /// </summary>
         internal static string Title {
@@ -129,6 +147,15 @@ namespace AppointIn.DesktopApp.Resources {
         internal static string UpcomingAppointmentsLabelText {
             get {
                 return ResourceManager.GetString("UpcomingAppointmentsLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schedule for User....
+        /// </summary>
+        internal static string UserScheduleReportMenuButtonText {
+            get {
+                return ResourceManager.GetString("UserScheduleReportMenuButtonText", resourceCulture);
             }
         }
     }
