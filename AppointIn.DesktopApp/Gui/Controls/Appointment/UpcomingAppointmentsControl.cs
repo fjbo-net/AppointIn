@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.Data;
+using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 {
-	public partial class UpcomingAppointmentsControl : UserControl, Interfaces.ILocalizable
+	public partial class UpcomingAppointmentsControl : UserControl, ILocalizable
 	{
 		public UpcomingAppointmentsControl()
 		{

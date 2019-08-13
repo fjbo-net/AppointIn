@@ -31,7 +31,7 @@
 			this.ButtonsContainer = new System.Windows.Forms.Panel();
 			this.CancelActionButton = new AppointIn.DesktopApp.Gui.ActionButton();
 			this.SaveActionButton = new AppointIn.DesktopApp.Gui.ActionButton();
-			this.DataPanel = new AppointIn.DesktopApp.Gui.AppointmentDataPanel();
+			this.DataPanel = new AppointIn.DesktopApp.Gui.Controls.AppointmentDataPanel();
 			this.ButtonsContainer.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -105,6 +105,6 @@
 		private System.Windows.Forms.Panel ButtonsContainer;
 		private ActionButton CancelActionButton;
 		private ActionButton SaveActionButton;
-		private AppointmentDataPanel DataPanel;
+		private AppointIn.DesktopApp.Gui.Controls.AppointmentDataPanel DataPanel;
 	}
 }

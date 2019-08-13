@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Data;
+
 using AppointIn.Domain.Entities;
 
 namespace AppointIn.DesktopApp.Gui
@@ -30,6 +32,15 @@ namespace AppointIn.DesktopApp.Gui
 				}
 
 				User = loginForm.User;
+
+				Load += (sender, e) =>
+				{
+					Timer.Tick += IntervalTickHandler;
+
+					Timer.Enabled = true;
+				};
+
+				CheckForNextAppointments();
 			}
 			
 			CustomersForm = new AllCustomersForm();
@@ -52,6 +63,13 @@ namespace AppointIn.DesktopApp.Gui
 		internal static string Username { get; private set; }
 
 		protected AllCustomersForm CustomersForm;
+		protected Timer Timer = new Timer()
+		{
+			Interval = 60000,
+			Enabled = false
+		};
+
+		protected List<Appointment> NotifiedAppointments = new List<Appointment>();
 		#endregion
 
 
@@ -131,6 +149,32 @@ namespace AppointIn.DesktopApp.Gui
 				=> new UserScheduleReportForm().Show();
 		}
 
+		protected void CheckForNextAppointments()
+		{
+			var nextAppointment = UnitOfWork.Data.Appointments
+						.GetNextAppointments(User)
+						.Where(appointment =>
+							!NotifiedAppointments
+							.Any(notifiedAppointment =>
+								notifiedAppointment.Id == appointment.Id)
+						)
+						.SingleOrDefault();
+
+			if (nextAppointment != null)
+			{
+				NotifiedAppointments.Add(nextAppointment);
+				new NotificationForm(nextAppointment).ShowDialog();
+			}
+		}
+
+		protected void ClearNotifiedAppointmentsList()
+		{
+			var now = DateTime.Now;
+			NotifiedAppointments = NotifiedAppointments
+				.Where(a => a.Start >= now)
+				.ToList();
+		}
+
 		protected override void InitializeVisualStyles()
 		{
 			base.InitializeVisualStyles();
@@ -156,6 +200,16 @@ namespace AppointIn.DesktopApp.Gui
 
 			UpcomingAppointmentsGroupbox.Text = Resources.DashboardFormStrings.UpcomingAppointmentsLabelText;
 		}
+
+		#region EventHandlers
+		private void IntervalTickHandler(object sender, EventArgs e)
+		{
+			CheckForNextAppointments();
+
+			ClearNotifiedAppointmentsList();
+			
+		}
+		#endregion
 		#endregion
 	}
 }

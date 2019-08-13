@@ -12,10 +12,11 @@ using AppointIn.Domain.Entities;
 
 using AppointIn.Data;
 using AppointIn.DesktopApp.Gui.Extensions;
+using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui.Controls
 {
-	public partial class CustomerCrudPanel : CrudPanel, Interfaces.ILocalizable
+	public partial class CustomerCrudPanel : CrudPanel, ILocalizable
 	{
 		public CustomerCrudPanel() : base()
 		{

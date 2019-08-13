@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 using AppointIn.Data;
 using AppointIn.DesktopApp.Gui.Extensions;
+using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui.Controls
 {
-	public partial class CountryCrudPanel : CrudPanel, Interfaces.ILocalizable
+	public partial class CountryCrudPanel : CrudPanel, ILocalizable
 	{
 		public CountryCrudPanel() : base()
 		{

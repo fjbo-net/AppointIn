@@ -47,12 +47,12 @@ namespace AppointIn.Data
 			}
 		}
 
-		public IRepository<Appointment, int> _appointments;
-		public IRepository<Appointment, int> Appointments
+		public IAppointmentRepository _appointments;
+		public IAppointmentRepository Appointments
 		{
 			get
 			{
-				if (_appointments == null) _appointments = new GenericRepository<Appointment, int>(_context);
+				if (_appointments == null) _appointments = new AppointmentRepository(_context);
 				return _appointments;
 			}
 		}

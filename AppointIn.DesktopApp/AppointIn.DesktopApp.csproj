@@ -150,6 +150,7 @@
     <Compile Include="Gui\Controls\ExtendedTextbox.Designer.cs">
       <DependentUpon>ExtendedTextbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Controls\Interfaces\IDataPanel.cs" />
     <Compile Include="Gui\Controls\SubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +250,12 @@
     <Compile Include="Gui\Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Forms\Notification\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Notification\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Forms\Reports\AppointmentsPerMonthReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +288,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppointmentsPerMonthReportFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\NotificationFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotificationFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\NotificationFormStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotificationFormStrings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\ReportFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -366,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Notification\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\Reports\AppointmentsPerMonthReportForm.resx">
       <DependentUpon>AppointmentsPerMonthReportForm.cs</DependentUpon>
@@ -814,6 +834,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\NotificationFormStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotificationFormStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\NotificationFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotificationFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ReportFormStrings.es.resx" />
     <EmbeddedResource Include="Resources\ReportFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>

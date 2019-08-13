@@ -12,7 +12,7 @@ namespace AppointIn.Domain
 	public interface IUnitOfWork : IDisposable
 	{
 		IRepository<Address,int> Addresses { get; }
-		IRepository<Appointment,int> Appointments { get; }
+		IAppointmentRepository Appointments { get; }
 		IRepository<City,int> Cities { get; }
 		IRepository<Country,int> Countries { get; }
 		IRepository<Customer,int> Customers { get; }

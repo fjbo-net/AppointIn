@@ -1,4 +1,4 @@
-﻿namespace AppointIn.DesktopApp.Gui
+﻿namespace AppointIn.DesktopApp.Gui.Controls
 {
 	partial class AppointmentDataPanel
 	{
@@ -54,7 +54,7 @@
 			this.UserComboBox.Location = new System.Drawing.Point(13, 82);
 			this.UserComboBox.Name = "UserComboBox";
 			this.UserComboBox.Size = new System.Drawing.Size(374, 20);
-			this.UserComboBox.TabIndex = 1;
+			this.UserComboBox.TabIndex = 2;
 			// 
 			// CustomerComboBox
 			// 
@@ -79,7 +79,7 @@
 			this.DescriptionExtendedTextBox.Readonly = false;
 			this.DescriptionExtendedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.DescriptionExtendedTextBox.Size = new System.Drawing.Size(374, 53);
-			this.DescriptionExtendedTextBox.TabIndex = 0;
+			this.DescriptionExtendedTextBox.TabIndex = 4;
 			this.DescriptionExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// IdExtendedTextbox
@@ -109,7 +109,7 @@
 			this.LocationExtendedTextBox.Readonly = false;
 			this.LocationExtendedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.LocationExtendedTextBox.Size = new System.Drawing.Size(374, 53);
-			this.LocationExtendedTextBox.TabIndex = 0;
+			this.LocationExtendedTextBox.TabIndex = 5;
 			this.LocationExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// ContactExtendedTextbox
@@ -124,7 +124,7 @@
 			this.ContactExtendedTextbox.Readonly = false;
 			this.ContactExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.ContactExtendedTextbox.Size = new System.Drawing.Size(374, 53);
-			this.ContactExtendedTextbox.TabIndex = 0;
+			this.ContactExtendedTextbox.TabIndex = 6;
 			this.ContactExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// UrlExtendedTextBox
@@ -139,7 +139,7 @@
 			this.UrlExtendedTextBox.Readonly = false;
 			this.UrlExtendedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.UrlExtendedTextBox.Size = new System.Drawing.Size(374, 20);
-			this.UrlExtendedTextBox.TabIndex = 0;
+			this.UrlExtendedTextBox.TabIndex = 8;
 			this.UrlExtendedTextBox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// StartDateTimePicker
@@ -151,7 +151,7 @@
 			this.StartDateTimePicker.Location = new System.Drawing.Point(13, 396);
 			this.StartDateTimePicker.Name = "StartDateTimePicker";
 			this.StartDateTimePicker.Size = new System.Drawing.Size(374, 20);
-			this.StartDateTimePicker.TabIndex = 2;
+			this.StartDateTimePicker.TabIndex = 9;
 			this.StartDateTimePicker.Value = new System.DateTime(2019, 7, 8, 11, 6, 42, 969);
 			// 
 			// EndDateTimePicker
@@ -163,7 +163,7 @@
 			this.EndDateTimePicker.Location = new System.Drawing.Point(13, 422);
 			this.EndDateTimePicker.Name = "EndDateTimePicker";
 			this.EndDateTimePicker.Size = new System.Drawing.Size(374, 20);
-			this.EndDateTimePicker.TabIndex = 2;
+			this.EndDateTimePicker.TabIndex = 10;
 			this.EndDateTimePicker.Value = new System.DateTime(2019, 7, 8, 11, 6, 42, 969);
 			// 
 			// CreateDateDateTimePicker
@@ -171,11 +171,12 @@
 			this.CreateDateDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.CreateDateDateTimePicker.BackColor = System.Drawing.Color.Transparent;
+			this.CreateDateDateTimePicker.Enabled = false;
 			this.CreateDateDateTimePicker.LabelText = "CreateDateLabel";
 			this.CreateDateDateTimePicker.Location = new System.Drawing.Point(13, 448);
 			this.CreateDateDateTimePicker.Name = "CreateDateDateTimePicker";
 			this.CreateDateDateTimePicker.Size = new System.Drawing.Size(374, 20);
-			this.CreateDateDateTimePicker.TabIndex = 2;
+			this.CreateDateDateTimePicker.TabIndex = 11;
 			this.CreateDateDateTimePicker.Value = new System.DateTime(2019, 7, 8, 11, 6, 42, 969);
 			// 
 			// CreatedByExtendedTextbox
@@ -190,7 +191,7 @@
 			this.CreatedByExtendedTextbox.Readonly = true;
 			this.CreatedByExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.CreatedByExtendedTextbox.Size = new System.Drawing.Size(374, 20);
-			this.CreatedByExtendedTextbox.TabIndex = 0;
+			this.CreatedByExtendedTextbox.TabIndex = 12;
 			this.CreatedByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// LastUpdateExtendedTextbox
@@ -205,7 +206,7 @@
 			this.LastUpdateExtendedTextbox.Readonly = true;
 			this.LastUpdateExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.LastUpdateExtendedTextbox.Size = new System.Drawing.Size(374, 20);
-			this.LastUpdateExtendedTextbox.TabIndex = 0;
+			this.LastUpdateExtendedTextbox.TabIndex = 13;
 			this.LastUpdateExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// LastUpdateByExtendedTextbox
@@ -220,7 +221,7 @@
 			this.LastUpdateByExtendedTextbox.Readonly = true;
 			this.LastUpdateByExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.LastUpdateByExtendedTextbox.Size = new System.Drawing.Size(374, 20);
-			this.LastUpdateByExtendedTextbox.TabIndex = 0;
+			this.LastUpdateByExtendedTextbox.TabIndex = 14;
 			this.LastUpdateByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// TitleExtendedTextbox
@@ -235,7 +236,7 @@
 			this.TitleExtendedTextbox.Readonly = false;
 			this.TitleExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.TitleExtendedTextbox.Size = new System.Drawing.Size(374, 20);
-			this.TitleExtendedTextbox.TabIndex = 0;
+			this.TitleExtendedTextbox.TabIndex = 3;
 			this.TitleExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// TypeExtendedTextbox
@@ -250,11 +251,12 @@
 			this.TypeExtendedTextbox.Readonly = false;
 			this.TypeExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.TypeExtendedTextbox.Size = new System.Drawing.Size(374, 53);
-			this.TypeExtendedTextbox.TabIndex = 0;
+			this.TypeExtendedTextbox.TabIndex = 7;
 			this.TypeExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
 			// AppointmentDataPanel
 			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.Transparent;

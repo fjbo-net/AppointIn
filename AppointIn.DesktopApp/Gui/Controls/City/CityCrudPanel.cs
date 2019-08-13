@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.DesktopApp.Gui.Extensions;
+using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui.Controls
 {
-	public partial class CityCrudPanel : CrudPanel, Interfaces.ILocalizable
+	public partial class CityCrudPanel : CrudPanel, ILocalizable
 	{
 		public CityCrudPanel()
 		{

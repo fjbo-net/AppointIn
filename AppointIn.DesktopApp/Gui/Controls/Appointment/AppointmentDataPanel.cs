@@ -11,11 +11,13 @@ using System.Windows.Forms;
 using AppointIn.Data;
 using AppointIn.Domain.Entities;
 using AppointIn.DesktopApp.Gui.Extensions;
+using AppointIn.DesktopApp.Gui.Interfaces;
 
-namespace AppointIn.DesktopApp.Gui
+namespace AppointIn.DesktopApp.Gui.Controls
 {
-	public partial class AppointmentDataPanel : UserControl, Interfaces.ILocalizable, Interfaces.ISyncable
+	public partial class AppointmentDataPanel : UserControl, ILocalizable, ISyncable, Interfaces.IDataPanel
 	{
+		#region Constructors
 		public AppointmentDataPanel()
 		{
 			Init();
@@ -23,13 +25,24 @@ namespace AppointIn.DesktopApp.Gui
 			Localizables.All.Add(this);
 		}
 
+		public AppointmentDataPanel(Interfaces.DataPanelMode mode) : this()
+		{
+			switch(mode)
+			{
+				case Interfaces.DataPanelMode.View:
+					MakeInputsReadOnly();
+					break;
+			}
+		}
+		#endregion
+
 		#region Properties
-		private Appointment _appointment;
+		private Domain.Entities.Appointment _appointment;
 		[Bindable(false)]
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public Appointment Appointment
+		public Domain.Entities.Appointment Appointment
 		{
 			get
 			{
@@ -108,7 +121,29 @@ namespace AppointIn.DesktopApp.Gui
 			LastUpdateByExtendedTextbox.LabelText = Resources.DataPanelStrings.LastUpdateByLabelText;
 		}
 
-		public void Reset() => Appointment = new Appointment()
+		public void MakeInputsEditable()
+		{
+			TitleExtendedTextbox.Readonly = false;
+			DescriptionExtendedTextBox.Readonly = false;
+			LocationExtendedTextBox.Readonly = false;
+			ContactExtendedTextbox.Readonly = false;
+			TypeExtendedTextbox.Readonly = false;
+			UrlExtendedTextBox.Readonly = false;
+			StartDateTimePicker.Enabled = false;
+		}
+
+		public void MakeInputsReadOnly()
+		{
+			TitleExtendedTextbox.Readonly = true;
+			DescriptionExtendedTextBox.Readonly = true;
+			LocationExtendedTextBox.Readonly = true;
+			ContactExtendedTextbox.Readonly = true;
+			TypeExtendedTextbox.Readonly = true;
+			UrlExtendedTextBox.Readonly = true;
+			StartDateTimePicker.Enabled = true;
+		}
+
+		public void Reset() => Appointment = new Domain.Entities.Appointment()
 		{
 			Start = DateTime.Now,
 			End = DateTime.Now,

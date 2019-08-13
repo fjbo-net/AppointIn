@@ -11,10 +11,11 @@ using System.Windows.Forms;
 using AppointIn.Data;
 using AppointIn.Domain.Entities;
 using AppointIn.DesktopApp.Gui.Extensions;
+using AppointIn.DesktopApp.Gui.Interfaces;
 
 namespace AppointIn.DesktopApp.Gui.Controls
 {
-	public partial class AddressDataPanel : UserControl, Interfaces.ILocalizable, Interfaces.ISyncable
+	public partial class AddressDataPanel : UserControl, ILocalizable, ISyncable
 	{
 		#region Constructor
 		public AddressDataPanel()
