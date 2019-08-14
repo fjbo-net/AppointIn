@@ -45,7 +45,11 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			{
 				var repository = Data.UnitOfWork.Data.Cities;
 
-				repository.Insert(CityForm.City);
+				var city = CityForm.City;
+
+				city.CreateDate = city.CreateDate.ToUniversalTime();
+
+				repository.Insert(city);
 
 				Data.UnitOfWork.Data.Save();
 			}
@@ -70,6 +74,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					var city = CityForm.City;
 
 					city.LastUpdateBy = Dashboard.Username;
+
+					city.CreateDate = city.CreateDate.ToUniversalTime();
 
 					Data.UnitOfWork.Data.Save();
 

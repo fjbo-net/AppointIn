@@ -14,13 +14,20 @@ namespace AppointIn.Data.Repositories
 		public AppointmentRepository(Context context) : base(context)
 		{
 		}
-		
+
 		public IEnumerable<Appointment> GetNextAppointments(User user = null)
 		{
 			var now = DateTime.Now;
 			var timeInFifteenMinutes = now.AddMinutes(15);
 			var upcomingAppointments = UnitOfWork.Data.Appointments
 				.GetAll()
+				//.Select(appointment =>
+				//{
+				//	appointment.Start = appointment.Start.ToLocalTime();
+				//	appointment.End = appointment.End.ToLocalTime();
+				//	appointment.CreateDate = appointment.CreateDate.ToLocalTime();
+				//	return appointment;
+				//})
 				.Where(appointment =>
 					appointment.Start <= timeInFifteenMinutes
 					&& appointment.Start > now)

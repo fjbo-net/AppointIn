@@ -68,6 +68,6 @@
 		#endregion
 
 		private System.Windows.Forms.Label Label;
-		private System.Windows.Forms.DateTimePicker DateTimePicker;
+		internal System.Windows.Forms.DateTimePicker DateTimePicker;
 	}
 }

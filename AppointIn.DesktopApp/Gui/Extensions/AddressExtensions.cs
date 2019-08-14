@@ -21,7 +21,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				address.City.Name,
 				address.PostalCode,
 				address.Phone,
-				address.CreateDate.ToLocalTime().ToLongDateString(),
+				address.CreateDate.ToLongDateString(),
 				address.CreatedBy,
 				address.LastUpdate.ToString(),
 				address.LastUpdateBy

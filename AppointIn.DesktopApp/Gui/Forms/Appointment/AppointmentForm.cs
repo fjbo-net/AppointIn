@@ -28,6 +28,25 @@ namespace AppointIn.DesktopApp.Gui
 			get => DataPanel.Appointment;
 			set => DataPanel.Appointment = value;
 		}
+
+		private static AppointmentForm sharedInstance;
+		public static AppointmentForm SharedInstance
+		{
+			get
+			{
+				if (sharedInstance == null) sharedInstance = new AppointmentForm();
+				return sharedInstance;
+			}
+		}
+
+		public bool ReadOnly
+		{
+			get => DataPanel.ReadOnly;
+			set {
+				DataPanel.ReadOnly = value;
+				SaveActionButton.Enabled = !value;
+			}
+		}
 		#endregion
 
 		#region Methods

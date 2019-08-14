@@ -11,9 +11,25 @@ namespace AppointIn.Data.Repositories
 	{
 		public UserRepository(Context context) : base(context)
 		{
-
 		}
 
 		public User GetByUsername(string username) => _entityDbSet.Where(user => user.Username == username).SingleOrDefault();
+
+		public override IEnumerable<User> GetAll()
+		{
+			var users = _entityDbSet.ToList();
+			foreach (var user in users)
+			{
+				//user.CreateDate = user.CreateDate.ToLocalTime();
+			}
+
+			return users;
+		}
+		public override User GetById(int id)
+		{
+			var user = _entityDbSet.Find(id);
+			//user.CreateDate = user.CreateDate.ToLocalTime();
+			return user;
+		}
 	}
 }

@@ -50,7 +50,11 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			{
 				var repository = UnitOfWork.Data.Customers;
 
-				repository.Insert(CustomerForm.Customer);
+				var customer = CustomerForm.Customer;
+
+				customer.CreateDate = customer.CreateDate.ToUniversalTime();
+
+				repository.Insert(customer);
 
 				UnitOfWork.Data.Save();
 			}
@@ -75,6 +79,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					var customer = CustomerForm.Customer;
 
 					customer.LastUpdateBy = Dashboard.Username;
+
+					customer.CreateDate = customer.CreateDate.ToUniversalTime();
 
 					UnitOfWork.Data.Save();
 

@@ -277,6 +277,7 @@
     <Compile Include="Gui\Interfaces\ILocalizable.cs" />
     <Compile Include="Gui\Interfaces\ISyncable.cs" />
     <Compile Include="Gui\Localizables.cs" />
+    <Compile Include="Gui\Syncables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppointmentsPerMonthReportFormStrings.Designer.cs">

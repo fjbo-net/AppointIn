@@ -12,7 +12,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 			{
 				country.Id.ToString(),
 				country.Name,
-				country.CreateDate.ToLocalTime().ToLongDateString(),
+				country.CreateDate.ToLongDateString(),
 				country.CreatedBy,
 				country.LastUpdate.ToString(),
 				country.LastUpdateBy

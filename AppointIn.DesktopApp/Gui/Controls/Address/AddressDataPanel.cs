@@ -23,6 +23,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			Init();
 
 			Localizables.All.Add(this);
+			Syncables.All.Add(this);
 		}
 		#endregion
 

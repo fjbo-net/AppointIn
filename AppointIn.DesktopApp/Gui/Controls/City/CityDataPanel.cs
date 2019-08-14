@@ -21,6 +21,7 @@ namespace AppointIn.DesktopApp.Gui
 			Init();
 
 			Localizables.All.Add(this);
+			Syncables.All.Add(this);
 		}
 
 		#region Properties

@@ -43,8 +43,8 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 			AppointmentForm.Appointment = new Domain.Entities.Appointment()
 			{
 				Id = 0,
-				Start = DateTime.Now,
-				End = DateTime.Now,
+				Start = DateTime.Now.AddMinutes(30),
+				End = DateTime.Now.AddMinutes(60),
 				CreateDate = DateTime.Now,
 				CreatedBy = Dashboard.Username,
 				LastUpdateBy = Dashboard.Username
@@ -57,7 +57,13 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 			{
 				var repository = UnitOfWork.Data.Appointments;
 
-				repository.Insert(AppointmentForm.Appointment);
+				var appointment = AppointmentForm.Appointment;
+
+				appointment.CreateDate = appointment.CreateDate.ToUniversalTime();
+				appointment.Start = appointment.Start.ToUniversalTime();
+				appointment.End = appointment.End.ToUniversalTime();
+
+				repository.Insert(appointment);
 
 				UnitOfWork.Data.Save();
 			}
@@ -80,6 +86,10 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 				if(result == DialogResult.OK)
 				{
 					var appointment = AppointmentForm.Appointment;
+
+					appointment.CreateDate = appointment.CreateDate.ToUniversalTime();
+					appointment.Start = appointment.Start.ToUniversalTime();
+					appointment.End = appointment.End.ToUniversalTime();
 
 					appointment.LastUpdateBy = Dashboard.Username;
 

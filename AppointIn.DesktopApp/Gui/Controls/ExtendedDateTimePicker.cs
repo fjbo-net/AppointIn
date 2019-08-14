@@ -43,6 +43,15 @@ namespace AppointIn.DesktopApp.Gui
 		[Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		[EditorBrowsable(EditorBrowsableState.Always)]
+		public DateTime MinDate {
+			get => DateTimePicker.MinDate;
+			set => DateTimePicker.MinDate = value;
+		}
+
+		[Bindable(true)]
+		[Browsable(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		[EditorBrowsable(EditorBrowsableState.Always)]
 		public DateTime Value
 		{
 			get => DateTimePicker.Value;

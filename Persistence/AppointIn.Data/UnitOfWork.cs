@@ -42,7 +42,7 @@ namespace AppointIn.Data
 		{
 			get
 			{
-				if (_addresses == null) _addresses = new GenericRepository<Address, int>(_context);
+				if (_addresses == null) _addresses = new GenericRepository<Address,int>(_context);
 				return _addresses;
 			}
 		}
@@ -62,7 +62,7 @@ namespace AppointIn.Data
 		{
 			get
 			{
-				if (_cities == null) _cities = new GenericRepository<City, int>(_context);
+				if (_cities == null) _cities = new GenericRepository<City,int>(_context);
 				return _cities;
 			}
 		}
@@ -72,7 +72,7 @@ namespace AppointIn.Data
 		{
 			get
 			{
-				if (_countries == null) _countries = new GenericRepository<Country, int>(_context);
+				if (_countries == null) _countries = new GenericRepository<Country,int>(_context);
 				return _countries;
 			}
 		}
@@ -82,7 +82,7 @@ namespace AppointIn.Data
 		{
 			get
 			{
-				if (_customers == null) _customers = new GenericRepository<Customer, int>(_context);
+				if (_customers == null) _customers = new GenericRepository<Customer,int>(_context);
 				return _customers;
 			}
 		}

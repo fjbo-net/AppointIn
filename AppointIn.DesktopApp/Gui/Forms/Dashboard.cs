@@ -207,7 +207,8 @@ namespace AppointIn.DesktopApp.Gui
 			CheckForNextAppointments();
 
 			ClearNotifiedAppointmentsList();
-			
+
+			Syncables.SyncAll();
 		}
 		#endregion
 		#endregion

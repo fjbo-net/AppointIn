@@ -47,7 +47,12 @@ namespace AppointIn.DesktopApp.Gui
 		#region Methods
 		public void AttachEvents()
 		{
-
+			ViewActionButton.Click += (sender, e) =>
+			{
+				AppointmentForm.SharedInstance.ReadOnly = true;
+				AppointmentForm.SharedInstance.Appointment = Appointment;
+				AppointmentForm.SharedInstance.ShowDialog();
+			};
 		}
 
 		public void Init()
@@ -65,7 +70,10 @@ namespace AppointIn.DesktopApp.Gui
 			MessageTextBox.Text = string.Format(
 				Resources.NotificationFormStrings.MessageTextBoxText,
 				Appointment.Title,
-				Appointment.Start.ToLocalTime().ToShortTimeString());
+				Appointment.Start.ToShortTimeString());
+
+			DismissActionButton.Text = Resources.NotificationFormStrings.DismissButtonText;
+			ViewActionButton.Text = Resources.NotificationFormStrings.ViewButtonText;
 		}
 		#endregion
 	}

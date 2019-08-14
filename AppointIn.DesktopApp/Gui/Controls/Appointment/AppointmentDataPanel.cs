@@ -23,16 +23,12 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			Init();
 
 			Localizables.All.Add(this);
+			Syncables.All.Add(this);
 		}
 
 		public AppointmentDataPanel(Interfaces.DataPanelMode mode) : this()
 		{
-			switch(mode)
-			{
-				case Interfaces.DataPanelMode.View:
-					MakeInputsReadOnly();
-					break;
-			}
+			
 		}
 		#endregion
 
@@ -56,9 +52,45 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				BindGui();
 			}
 		}
+
+		private Interfaces.DataPanelMode mode = Interfaces.DataPanelMode.Edit;
+		public Interfaces.DataPanelMode Mode
+		{
+			get => mode;
+
+			set
+			{
+				switch (value)
+				{
+					case Interfaces.DataPanelMode.View:
+						MakeInputsReadOnly();
+						break;
+					default:
+						MakeInputsEditable();
+						break;
+				}
+
+				mode = value;
+			}
+		}
+
+		[Bindable(false)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public bool ReadOnly
+		{
+			get => Mode == Interfaces.DataPanelMode.View;
+			set => Mode = value ? Interfaces.DataPanelMode.View : Interfaces.DataPanelMode.Edit;
+		}
 		#endregion
 
 		#region Methods
+		private void AttachEvents()
+		{
+			if(StartDateTimePicker != null) StartDateTimePicker.DateTimePicker.ValueChanged += (sender, e) => LimitDates();
+		}
+
 		private void BindEntity() {
 			_appointment.Id = int.Parse(IdExtendedTextbox.Text);
 			_appointment.Customer = (Customer)CustomerComboBox.ComboBox.SelectedValue;
@@ -94,12 +126,22 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			CreatedByExtendedTextbox.Text = _appointment.CreatedBy;
 			//LastUpdateExtendedTextbox.Text = _appointment.LastUpdate.ToString();
 			LastUpdateByExtendedTextbox.Text = _appointment.LastUpdateBy;
+
+			LimitDates();
 		}
 
 		private void Init() {
 			InitializeComponent();
 
+			AttachEvents();
+
 			Reset();
+		}
+
+		public void LimitDates()
+		{
+			StartDateTimePicker.MinDate = DateTime.Now.AddMinutes(1);
+			EndDateTimePicker.MinDate = StartDateTimePicker.Value.AddMinutes(15);
 		}
 
 		public void LocalizeText(string culture ="")
@@ -129,7 +171,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			ContactExtendedTextbox.Readonly = false;
 			TypeExtendedTextbox.Readonly = false;
 			UrlExtendedTextBox.Readonly = false;
-			StartDateTimePicker.Enabled = false;
+			StartDateTimePicker.Enabled = true;
 		}
 
 		public void MakeInputsReadOnly()
@@ -140,16 +182,22 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			ContactExtendedTextbox.Readonly = true;
 			TypeExtendedTextbox.Readonly = true;
 			UrlExtendedTextBox.Readonly = true;
-			StartDateTimePicker.Enabled = true;
+			StartDateTimePicker.Enabled = false;
 		}
 
-		public void Reset() => Appointment = new Domain.Entities.Appointment()
+		public void Reset()
 		{
-			Start = DateTime.Now,
-			End = DateTime.Now,
-			CreateDate = DateTime.Now,
-			CreatedBy = Dashboard.Username
-		};
+			ReadOnly = false;
+			var defaultStart = DateTime.Now.AddMinutes(60);
+			var defaultEnd = defaultStart.AddMinutes(30);
+			Appointment = new Domain.Entities.Appointment()
+			{
+				Start = defaultStart,
+				End = defaultEnd,
+				CreateDate = DateTime.Now,
+				CreatedBy = Dashboard.Username
+			};
+		}
 
 		public void SyncData()
 		{
