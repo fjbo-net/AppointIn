@@ -43,12 +43,22 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			get
 			{
 				BindEntity();
+
+				_appointment.CreateDate = _appointment.CreateDate.ToUniversalTime();
+				_appointment.Start = _appointment.Start.ToUniversalTime();
+				_appointment.End = _appointment.End.ToUniversalTime();
+
 				return _appointment;
 			}
 
 			set
 			{
 				_appointment = value;
+
+				_appointment.CreateDate = _appointment.CreateDate.ToLocalTime();
+				_appointment.Start = _appointment.Start.ToLocalTime();
+				_appointment.End = _appointment.End.ToLocalTime();
+
 				BindGui();
 			}
 		}
@@ -165,6 +175,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 		public void MakeInputsEditable()
 		{
+			CustomerComboBox.Enabled = true;
+			UserComboBox.Enabled = true;
 			TitleExtendedTextbox.Readonly = false;
 			DescriptionExtendedTextBox.Readonly = false;
 			LocationExtendedTextBox.Readonly = false;
@@ -172,10 +184,13 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			TypeExtendedTextbox.Readonly = false;
 			UrlExtendedTextBox.Readonly = false;
 			StartDateTimePicker.Enabled = true;
+			EndDateTimePicker.Enabled = true;
 		}
 
 		public void MakeInputsReadOnly()
 		{
+			CustomerComboBox.Enabled = false;
+			UserComboBox.Enabled = false;
 			TitleExtendedTextbox.Readonly = true;
 			DescriptionExtendedTextBox.Readonly = true;
 			LocationExtendedTextBox.Readonly = true;
@@ -183,6 +198,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			TypeExtendedTextbox.Readonly = true;
 			UrlExtendedTextBox.Readonly = true;
 			StartDateTimePicker.Enabled = false;
+			EndDateTimePicker.Enabled = false;
 		}
 
 		public void Reset()

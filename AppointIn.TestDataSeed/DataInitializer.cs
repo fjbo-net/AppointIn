@@ -19,10 +19,12 @@ namespace AppointIn.TestDataSeed
 			{
 				if (!DataBaseHasInitializedUsers())
 				{
-					foreach (var user in GetUsers())
+					foreach (var user in GenerateUsers())
 					{
 						UnitOfWork.Data.Users.Insert(user);
 					}
+
+					UnitOfWork.Data.Save();
 				}
 
 				if (!DataBaseHasInitializedCountries())
@@ -31,9 +33,39 @@ namespace AppointIn.TestDataSeed
 					{
 						UnitOfWork.Data.Countries.Insert(country);
 					}
+
+					UnitOfWork.Data.Save();
 				}
 
-				UnitOfWork.Data.Save();
+				if(!DataBaseHasInitializedCities())
+				{
+					foreach (var city in GenerateCities())
+					{
+						UnitOfWork.Data.Cities.Insert(city);
+					}
+
+					UnitOfWork.Data.Save();
+				}
+
+				if(!DataBaseHasInitializedAddresses())
+				{
+					foreach(var address in GenerateAddresses())
+					{
+						UnitOfWork.Data.Addresses.Insert(address);
+					}
+
+					UnitOfWork.Data.Save();
+				}
+
+				if(!DataBaseHasInitializedCustomers())
+				{
+					foreach(var customer in GenerateCustomers())
+					{
+						UnitOfWork.Data.Customers.Insert(customer);
+					}
+
+					UnitOfWork.Data.Save();
+				}
 
 				return true;
 
@@ -47,8 +79,15 @@ namespace AppointIn.TestDataSeed
 			}
 		}
 
-		public static bool NeedsDataInitialization() 
-			=> !(DataBaseHasInitializedCountries() 
-				&& DataBaseHasInitializedUsers());
+		public static bool NeedsDataInitialization()
+		{
+			var hasUsers = DataBaseHasInitializedUsers();
+			var hasCountries = DataBaseHasInitializedCountries();
+			var hasCities = DataBaseHasInitializedCities();
+			var hasAddresses = DataBaseHasInitializedAddresses();
+			var hasCustomers = DataBaseHasInitializedCustomers();
+
+			return !hasUsers && !hasCountries && !hasCities && !hasAddresses && !hasCustomers;
+		}
 	}
 }

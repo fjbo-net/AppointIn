@@ -17,15 +17,15 @@ namespace AppointIn.Data.Repositories
 
 		public IEnumerable<Appointment> GetNextAppointments(User user = null)
 		{
-			var now = DateTime.Now;
+			var now = DateTime.Now.ToUniversalTime();
 			var timeInFifteenMinutes = now.AddMinutes(15);
 			var upcomingAppointments = UnitOfWork.Data.Appointments
 				.GetAll()
 				//.Select(appointment =>
 				//{
-				//	appointment.Start = appointment.Start.ToLocalTime();
-				//	appointment.End = appointment.End.ToLocalTime();
-				//	appointment.CreateDate = appointment.CreateDate.ToLocalTime();
+				//	appointment.Start = appointment.Start;
+				//	appointment.End = appointment.End;
+				//	appointment.CreateDate = appointment.CreateDate;
 				//	return appointment;
 				//})
 				.Where(appointment =>

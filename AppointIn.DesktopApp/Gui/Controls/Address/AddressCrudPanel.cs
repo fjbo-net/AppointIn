@@ -48,7 +48,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 				var address = AddressForm.Address;
 
-				address.CreateDate = address.CreateDate.ToUniversalTime();
+				address.CreateDate = address.CreateDate;
 
 				repository.Insert(address);
 
@@ -76,7 +76,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 					address.LastUpdateBy = Dashboard.Username;
 
-					address.CreateDate = address.CreateDate.ToUniversalTime();
+					address.CreateDate = address.CreateDate;
 
 					UnitOfWork.Data.Save();
 

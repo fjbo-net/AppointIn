@@ -20,7 +20,7 @@ namespace AppointIn.Data.Repositories
 			var users = _entityDbSet.ToList();
 			foreach (var user in users)
 			{
-				//user.CreateDate = user.CreateDate.ToLocalTime();
+				//user.CreateDate = user.CreateDate;
 			}
 
 			return users;
@@ -28,7 +28,7 @@ namespace AppointIn.Data.Repositories
 		public override User GetById(int id)
 		{
 			var user = _entityDbSet.Find(id);
-			//user.CreateDate = user.CreateDate.ToLocalTime();
+			//user.CreateDate = user.CreateDate;
 			return user;
 		}
 	}

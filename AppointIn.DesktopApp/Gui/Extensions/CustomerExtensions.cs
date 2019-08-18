@@ -18,7 +18,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				customer.Name,
 				customer.Address.AsString(),
 				customer.IsActive ? "Active" : "Inactive",
-				customer.CreateDate.ToLongDateString(),
+				customer.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				customer.CreatedBy,
 				customer.LastUpdate.ToString(),
 				customer.LastUpdateBy

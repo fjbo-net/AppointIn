@@ -70,7 +70,7 @@ namespace AppointIn.DesktopApp.Gui
 			MessageTextBox.Text = string.Format(
 				Resources.NotificationFormStrings.MessageTextBoxText,
 				Appointment.Title,
-				Appointment.Start.ToShortTimeString());
+				Appointment.Start.ToLocalTime().ToShortTimeString());
 
 			DismissActionButton.Text = Resources.NotificationFormStrings.DismissButtonText;
 			ViewActionButton.Text = Resources.NotificationFormStrings.ViewButtonText;

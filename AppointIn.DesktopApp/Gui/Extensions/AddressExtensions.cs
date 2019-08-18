@@ -21,7 +21,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				address.City.Name,
 				address.PostalCode,
 				address.Phone,
-				address.CreateDate.ToLongDateString(),
+				address.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				address.CreatedBy,
 				address.LastUpdate.ToString(),
 				address.LastUpdateBy
@@ -36,7 +36,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				&& !string.IsNullOrWhiteSpace(address.City.Name)
 				&& !string.IsNullOrWhiteSpace(address.City.Country.Name))
 			{
-				return $"{address.StreetName}{(!string.IsNullOrWhiteSpace(address.BuildingOrInterior) ? $" {address.BuildingOrInterior}" : string.Empty )}, {address.City.Name}, {address.City.Country.Name}";
+				return address.FullAddress;
 			}
 			return "[Empty]";
 		}

@@ -20,7 +20,7 @@ namespace AppointIn.Data.Repositories
 			var addresses = _entityDbSet.ToList();
 			foreach(var address in addresses)
 			{
-				address.CreateDate = address.CreateDate.ToLocalTime();
+				address.CreateDate = address.CreateDate;
 			}
 
 			return addresses;
@@ -28,7 +28,7 @@ namespace AppointIn.Data.Repositories
 		public override Address GetById(int id)
 		{
 			var address = _entityDbSet.Find(id);
-			address.CreateDate = address.CreateDate.ToLocalTime();
+			address.CreateDate = address.CreateDate;
 			return address;
 		}
 		public override void Insert(Address entity) => _entityDbSet.Add(entity);

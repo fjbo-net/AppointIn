@@ -38,12 +38,18 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			get
 			{
 				BindEntity();
+
+				_address.CreateDate = _address.CreateDate.ToUniversalTime();
+
 				return _address;
 			}
 
 			set
 			{
 				_address = value;
+
+				_address.CreateDate = _address.CreateDate.ToLocalTime();
+
 				BindGui();
 			}
 		}

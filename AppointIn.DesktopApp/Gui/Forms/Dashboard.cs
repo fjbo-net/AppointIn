@@ -38,9 +38,9 @@ namespace AppointIn.DesktopApp.Gui
 					Timer.Tick += IntervalTickHandler;
 
 					Timer.Enabled = true;
-				};
 
-				CheckForNextAppointments();
+					CheckForNextAppointments();
+				};
 			}
 			
 			CustomersForm = new AllCustomersForm();
@@ -65,7 +65,7 @@ namespace AppointIn.DesktopApp.Gui
 		protected AllCustomersForm CustomersForm;
 		protected Timer Timer = new Timer()
 		{
-			Interval = 60000,
+			Interval = 45000,
 			Enabled = false
 		};
 
@@ -169,7 +169,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		protected void ClearNotifiedAppointmentsList()
 		{
-			var now = DateTime.Now;
+			var now = DateTime.Now.ToUniversalTime();
 			NotifiedAppointments = NotifiedAppointments
 				.Where(a => a.Start >= now)
 				.ToList();

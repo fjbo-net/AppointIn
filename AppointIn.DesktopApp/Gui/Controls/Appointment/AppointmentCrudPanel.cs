@@ -59,10 +59,6 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 
 				var appointment = AppointmentForm.Appointment;
 
-				appointment.CreateDate = appointment.CreateDate.ToUniversalTime();
-				appointment.Start = appointment.Start.ToUniversalTime();
-				appointment.End = appointment.End.ToUniversalTime();
-
 				repository.Insert(appointment);
 
 				UnitOfWork.Data.Save();
@@ -86,10 +82,6 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 				if(result == DialogResult.OK)
 				{
 					var appointment = AppointmentForm.Appointment;
-
-					appointment.CreateDate = appointment.CreateDate.ToUniversalTime();
-					appointment.Start = appointment.Start.ToUniversalTime();
-					appointment.End = appointment.End.ToUniversalTime();
 
 					appointment.LastUpdateBy = Dashboard.Username;
 

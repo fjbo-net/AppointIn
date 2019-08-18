@@ -11,36 +11,13 @@ namespace AppointIn.TestDataSeed
 {
 	public static partial class DataInitializer
 	{
-		private static ICollection<User> Users { get; } = new List<User>()
-		{
-			new User()
-			{
-				Id = 1,
-				Username = "test",
-				Password = "test",
-				CreateDate = DateTime.Now,
-				CreatedBy = "DataInitializer",
-				IsActive = true,
-				LastUpdateBy = "DataInitializer"
-			},
-			
-			new User()
-			{
-				Id = 2,
-				Username = "fjbo",
-				Password = "MyPass123",
-				CreateDate = DateTime.Now,
-				CreatedBy = "DataInitializer",
-				IsActive = true,
-				LastUpdateBy = "DataInitializer"
-			}
-		};
+		//private static ICollection<User> Users { get; }
 
 
 		public static bool DataBaseHasInitializedUsers()
 			=> UnitOfWork.Data.Users.GetAll().Any();
 
-		public static ICollection<User> GetUsers() => Users;
+		//public static ICollection<User> GetUsers() => Users;
 
 
 		public class UserMockRepository : GenericMockRepository<User, int>, Domain.Repositories.IUserRepository
@@ -51,6 +28,36 @@ namespace AppointIn.TestDataSeed
 			}
 
 			public User GetByUsername(string username) => _data.Where(entity => entity.Username == username).Single();
+		}
+
+		public static ICollection<User> GenerateUsers()
+		{
+			var newCities = new List<User>()
+			{
+				new User()
+				{
+					Id = 1,
+					Username = "test",
+					Password = "test",
+					CreateDate = DateTime.Now.ToUniversalTime(),
+					CreatedBy = "DataInitializer",
+					IsActive = true,
+					LastUpdateBy = "DataInitializer"
+				},
+
+				new User()
+				{
+					Id = 2,
+					Username = "fjbo",
+					Password = "MyPass123",
+					CreateDate = DateTime.Now.ToUniversalTime(),
+					CreatedBy = "DataInitializer",
+					IsActive = true,
+					LastUpdateBy = "DataInitializer"
+				}
+			};
+
+			return newCities;
 		}
 	}
 }

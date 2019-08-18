@@ -19,8 +19,8 @@ namespace AppointIn.DesktopApp
 		[STAThread]
 		static void Main()
 		{
-
-			if (DataInitializer.NeedsDataInitialization())
+			var needsInitialization = DataInitializer.NeedsDataInitialization();
+			if (needsInitialization)
 			{
 				var dialogResult = MessageBox.Show(
 					"There is no data currently initialized. That is that the DataBase currently has no data. Would you like to seed data on the database for demo purposes?",

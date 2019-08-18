@@ -52,7 +52,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 				var customer = CustomerForm.Customer;
 
-				customer.CreateDate = customer.CreateDate.ToUniversalTime();
+				customer.CreateDate = customer.CreateDate;
 
 				repository.Insert(customer);
 
@@ -80,7 +80,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 					customer.LastUpdateBy = Dashboard.Username;
 
-					customer.CreateDate = customer.CreateDate.ToUniversalTime();
+					customer.CreateDate = customer.CreateDate;
 
 					UnitOfWork.Data.Save();
 

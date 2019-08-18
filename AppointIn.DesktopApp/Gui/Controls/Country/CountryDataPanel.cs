@@ -33,12 +33,18 @@ namespace AppointIn.DesktopApp.Gui
 			get
 			{
 				BindEntity();
+
+				_country.CreateDate = _country.CreateDate.ToUniversalTime();
+
 				return _country;
 			}
 
 			set
 			{
 				_country = value;
+
+				_country.CreateDate = _country.CreateDate.ToLocalTime();
+
 				BindGui();
 			}
 		}

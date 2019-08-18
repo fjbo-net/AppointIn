@@ -13,7 +13,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				city.Id.ToString(),
 				city.Name,
 				city.Country.Name,
-				city.CreateDate.ToLongDateString(),
+				city.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				city.CreatedBy,
 				city.LastUpdate.ToString(),
 				city.LastUpdateBy

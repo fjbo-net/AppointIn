@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataInitializer.Address.cs" />
+    <Compile Include="DataInitializer.City.cs" />
     <Compile Include="DataInitializer.Country.cs" />
     <Compile Include="DataInitializer.cs" />
+    <Compile Include="DataInitializer.Customer.cs" />
     <Compile Include="DataInitializer.User.cs" />
     <Compile Include="Exceptions\DataNotInitializedException.cs" />
     <Compile Include="GenericMockRepository.cs" />

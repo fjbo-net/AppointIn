@@ -24,9 +24,9 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				appointment.Contact,
 				appointment.Type,
 				appointment.Url,
-				appointment.Start.ToShortDateAndTimeString(),
-				appointment.End.ToShortDateAndTimeString(),
-				appointment.CreateDate.ToLongDateString(),
+				appointment.Start.ToLocalTime().ToShortDateAndTimeString(),
+				appointment.End.ToLocalTime().ToShortDateAndTimeString(),
+				appointment.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				appointment.CreatedBy,
 				appointment.LastUpdate.ToString(),
 				appointment.LastUpdateBy
@@ -48,9 +48,9 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.ContactLabelText}: {appointment.Contact}");
 			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.TypeLabelText}: {appointment.Type}");
 			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.UrlLabelText}: {appointment.Url}");
-			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.StartLabelText}: {appointment.Start.ToLongDateAndTimeString()}");
-			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.EndLabelText}: {appointment.End.ToLongDateAndTimeString()}");
-			builder.AppendLine($"\t{Resources.DataPanelStrings.CreateDateLabelText}: {appointment.CreateDate.ToShortDateString()}");
+			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.StartLabelText}: {appointment.Start.ToLocalTime().ToLongDateAndTimeString()}");
+			builder.AppendLine($"\t{Resources.AppointmentDataPanelStrings.EndLabelText}: {appointment.End.ToLocalTime().ToLongDateAndTimeString()}");
+			builder.AppendLine($"\t{Resources.DataPanelStrings.CreateDateLabelText}: {appointment.CreateDate.ToLocalTime().ToLongDateAndTimeString()}");
 			builder.AppendLine($"\t{Resources.DataPanelStrings.CreatedByLabelText}: {appointment.CreatedBy}");
 			builder.AppendLine($"\t{Resources.DataPanelStrings.LastUpdateLabelText}: {appointment.LastUpdate}");
 			builder.AppendLine($"\t{Resources.DataPanelStrings.LastUpdateByLabelText}: {appointment.LastUpdateBy}");

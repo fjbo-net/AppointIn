@@ -34,10 +34,13 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		#region Methods
 		public override void Add()
 		{
+			var now = DateTime.Now;
+			var nowInUtc = now.ToUniversalTime();
+
 			CountryForm.Country = new Domain.Entities.Country()
 			{
 				Id = 0,
-				CreateDate = DateTime.Now,
+				CreateDate = now,
 				CreatedBy = Dashboard.Username,
 				LastUpdateBy = Dashboard.Username
 			};
@@ -48,6 +51,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			if(result == DialogResult.OK)
 			{
 				var repository = UnitOfWork.Data.Countries;
+
+				CountryForm.Country.CreateDate = nowInUtc;
 
 				repository.Insert(CountryForm.Country);
 
@@ -76,6 +81,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					var country = CountryForm.Country;
 
 					country.LastUpdateBy = Dashboard.Username;
+
+					country.CreateDate = country.CreateDate.ToUniversalTime();
 
 					UnitOfWork.Data.Save();
 						

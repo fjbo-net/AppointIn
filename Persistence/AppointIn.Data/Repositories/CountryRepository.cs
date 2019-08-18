@@ -19,7 +19,8 @@ namespace AppointIn.Data.Repositories
 			var countries = _entityDbSet.ToList();
 			foreach (var country in countries)
 			{
-				country.CreateDate = country.CreateDate.ToLocalTime();
+				var createDate = country.CreateDate;
+				country.CreateDate = createDate.ToLocalTime();
 			}
 
 			return countries;
@@ -27,7 +28,8 @@ namespace AppointIn.Data.Repositories
 		public override Country GetById(int id)
 		{
 			var country = _entityDbSet.Find(id);
-			country.CreateDate = country.CreateDate.ToLocalTime();
+			var createDate = country.CreateDate;
+			country.CreateDate = createDate.ToLocalTime();
 			return country;
 		}
 	}

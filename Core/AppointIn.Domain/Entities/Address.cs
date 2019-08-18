@@ -21,6 +21,10 @@ namespace AppointIn.Domain.Entities
 		public byte[] LastUpdate { get; set; }
 		public string LastUpdateBy { get; set; }
 
+		#region Non-Mapped Properties
+		public string FullAddress => $"{StreetName}{(!string.IsNullOrWhiteSpace(BuildingOrInterior) ? $" {BuildingOrInterior}" : string.Empty)}, {City.Name}, {City.Country.Name}";
+		#endregion
+
 		#region Navigation Properties
 		public virtual City City { get; set; }
 		//public virtual ICollection<Customer> Customers { get; set; }

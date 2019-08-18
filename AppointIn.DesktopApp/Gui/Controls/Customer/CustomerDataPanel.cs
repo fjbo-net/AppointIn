@@ -35,12 +35,18 @@ namespace AppointIn.DesktopApp.Gui
 			get
 			{
 				BindEntity();
+
+				_customer.CreateDate = _customer.CreateDate.ToUniversalTime();
+
 				return _customer;
 			}
 
 			set
 			{
 				_customer = value;
+
+				_customer.CreateDate = _customer.CreateDate.ToLocalTime();
+
 				BindGui();
 			}
 		}
@@ -64,7 +70,11 @@ namespace AppointIn.DesktopApp.Gui
 
 			IdExtendedTextbox.Text = _customer.Id.ToString();
 			NameExtendedTextbox.Text = _customer.Name;
+			ActiveCheckbox.Checked = _customer.IsActive;
 			AddressExtendedCombobox.ComboBox.SelectedItem = _customer.Address;
+			CreatedDateDateTimePicker.Value = _customer.CreateDate;
+			CreatedByExtendedTextbox.Text = _customer.CreatedBy;
+			LastUpdateByExtendedTextbox.Text = _customer.LastUpdateBy;
 		}
 
 		public void LocalizeText(string culture = "")
@@ -94,7 +104,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		public void SyncData()
 		{
-			AddressExtendedCombobox.ComboBox.Bind(UnitOfWork.Data.Addresses.GetAll(), "StreetName");
+			AddressExtendedCombobox.ComboBox.Bind(UnitOfWork.Data.Addresses.GetAll(), "FullAddress");
 		}
 		#endregion
 	}

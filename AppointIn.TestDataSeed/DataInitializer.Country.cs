@@ -9,26 +9,50 @@ using AppointIn.Domain.Entities;
 
 namespace AppointIn.TestDataSeed
 {
-	public partial class DataInitializer
+	public static partial class DataInitializer
 	{
 		private static ICollection<Country> Countries { get; } = GenerateCountries(new List<string>() {
-			"United States",
+			"Argentina",
+			"Austria",
+			"Belgium",
+			"Brazil",
 			"Canada",
-			"Mexico"
+			"Denmark",
+			"Finland",
+			"France",
+			"Germany",
+			"Ireland",
+			"Italy",
+			"Mexico",
+			"Norway",
+			"Poland",
+			"Portugal",
+			"Spain",
+			"Sweden",
+			"Switzerland",
+			"UK",
+			"USA",
+			"Venezuela"
 		});
 
 		
 		public static bool DataBaseHasInitializedCountries()
 			=> UnitOfWork.Data.Countries.GetAll().Any();
 
-		public static Country GenerateCountry(int id, string name) => new Country()
+		public static Country GenerateCountry(int id, string name)
 		{
-			Id = id,
-			Name = name,
-			CreateDate = DateTime.Now,
-			CreatedBy = "DataInitializer",
-			LastUpdateBy = "DataInitializer"
-		};
+			var now = DateTime.Now;
+			var nowUtc = DateTime.UtcNow;
+
+			return new Country()
+			{
+				Id = id,
+				Name = name,
+				CreateDate = nowUtc,
+				CreatedBy = "DataInitializer",
+				LastUpdateBy = "DataInitializer"
+			};
+		}
 
 		public static List<Country> GenerateCountries(IEnumerable<string> countryNames)
 		{
@@ -45,7 +69,7 @@ namespace AppointIn.TestDataSeed
 
 		public static ICollection<Country> GetCountries() => Countries;
 
-		
+
 		public class CountryMockRepository : GenericMockRepository<Country, int>
 		{
 			public CountryMockRepository(ICollection<Country> data) : base(data)
