@@ -40,6 +40,7 @@
 			this.ReportsMenuButton = new System.Windows.Forms.ToolStripMenuItem();
 			this.AppointmentsPerMonthReportMenuButton = new System.Windows.Forms.ToolStripMenuItem();
 			this.UserScheduleReportMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+			this.CustomerCountrySummaryMenuButton = new System.Windows.Forms.ToolStripMenuItem();
 			this.UpcomingAppointmentsGroupbox.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -128,7 +129,8 @@
 			// 
 			this.ReportsMenuButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AppointmentsPerMonthReportMenuButton,
-            this.UserScheduleReportMenuButton});
+            this.UserScheduleReportMenuButton,
+            this.CustomerCountrySummaryMenuButton});
 			this.ReportsMenuButton.Name = "ReportsMenuButton";
 			this.ReportsMenuButton.Size = new System.Drawing.Size(80, 20);
 			this.ReportsMenuButton.Text = "ReportsText";
@@ -136,18 +138,23 @@
 			// AppointmentsPerMonthReportMenuButton
 			// 
 			this.AppointmentsPerMonthReportMenuButton.Name = "AppointmentsPerMonthReportMenuButton";
-			this.AppointmentsPerMonthReportMenuButton.Size = new System.Drawing.Size(224, 22);
+			this.AppointmentsPerMonthReportMenuButton.Size = new System.Drawing.Size(241, 22);
 			this.AppointmentsPerMonthReportMenuButton.Text = "AppointmentsPerMonthText";
 			// 
 			// UserScheduleReportMenuButton
 			// 
 			this.UserScheduleReportMenuButton.Name = "UserScheduleReportMenuButton";
-			this.UserScheduleReportMenuButton.Size = new System.Drawing.Size(224, 22);
+			this.UserScheduleReportMenuButton.Size = new System.Drawing.Size(241, 22);
 			this.UserScheduleReportMenuButton.Text = "UserScheduleText";
+			// 
+			// CustomerCountrySummaryMenuButton
+			// 
+			this.CustomerCountrySummaryMenuButton.Name = "CustomerCountrySummaryMenuButton";
+			this.CustomerCountrySummaryMenuButton.Size = new System.Drawing.Size(241, 22);
+			this.CustomerCountrySummaryMenuButton.Text = "CustomerCountrySummaryText";
 			// 
 			// Dashboard
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::AppointIn.DesktopApp.Properties.Resources.White_Abstract_Wallpapers_Gallery_89_Plus_PIC_WPW405898_1_1_;
 			this.ClientSize = new System.Drawing.Size(384, 361);
@@ -178,5 +185,6 @@
 		private System.Windows.Forms.ToolStripMenuItem ReportsMenuButton;
 		private System.Windows.Forms.ToolStripMenuItem AppointmentsPerMonthReportMenuButton;
 		private System.Windows.Forms.ToolStripMenuItem UserScheduleReportMenuButton;
+		private System.Windows.Forms.ToolStripMenuItem CustomerCountrySummaryMenuButton;
 	}
 }

@@ -262,6 +262,12 @@
     <Compile Include="Gui\Forms\Reports\AppointmentsPerMonthReportForm.Designer.cs">
       <DependentUpon>AppointmentsPerMonthReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gui\Forms\Reports\CustomerCountrySummaryReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\Reports\CustomerCountrySummaryReportForm.Designer.cs">
+      <DependentUpon>CustomerCountrySummaryReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gui\Forms\Reports\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppointmentsPerMonthReportFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CustomerReportSummaryReportStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerReportSummaryReportStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\NotificationFormStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -390,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\Reports\AppointmentsPerMonthReportForm.resx">
       <DependentUpon>AppointmentsPerMonthReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\Reports\CustomerCountrySummaryReportForm.resx">
+      <DependentUpon>CustomerCountrySummaryReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gui\Forms\Reports\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
@@ -565,6 +579,11 @@
     <EmbeddedResource Include="Resources\CustomerFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CustomerFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CustomerReportSummaryReportStrings.es.resx" />
+    <EmbeddedResource Include="Resources\CustomerReportSummaryReportStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerReportSummaryReportStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\DashboardFormStrings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>

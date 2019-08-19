@@ -34,8 +34,8 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 
 				var items = UnitOfWork.Data.Appointments.GetAll()
 				.Where(appointment =>
-					appointment.Start > today
-					&& appointment.Start < limit)
+					appointment.Start > today.ToUniversalTime()
+					&& appointment.Start < limit.ToUniversalTime())
 				.OrderBy(appointment => appointment.Start);
 
 				return items;
@@ -48,8 +48,8 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 
 				var items = UnitOfWork.Data.Appointments.GetAll()
 				.Where(appointment =>
-					appointment.Start > today
-					&& appointment.Start < limit)
+					appointment.Start > today.ToUniversalTime()
+					&& appointment.Start < limit.ToUniversalTime())
 				.OrderBy(appointment => appointment.Start);
 
 				return items;

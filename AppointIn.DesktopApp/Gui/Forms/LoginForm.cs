@@ -106,7 +106,7 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			var repository = UnitOfWork.Data.Users;
 
-			var loginResult = Core.User.Actions.UserActions.LogUserIn(repository, usernameTextbox.Text, passwordTextbox.Text);
+			var loginResult = Core.UserActions.LogUserIn(repository, usernameTextbox.Text, passwordTextbox.Text);
 
 			if (loginResult.Value != null)
 			{

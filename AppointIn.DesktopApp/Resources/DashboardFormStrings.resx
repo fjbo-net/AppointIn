@@ -120,6 +120,10 @@
   <data name="AppointmentsPerMonthReportMenuButtonText" xml:space="preserve">
     <value>Appointments per Month...</value>
   </data>
+  <data name="CustomerCountrySummaryMenuButtonText" xml:space="preserve">
+    <value>Customer Summary by Country...
+</value>
+  </data>
   <data name="ManageAddressesMenuButtonText" xml:space="preserve">
     <value>Manage Addresses</value>
   </data>

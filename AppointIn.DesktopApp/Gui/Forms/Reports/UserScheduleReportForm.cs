@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Core.Reports;
+
 using AppointIn.Data;
 using AppointIn.DesktopApp.Gui.Extensions;
 
@@ -28,7 +30,7 @@ namespace AppointIn.DesktopApp.Gui
 				StartDateDateTimePicker.Value.Day,
 				StartTimeDateTimePicker.Value.Hour,
 				StartTimeDateTimePicker.Value.Minute,
-				0);
+				0).ToUniversalTime();
 		}
 
 		private DateTime End
@@ -39,7 +41,7 @@ namespace AppointIn.DesktopApp.Gui
 				EndDateDateTimePicker.Value.Day,
 				EndTimeDateTimePicker.Value.Hour,
 				EndTimeDateTimePicker.Value.Minute,
-				59);
+				59).ToUniversalTime();
 		}
 		#endregion
 
@@ -100,47 +102,25 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			DisableDateTimePickers();
 
-			var builder = new StringBuilder();
+			var report = new UserScheduleReport(
+				new UserScheduleReport.Parameters() {
+					AppointmentFormatter = appointment => appointment.ToLocalString(),
+					Appointments = UnitOfWork.Data.Appointments,
+					Start = Start,
+					End = End,
+					Users = UnitOfWork.Data.Users
+				},
+				new UserScheduleReport.Strings() {
+					AppointmentPluralNoun = Resources.ReportFormStrings.AppointmentNounPlural,
+					AppointmentSingularNoun = Resources.ReportFormStrings.AppointmentNounSingular,
+					Start = Start.ToLongDateAndTimeString(),
+					End = Start.ToLongDateAndTimeString(),
+					Title = Resources.UserScheduleReportFormStrings.Title,
+					DateRangeMessage = Resources.UserScheduleReportFormStrings.ReportDateRangeMessage,
+					AppointmentsFoundForUser = Resources.UserScheduleReportFormStrings.AppointmentsFoundForUserMessage
+				});
 
-			builder.AppendLine($"{Resources.UserScheduleReportFormStrings.Title} {string.Format(Resources.UserScheduleReportFormStrings.ReportDateRangeMessage, Start.ToLongDateAndTimeString(), End.ToLongDateAndTimeString())}".ToUpper());
-			builder.AppendLine();
-
-			foreach (var user in UnitOfWork.Data.Users.GetAll().OrderBy(user => user.Username))
-			{
-				var userAppointments = UnitOfWork.Data.Appointments
-					.GetAll()
-					.Where(appointment
-							=> appointment.User.Id == user.Id
-							&& appointment.Start >= Start
-							&& appointment.End <= End)
-					.OrderBy(appointment => appointment.Start);
-				
-				builder.AppendLine(	string.Format(Resources.UserScheduleReportFormStrings.AppointmentsFoundForUserMessage,
-									user.Username,
-									userAppointments.Count(),
-									userAppointments.Count() == 1
-										? Resources.ReportFormStrings.AppointmentNounSingular
-										: Resources.ReportFormStrings.AppointmentNounPlural));
-
-				builder.AppendLine();
-
-				if(userAppointments.Any())
-				{
-					foreach(var appointment in userAppointments)
-					{
-						foreach (var line in appointment.ToLocalString().Split(new []{ Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
-						{
-							builder.AppendLine($"\t{line}");
-						}
-
-						builder.AppendLine();
-					}
-				}
-
-				builder.AppendLine();
-			}
-
-			TextBox.Text = builder.ToString();
+			TextBox.Text = report.Generate();
 
 			EnableDateTimePickers();
 		}

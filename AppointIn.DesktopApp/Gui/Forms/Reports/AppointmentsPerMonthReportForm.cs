@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using AppointIn.Data;
 using AppointIn.DesktopApp.Gui.Extensions;
 
+using AppointIn.Core.Reports;
+
 namespace AppointIn.DesktopApp.Gui
 {
 	public partial class AppointmentsPerMonthReportForm : ReportForm, Interfaces.ILocalizable
@@ -50,39 +52,26 @@ namespace AppointIn.DesktopApp.Gui
 			var dateRangeStart = new DateTime(MonthDateTimePicker.Value.Year, MonthDateTimePicker.Value.Month, 1, 0, 0, 0);
 			var dateRangeEnd = new DateTime(MonthDateTimePicker.Value.Year, MonthDateTimePicker.Value.Month, DateTime.DaysInMonth(MonthDateTimePicker.Value.Year, MonthDateTimePicker.Value.Month), 23, 59, 59);
 
-			var appointments = UnitOfWork.Data.Appointments
-				.GetAll()
-				.Where(appointment
-					=> appointment.Start >= dateRangeStart
-					&& appointment.Start <= dateRangeEnd
-					&& appointment.End >= dateRangeStart
-					&& appointment.End <= dateRangeEnd)
-				.OrderBy(appointment => appointment.Start);
+			var report = new AppointmentsPerMonthReport(
+				new AppointmentsPerMonthReport.Parameters()
+				{
+					Appointments = UnitOfWork.Data.Appointments,
+					AppointmentFormatter = appointment => appointment.ToLocalString(),
+					Start = dateRangeStart.ToUniversalTime(),
+					End = dateRangeEnd.ToUniversalTime()
+				},
+				new AppointmentsPerMonthReport.Strings()
+				{
+					Title = Resources.AppointmentsPerMonthReportFormStrings.Title,
+					Month = MonthDateTimePicker.Value.ToString("MMMM yyyy"),
+					AppointmentsFoundMessage = Resources.AppointmentsPerMonthReportFormStrings.AppointmentsFoundMessage,
+					AppointmentSingularNoun = Resources.ReportFormStrings.AppointmentNounSingular,
+					AppointmentPluralNoun = Resources.ReportFormStrings.AppointmentNounPlural,
+					NoAppointmentsFoundMessage = Resources.AppointmentsPerMonthReportFormStrings.NoAppointmentsFoundMessage
+				}
+				);
 
-			var builder = new StringBuilder();
-
-			builder.AppendLine($"{Resources.AppointmentsPerMonthReportFormStrings.Title}, {MonthDateTimePicker.Value.ToString("MMMM yyyy")}".ToUpper());
-			builder.AppendLine();
-
-			if (appointments.Any())
-			{
-				builder.AppendLine(string.Format(
-					Resources.AppointmentsPerMonthReportFormStrings.AppointmentsFoundMessage,
-					appointments.Count(),
-					appointments.Count() == 1 ? Resources.ReportFormStrings.AppointmentNounSingular.ToLower() : Resources.ReportFormStrings.AppointmentNounPlural.ToLower(),
-					MonthDateTimePicker.Value.ToString("MMMM yyyy")));
-
-				builder.AppendLine();
-
-				foreach (var appointment in appointments) builder.AppendLine(appointment.ToLocalString());
-			} else
-			{
-				builder.AppendLine(string.Format(Resources.AppointmentsPerMonthReportFormStrings.NoAppointmentsFoundMessage, MonthDateTimePicker.Value.ToString("MMMM yyyy")) + ":");
-				builder.AppendLine();
-				builder.AppendLine();
-			}
-
-			TextBox.Text = builder.ToString();
+			TextBox.Text = report.Generate();
 
 			MonthDateTimePicker.Enabled = true;
 		}

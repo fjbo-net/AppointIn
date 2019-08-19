@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointIn.Core.User.Actions
+namespace AppointIn.Core
 {
 	public static class UserActions
 	{

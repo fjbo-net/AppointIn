@@ -98,7 +98,10 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		#region Methods
 		private void AttachEvents()
 		{
-			if(StartDateTimePicker != null) StartDateTimePicker.DateTimePicker.ValueChanged += (sender, e) => LimitDates();
+			if (StartDateTimePicker != null) StartDateTimePicker.DateTimePicker.ValueChanged += (sender, e) =>
+			{
+				if(((DateTimePicker) sender).Focused) LimitDates();
+			};
 		}
 
 		private void BindEntity() {
@@ -150,7 +153,12 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 		public void LimitDates()
 		{
-			StartDateTimePicker.MinDate = DateTime.Now.AddMinutes(1);
+			var now = DateTime.Now;
+
+			StartDateTimePicker.MinDate = Appointment.Id == 0
+				? now.AddMinutes(1)
+				: DateTimePicker.MinimumDateTime;
+
 			EndDateTimePicker.MinDate = StartDateTimePicker.Value.AddMinutes(15);
 		}
 
@@ -213,6 +221,9 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				CreateDate = DateTime.Now,
 				CreatedBy = Dashboard.Username
 			};
+
+			StartDateTimePicker.MinDate = DateTimePicker.MinimumDateTime;
+			EndDateTimePicker.MinDate = DateTimePicker.MinimumDateTime;
 		}
 
 		public void SyncData()

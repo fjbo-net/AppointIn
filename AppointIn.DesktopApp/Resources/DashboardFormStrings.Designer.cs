@@ -70,6 +70,16 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Summary by Country...
+        ///.
+        /// </summary>
+        internal static string CustomerCountrySummaryMenuButtonText {
+            get {
+                return ResourceManager.GetString("CustomerCountrySummaryMenuButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage Addresses.
         /// </summary>
         internal static string ManageAddressesMenuButtonText {

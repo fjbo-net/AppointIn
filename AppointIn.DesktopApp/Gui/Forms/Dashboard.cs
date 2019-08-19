@@ -147,6 +147,9 @@ namespace AppointIn.DesktopApp.Gui
 
 			UserScheduleReportMenuButton.Click += (sender, e)
 				=> new UserScheduleReportForm().Show();
+
+			CustomerCountrySummaryMenuButton.Click += (sender, e)
+				=> new CustomerCountrySummaryReportForm().Show();
 		}
 
 		protected void CheckForNextAppointments()
@@ -197,6 +200,7 @@ namespace AppointIn.DesktopApp.Gui
 			ReportsMenuButton.Text = Resources.DashboardFormStrings.ReportsMenuButtonText;
 			AppointmentsPerMonthReportMenuButton.Text = Resources.DashboardFormStrings.AppointmentsPerMonthReportMenuButtonText;
 			UserScheduleReportMenuButton.Text = Resources.DashboardFormStrings.UserScheduleReportMenuButtonText;
+			CustomerCountrySummaryMenuButton.Text = Resources.DashboardFormStrings.CustomerCountrySummaryMenuButtonText;
 
 			UpcomingAppointmentsGroupbox.Text = Resources.DashboardFormStrings.UpcomingAppointmentsLabelText;
 		}
