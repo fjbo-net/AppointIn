@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointIn.Core.Classes
+namespace AppointIn.Domain.Classes
 {
 	public class ValidationCondition<TypeOfValue>
 	{

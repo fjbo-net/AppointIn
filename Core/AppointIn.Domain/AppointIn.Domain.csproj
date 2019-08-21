@@ -42,13 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Time.cs" />
+    <Compile Include="Classes\TimeRange.cs" />
+    <Compile Include="Classes\ValidationCondition.cs" />
+    <Compile Include="Classes\ValidationResult.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Appointment.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Customer.cs" />
-    <Compile Include="Entities\TimeRange.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Extensions\ValidationConditionExtensions.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

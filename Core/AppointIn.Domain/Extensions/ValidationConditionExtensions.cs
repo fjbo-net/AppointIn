@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using AppointIn.Core.Classes;
+using AppointIn.Domain.Classes;
 
 namespace AppointIn.Core.Extensions
 {

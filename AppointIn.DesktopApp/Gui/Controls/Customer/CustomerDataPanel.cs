@@ -10,7 +10,9 @@ using System.Windows.Forms;
 
 using AppointIn.Data;
 using AppointIn.DesktopApp.Gui.Extensions;
+using AppointIn.Domain.Classes;
 using AppointIn.Domain.Entities;
+using AppointIn.Core.Extensions;
 
 namespace AppointIn.DesktopApp.Gui
 {
@@ -50,6 +52,12 @@ namespace AppointIn.DesktopApp.Gui
 				BindGui();
 			}
 		}
+
+		[Bindable(false)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public ValidationResult IsValid { get => ValidateValue(); }
 		#endregion
 
 		#region Methods
@@ -57,7 +65,7 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			_customer.Id = int.Parse(IdExtendedTextbox.Text);
 			_customer.Name = NameExtendedTextbox.Text;
-			_customer.Address = (Address) AddressExtendedCombobox.ComboBox.SelectedValue;
+			_customer.Address = (Address)AddressExtendedCombobox.ComboBox.SelectedValue;
 			_customer.IsActive = ActiveCheckbox.Checked;
 			_customer.CreateDate = CreatedDateDateTimePicker.Value;
 			_customer.CreatedBy = CreatedByExtendedTextbox.Text;
@@ -105,6 +113,27 @@ namespace AppointIn.DesktopApp.Gui
 		public void SyncData()
 		{
 			AddressExtendedCombobox.ComboBox.Bind(UnitOfWork.Data.Addresses.GetAll(), "FullAddress");
+		}
+
+		public ValidationResult ValidateValue()
+		{
+			var errorMessages = new List<string>();
+			var errorFound = false;
+
+			var nameValidationResult = Customer.NameValidationConditions.Validate(NameExtendedTextbox.Text);
+
+			if(AddressExtendedCombobox.ComboBox.SelectedValue == null)
+			{
+				errorMessages.Add("An address must be selected.");
+				return new ValidationResult(false, nameValidationResult.ErrorMessages.Concat(errorMessages).ToList());
+			}
+			var addressValidationResult = Customer.AddressIdValidationConditions.Validate(((Address)AddressExtendedCombobox.ComboBox.SelectedValue).Id);
+
+			return new ValidationResult(
+				nameValidationResult.IsValid && addressValidationResult.IsValid && !errorFound,
+				errorMessages
+					.Concat(nameValidationResult.ErrorMessages).ToList()
+					.Concat(addressValidationResult.ErrorMessages).ToList());
 		}
 		#endregion
 	}

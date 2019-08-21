@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointIn.Core.Classes
+namespace AppointIn.Domain.Classes
 {
 	public class ValidationResult
 	{
@@ -16,7 +16,7 @@ namespace AppointIn.Core.Classes
 		{
 			StringBuilder builder = new StringBuilder();
 
-			foreach (string message in ErrorMessages) builder.AppendLine($"{message}{(multiLine ? Environment.NewLine : string.Empty )}");
+			foreach (string message in ErrorMessages) builder.Append($"{message}{(multiLine ? Environment.NewLine : string.Empty )}");
 
 			return builder.ToString().Trim();
 		}
@@ -26,5 +26,12 @@ namespace AppointIn.Core.Classes
 			IsValid = isValid;
 			ErrorMessages = errorMessages;
 		}
+
+		#region Operator Overloads
+		public static bool operator !(ValidationResult resultToEvaluate)
+		{
+			return !resultToEvaluate.IsValid;
+		}
+		#endregion
 	}
 }

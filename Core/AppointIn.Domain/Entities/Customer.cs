@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AppointIn.Core.Extensions;
+using AppointIn.Domain.Classes;
+using AppointIn.Domain.Repositories;
+
 using AppointIn.Domain.Interfaces;
 
 namespace AppointIn.Domain.Entities
@@ -19,9 +23,27 @@ namespace AppointIn.Domain.Entities
 		public byte[] LastUpdate { get; set; }
 		public string LastUpdateBy { get; set; }
 
+
 		#region Navigation Properties
 		public virtual Address Address { get; set; }
 		//public virtual ICollection<Appointment> Appointments { get; set; }
+		#endregion
+			
+			
+		#region Validation Rules
+		public static List<ValidationCondition<string>> NameValidationConditions = new List<ValidationCondition<string>>()
+		{
+			new ValidationCondition<string>(
+				name => name.Length <= 40,
+				$"{nameof(Customer)}'s name must not exceed 40 characters long.")
+		};
+
+		public static List<ValidationCondition<int>> AddressIdValidationConditions = new List<ValidationCondition<int>>()
+		{
+			new ValidationCondition<int>(
+				addressId => addressId > 0,
+				$"{nameof(Customer)}'s Address ID must be a positive integer.")
+		};
 		#endregion
 	}
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.Domain.Entities;
+using AppointIn.Domain.Classes;
 
 namespace AppointIn.DesktopApp.Gui
 {
@@ -27,6 +28,8 @@ namespace AppointIn.DesktopApp.Gui
 			get => DataPanel.Customer;
 			set => DataPanel.Customer = value;
 		}
+
+		public ValidationResult IsValid { get => DataPanel.IsValid; }
 		#endregion
 
 		#region Methods
@@ -38,6 +41,15 @@ namespace AppointIn.DesktopApp.Gui
 			{
 				SaveActionButton.Click += (sender, e) =>
 				{
+					if (!IsValid)
+					{
+						MessageBox.Show(
+							$"Can't save new customer due to the following errors:{Environment.NewLine}{IsValid.ErrorMessagesAsString(true)}",
+							"Invalid Data Found",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Error);
+						return;
+					}
 					Hide();
 					DialogResult = DialogResult.OK;
 				};
