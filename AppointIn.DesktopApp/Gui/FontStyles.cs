@@ -11,6 +11,7 @@ namespace AppointIn.DesktopApp.Gui
 	{
 		internal static string FontFamilyName = "Microsoft Sans Serif";
 
+		// Using lambda expression to simplify function definition due to simplicity
 		internal static Font GetFont(float size, FontStyle style = FontStyle.Regular)
 			=> new Font(
 				FontFamilyName,

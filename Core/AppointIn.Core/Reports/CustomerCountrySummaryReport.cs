@@ -67,6 +67,7 @@ namespace AppointIn.Core.Reports
 					foreach(var country in countries)
 					{
 						var customerCountForCountry = customers
+							// Using lambdas for LINQ's lambda expression notation
 							.Where(customer => customer.Address.City.CountryId == country.Id)
 							.Count();
 
@@ -77,6 +78,7 @@ namespace AppointIn.Core.Reports
 				else
 				{
 					var customerCountForCountry = customers
+						// Using lambdas for LINQ's lambda expression notation
 						.Where(customer =>
 							customer.Address.City.Country.Id == _Parameters.SelectedCountryId)
 						.Count();
@@ -92,6 +94,7 @@ namespace AppointIn.Core.Reports
 
 				var countryIdsOrderedByCustomerVolume = countByCountry
 					.Keys
+					// Using lambdas for LINQ's lambda expression notation
 					.Select(key => new { CountryId = key, Count = countByCountry[key] })
 					.OrderByDescending(x => x.Count)
 					.Select(x => x.CountryId);
@@ -108,6 +111,7 @@ namespace AppointIn.Core.Reports
 				foreach (var countryId in countryIdsOrderedByCustomerVolume)
 				{
 					var customersForCountry = customers
+						// Using lambdas for LINQ's lambda expression notation
 						.Where(customer
 							=> customer.Address.City.Country.Id == countryId)
 						.OrderBy(customer => customer.Name);

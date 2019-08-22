@@ -33,6 +33,7 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 				var limit = new DateTime(today.Year, today.Month, daysInThisMonth, 23, 59, 59);
 
 				var items = UnitOfWork.Data.Appointments.GetAll()
+				// Using lambdas for LINQ's lambda expression notation
 				.Where(appointment =>
 					appointment.Start > today.ToUniversalTime()
 					&& appointment.Start < limit.ToUniversalTime())
@@ -41,12 +42,14 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 				return items;
 			};
 
+			// Using lambda expression as to simplify property definition for computed data source
 			WeekAppointmentCrudPanel.DataSource = () =>
 			{
 				var today = DateTime.Now;
 				var limit = new DateTime(today.Year, today.Month, (today.AddDays(7)).Day, 23, 59, 59);
 
 				var items = UnitOfWork.Data.Appointments.GetAll()
+				// Using lambdas for LINQ's lambda expression notation
 				.Where(appointment =>
 					appointment.Start > today.ToUniversalTime()
 					&& appointment.Start < limit.ToUniversalTime())

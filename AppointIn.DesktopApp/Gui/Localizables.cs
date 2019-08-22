@@ -19,6 +19,7 @@ namespace AppointIn.DesktopApp.Gui
 		}
 
 		internal static string TargetCulture {
+			// Using lambda expression to simplify property getter
 			get => CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
 			set {
 				Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(value);

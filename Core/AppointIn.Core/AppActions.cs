@@ -10,6 +10,7 @@ namespace AppointIn.Core
 	public static class AppActions
 	{
 		#region Properties
+		// Using lambda expressino to simplify function return value reference
 		public static Action<Exception> ErrorHandler = (exception)
 			=> Console.WriteLine($"Error '{exception.GetType().ToString()}' encountered: \n{exception.Message} \n {exception.StackTrace}");
 		#endregion
@@ -22,6 +23,7 @@ namespace AppointIn.Core
 			return AppConfig.LogDirectory;
 		}
 
+		// Using lambda expressino to simplify function return value reference
 		public static void HandleError(Exception exception) => ErrorHandler?.Invoke(exception);
 
 		public static Result<TypeOfResult> HandleErrorWithResult<TypeOfResult>(Exception exception, TypeOfResult value, List<string> messages)

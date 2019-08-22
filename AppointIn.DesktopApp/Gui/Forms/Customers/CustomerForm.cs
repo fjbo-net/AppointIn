@@ -25,10 +25,12 @@ namespace AppointIn.DesktopApp.Gui
 		#region Properties
 		public Customer Customer
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => DataPanel.Customer;
 			set => DataPanel.Customer = value;
 		}
 
+		// Using lambda expression to simplify GET only property
 		public ValidationResult IsValid { get => DataPanel.IsValid; }
 		#endregion
 
@@ -39,6 +41,7 @@ namespace AppointIn.DesktopApp.Gui
 
 			if(SaveActionButton != null)
 			{
+				// Using lambda expression to simplify event handler due to handler's simplicity
 				SaveActionButton.Click += (sender, e) =>
 				{
 					if (!IsValid)

@@ -92,6 +92,7 @@ namespace AppointIn.DesktopApp.Gui
 			LastUpdateByExtendedTextBox.LabelText = Resources.DataPanelStrings.LastUpdateByLabelText;
 		}
 
+		// Using lambda expression to simplify function definition
 		public void Reset() => City = new City() {
 			CreateDate = DateTime.Now,
 			CreatedBy = Dashboard.Username

@@ -30,8 +30,10 @@ namespace AppointIn.DesktopApp.Gui
 		protected override void AttachEvents()
 		{
 			base.AttachEvents();
-
-			if(CountryComboBox != null) CountryComboBox.SelectedValueChanged += (sender, e) => GenerateReport();
+			
+			// Using lambda expression to simplify event handler due to handler's simplicity
+			if (CountryComboBox != null) CountryComboBox.SelectedValueChanged += (sender, e)
+					=> GenerateReport();
 		}
 
 		private void BindData()

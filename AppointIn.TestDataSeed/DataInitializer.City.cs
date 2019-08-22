@@ -121,6 +121,7 @@ namespace AppointIn.TestDataSeed
 				new City() { Name = "Walla", Country = countries.Where(country => country.Name == "Poland").Single(), CreateDate = nowUtc, CreatedBy = "DataInitializer", LastUpdateBy = "DataInitializer" }
 			};
 
+			// Using lambdas for LINQ's lambda expression notation
 			var distinctCityNames = cityCollection.Select(city => city.Name).Distinct();
 
 			var output = new List<City>();
@@ -132,6 +133,7 @@ namespace AppointIn.TestDataSeed
 					output.Add(city);
 				}
 
+				// Using lambdas for LINQ's lambda expression notation
 				distinctCityNames = distinctCityNames.Where(cityName=> cityName != city.Name);
 			}
 
@@ -139,9 +141,8 @@ namespace AppointIn.TestDataSeed
 		}
 
 
+		// Using lambda expression to simplify call to an object property's method
 		public static bool DataBaseHasInitializedCities()
 			=> UnitOfWork.Data.Cities.GetAll().Any();
-
-		//public static ICollection<City> GetCities() => Cities;
 	}
 }

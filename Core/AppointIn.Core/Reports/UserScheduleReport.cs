@@ -62,6 +62,7 @@ namespace AppointIn.Core.Reports
 			foreach (var user in _Parameters.Users.GetAll())
 			{
 				var userAppointments = _Parameters.Appointments.GetAll()
+					// Using lambdas for LINQ's lambda expression notation
 					.Where(appointment
 							=> appointment.User.Id == user.Id
 							&& appointment.Start >= _Parameters.Start

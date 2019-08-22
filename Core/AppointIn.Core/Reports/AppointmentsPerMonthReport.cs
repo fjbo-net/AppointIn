@@ -51,6 +51,7 @@ namespace AppointIn.Core.Reports
 		public override string Generate()
 		{
 			var appointments = _Parameters.Appointments.GetAll()
+				// Using lambdas for LINQ's lambda expression notation
 				.Where(appointment
 					=> appointment.Start >= _Parameters.Start
 					&& appointment.Start <= _Parameters.End

@@ -27,6 +27,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 			return new ListViewItem(items);
 		}
 
+		// Using lambda expression to simplify function definition due to simplicity
 		public static string AsString(this Customer customer)
 			=> $"{customer.Name} [{Resources.DataPanelStrings.IdLabelText}: {customer.Id}]";
 	}

@@ -31,6 +31,8 @@ namespace AppointIn.Data.Repositories
 			address.CreateDate = address.CreateDate;
 			return address;
 		}
+
+		// Using lambda expression to simplify call to an object property's method
 		public override void Insert(Address entity) => _entityDbSet.Add(entity);
 	}
 }

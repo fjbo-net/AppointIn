@@ -69,6 +69,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
+		// Using lambda expression to simplify GET only property
 		public ValidationResult IsValid { get => ValidateValue(); }
 
 		private Interfaces.DataPanelMode mode = Interfaces.DataPanelMode.Edit;
@@ -98,6 +99,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		public bool ReadOnly
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => Mode == Interfaces.DataPanelMode.View;
 			set => Mode = value ? Interfaces.DataPanelMode.View : Interfaces.DataPanelMode.Edit;
 		}
@@ -106,6 +108,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		#region Methods
 		private void AttachEvents()
 		{
+			// Using lambda expression to simplify event handler due to handler's simplicity
 			if (StartDateTimePicker != null) StartDateTimePicker.DateTimePicker.ValueChanged += (sender, e) =>
 			{
 				if(((DateTimePicker) sender).Focused) LimitDates();

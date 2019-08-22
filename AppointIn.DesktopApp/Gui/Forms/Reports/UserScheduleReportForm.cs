@@ -24,6 +24,7 @@ namespace AppointIn.DesktopApp.Gui
 		#region Properties
 		private DateTime Start
 		{
+			// Using lambda expression to simplify property getter
 			get => new DateTime(
 				StartDateDateTimePicker.Value.Year,
 				StartDateDateTimePicker.Value.Month,
@@ -35,6 +36,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		private DateTime End
 		{
+			// Using lambda expression to simplify property getter
 			get => new DateTime(
 				EndDateDateTimePicker.Value.Year,
 				EndDateDateTimePicker.Value.Month,
@@ -50,6 +52,7 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.AttachEvents();
 
+			// Using lambda expressions to simplify event handlers due to handlers' simplicity
 			if (StartDateDateTimePicker != null) StartDateDateTimePicker.ValueChanged += (sender, e) =>
 			{
 				LimitDates();

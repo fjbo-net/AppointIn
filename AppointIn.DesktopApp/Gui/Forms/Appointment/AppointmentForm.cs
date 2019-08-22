@@ -26,6 +26,7 @@ namespace AppointIn.DesktopApp.Gui
 		#region Properties
 		public Appointment Appointment
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => DataPanel.Appointment;
 			set => DataPanel.Appointment = value;
 		}
@@ -34,6 +35,7 @@ namespace AppointIn.DesktopApp.Gui
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
+		// Using lambda expression to simplify GET only property
 		public ValidationResult IsValid { get => DataPanel.IsValid; }
 
 		private static AppointmentForm sharedInstance;
@@ -48,6 +50,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		public bool ReadOnly
 		{
+			// Using lambda expression to simplify property getter
 			get => DataPanel.ReadOnly;
 			set {
 				DataPanel.ReadOnly = value;
@@ -88,6 +91,7 @@ namespace AppointIn.DesktopApp.Gui
 			if (CancelActionButton != null) CancelActionButton.Text = Resources.BaseFormStrings.CancelButtonText;
 		}
 
+		// Using lambda expression to simplify call to an object property's method
 		public void Reset() => DataPanel.Reset();
 		#endregion
 

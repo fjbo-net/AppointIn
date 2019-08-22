@@ -35,7 +35,8 @@ namespace AppointIn.TestDataSeed
 			"Venezuela"
 		});
 
-		
+
+		// Using lambda expression to simplify function definition due to simplicity
 		public static bool DataBaseHasInitializedCountries()
 			=> UnitOfWork.Data.Countries.GetAll().Any();
 
@@ -67,6 +68,7 @@ namespace AppointIn.TestDataSeed
 			return output;
 		}
 
+		// Using lambda expressino to simplify function return value reference
 		public static ICollection<Country> GetCountries() => Countries;
 
 

@@ -33,6 +33,8 @@ namespace AppointIn.DesktopApp
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			// Using lambda expression to define behavior on Core layer from the Presentation layer as this behavior
+			// won't be shared throughout different presentation platforms.
 			Core.AppActions.ErrorHandler = (exception) =>
 			{
 				MessageBox.Show(

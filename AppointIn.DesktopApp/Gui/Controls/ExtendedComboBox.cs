@@ -26,6 +26,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		protected new bool Enabled
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => ComboBox.Enabled;
 			set => ComboBox.Enabled = value;
 		}
@@ -36,6 +37,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public string LabelText
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => Label.Text;
 			set => Label.Text = value;
 		}
@@ -46,6 +48,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public override string Text
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => ComboBox.Text;
 			set => ComboBox.Text = value;
 		}

@@ -38,6 +38,7 @@ namespace AppointIn.Domain.Extensions
 					&& startTime.Add(duration) <= rangeEnd);
 			}
 
+			// Using lambdas for LINQ's lambda expression notation
 			return matches.Any(match => match == true);
 		}
 

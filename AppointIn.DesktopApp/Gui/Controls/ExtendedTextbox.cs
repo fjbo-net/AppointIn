@@ -27,6 +27,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		protected new bool Enabled
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => TextBox.Enabled;
 			set => TextBox.Enabled = value;
 		}
@@ -37,6 +38,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public string LabelText
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => Label.Text;
 			set => Label.Text = value;
 		}
@@ -47,6 +49,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public bool MultiLine
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => TextBox.Multiline;
 			set => TextBox.Multiline = value;
 		}
@@ -57,6 +60,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public bool Readonly
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => TextBox.ReadOnly;
 			set => TextBox.ReadOnly = value;
 		}
@@ -67,6 +71,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public ScrollBars ScrollBars
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => TextBox.ScrollBars;
 			set => TextBox.ScrollBars = value;
 		}
@@ -77,6 +82,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public override string Text
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => TextBox.Text;
 			set => TextBox.Text = value;
 		}

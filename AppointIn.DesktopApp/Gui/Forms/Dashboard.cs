@@ -27,6 +27,7 @@ namespace AppointIn.DesktopApp.Gui
 			{
 				loginForm.ShowDialog();
 
+				// Using lambda expression to simplify event handler due to handler's simplicity
 				if (loginForm.DialogResult != DialogResult.OK)
 				{
 					Load += (sender, e) => Close();
@@ -34,6 +35,7 @@ namespace AppointIn.DesktopApp.Gui
 
 				User = loginForm.User;
 
+				// Using lambda expression to simplify event handler due to handler's simplicity
 				Load += (sender, e) =>
 				{
 					Timer.Tick += IntervalTickHandler;
@@ -53,6 +55,7 @@ namespace AppointIn.DesktopApp.Gui
 		private User _user;
 		private User User
 		{
+			// Using lambda expression to simplify property getter
 			get => _user;
 			set
 			{
@@ -127,6 +130,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		private void AttachManageRecordsMenuEvents()
 		{
+			// Using lambda expressions to simplify event handlers due to handlers'  simplicity
 			ManageCustomersMenuItem.Click += (sender, e) =>
 			{
 				if (CustomersForm.Visible)
@@ -185,6 +189,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		private void AttachReportsMenuEvents()
 		{
+			// Using lambda expressions to simplify event handlers due to handlers'  simplicity
 			AppointmentsPerMonthReportMenuButton.Click += (sender, e)
 				=> new AppointmentsPerMonthReportForm().Show();
 
@@ -198,6 +203,7 @@ namespace AppointIn.DesktopApp.Gui
 		protected void CheckForNextAppointments()
 		{
 			var nextAppointment = UnitOfWork.Data.Appointments
+						// Using lambdas for LINQ's lambda expression notation
 						.GetNextAppointments(User)
 						.Where(appointment =>
 							!NotifiedAppointments
@@ -217,6 +223,7 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			var now = DateTime.Now.ToUniversalTime();
 			NotifiedAppointments = NotifiedAppointments
+				// Using lambdas for LINQ's lambda expression notation
 				.Where(a => a.Start >= now)
 				.ToList();
 		}

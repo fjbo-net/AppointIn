@@ -24,6 +24,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		#region Properties
 		public Country Country {
+			// Using lambda expressions to simplify property's getter and setter
 			get => DataPanel.Country;
 			set => DataPanel.Country = value;
 		}
@@ -37,6 +38,7 @@ namespace AppointIn.DesktopApp.Gui
 
 			if(SaveActionButton != null)
 			{
+				// Using lambda expression to simplify event handler due to handler's simplicity
 				SaveActionButton.Click += (sender, e) =>
 				{
 					Hide();
@@ -66,6 +68,7 @@ namespace AppointIn.DesktopApp.Gui
 			if(CancelActionButton != null) CancelActionButton.Text = Resources.CountryFormStrings.CancelButtonText;
 		}
 
+		// Using lambda expression to simplify call to an object property's method
 		public void Reset() => DataPanel.Reset();
 		#endregion
 	}

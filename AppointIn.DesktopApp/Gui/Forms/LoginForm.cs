@@ -34,6 +34,7 @@ namespace AppointIn.DesktopApp.Gui
 		#region Methods
 		protected override void AttachEvents()
 		{
+			// Using lambda expressions to simplify event handlers due to handlers' simplicity
 			LoginButton.Click += (sender, e) => Login();
 
 			LanguageCombobox.SelectedIndexChanged += (sender, e) =>

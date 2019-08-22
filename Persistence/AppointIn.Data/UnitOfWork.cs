@@ -33,6 +33,7 @@ namespace AppointIn.Data
 		private Context _context;
 
 
+		// Using lambda expression to simplify call to an object property's method
 		public void Save() => _context.SaveChanges();
 		#endregion
 		

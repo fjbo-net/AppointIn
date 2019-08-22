@@ -113,6 +113,7 @@ namespace AppointIn.TestDataSeed
 		}
 
 
+		// Using lambda expression to simplify call to an object property's method
 		public static bool DataBaseHasInitializedAddresses()
 			=> UnitOfWork.Data.Addresses.GetAll().Any();
 	}

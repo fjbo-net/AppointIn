@@ -11,9 +11,6 @@ namespace AppointIn.TestDataSeed
 {
 	public static partial class DataInitializer
 	{
-		//private static ICollection<Customer> Customers { get; } = GenerateCustomers();
-
-
 		public static ICollection<Customer> GenerateCustomers()
 		{
 			var output = new List<Customer>()
@@ -115,6 +112,7 @@ namespace AppointIn.TestDataSeed
 		}
 
 
+		// Using lambda expression to simplify function definition due to simplicity
 		public static bool DataBaseHasInitializedCustomers()
 			=> UnitOfWork.Data.Customers.GetAll().Any();
 	}

@@ -28,8 +28,9 @@ namespace AppointIn.DesktopApp.Gui
 
 
 		#region Properties
+		// Using lambda expression to simplify GET only property
 		protected bool HasItems { get => ListView.Items.Count > 0; }
-
+		// Using lambda expression to simplify GET only property
 		protected bool HasSelection { get => ListView.SelectedIndices.Count == 1; }
 
 		[Browsable(true)]
@@ -38,6 +39,7 @@ namespace AppointIn.DesktopApp.Gui
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		public override string Text
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => HeadingLabel.Text;
 			set => HeadingLabel.Text = value;
 		}
@@ -59,6 +61,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		protected void AttachEvents()
 		{
+			// Using lambda expressions to simplify event handlers due to handlers' simplicity
 			Resize += (sender, e) => ResizeHandler();
 			AddButton.Click += (sender, e) => Add();
 			EditButton.Click += (sender, e) => Edit();
@@ -70,9 +73,11 @@ namespace AppointIn.DesktopApp.Gui
 			};
 		}
 
+		// Using lambda expression to simplify function definition due to simplicity
 		private NotImplementedException BuildNotImplementedException(string methodName)
 			=> new NotImplementedException($"\"{methodName}\" method needs to be implemented at sub-class level.");
 
+		// Using lambda expression to simplify function definition due to simplicity
 		public virtual void Edit()
 			=> throw BuildNotImplementedException(nameof(Edit));
 
@@ -105,6 +110,7 @@ namespace AppointIn.DesktopApp.Gui
 			LoadData();
 		}
 
+		// Using lambda expression to simplify function definition due to simplicity
 		public virtual void Remove()
 			=> throw BuildNotImplementedException(nameof(Remove));
 
@@ -118,6 +124,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		protected virtual void SetupListView() { }
 
+		// Using lambda expression to simplify function definition due to simplicity
 		protected virtual void SyncListView()
 			=> throw BuildNotImplementedException(nameof(SyncListView));
 

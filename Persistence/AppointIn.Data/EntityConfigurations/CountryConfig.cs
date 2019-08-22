@@ -9,6 +9,7 @@ namespace AppointIn.Data.EntityConfigurations
 	{
 		public CountryConfig()
 		{
+			// Using lambda expressions to define EF's entity configuration using EF's fluid API
 			Property(country => country.Id)
 				.IsRequired()
 				.HasColumnName("countryId");

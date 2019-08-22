@@ -24,6 +24,7 @@ namespace AppointIn.TestDataSeed
 		#endregion
 
 
+		// Using lambda expression to simplify function definition due to simplicity
 		private ICollection<TypeOfEntity> EmptyDataSource()
 			=> _data = new List<TypeOfEntity>();
 
@@ -41,13 +42,17 @@ namespace AppointIn.TestDataSeed
 			var oldData = _data;
 			EmptyDataSource();
 
+			// Using lambdas for LINQ's lambda expression notation
 			_data = oldData.Where(entityInCollection => !entityInCollection.Id.Equals(entity.Id)).ToList();
 		}
 
+		// Using lambda expression to simplify call to an object property's method
 		public IEnumerable<TypeOfEntity> GetAll() => _data.ToList();
 
+		// Using lambda expression to simplify call to an object property's method
 		public TypeOfEntity GetById(TypeOfKey id) => _data.Where(entity => entity.Id.Equals(id)).Single();
 
+		// Using lambda expression to simplify call to an object property's method
 		public void Insert(TypeOfEntity entity) => _data.Add(entity);
 	}
 }

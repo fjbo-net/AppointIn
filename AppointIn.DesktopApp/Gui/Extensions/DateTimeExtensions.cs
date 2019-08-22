@@ -8,9 +8,11 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 {
 	public static class DateTimeExtensions
 	{
+		// Using lambda expression to simplify function definition due to simplicity
 		public static string ToLongDateAndTimeString(this DateTime date)
 			=> $"{date.ToLongDateString()} {date.ToLongTimeString()}";
 
+		// Using lambda expression to simplify function definition due to simplicity
 		public static string ToShortDateAndTimeString(this DateTime date)
 			=> $"{date.ToShortDateString()} {date.ToShortTimeString()}";
 	}

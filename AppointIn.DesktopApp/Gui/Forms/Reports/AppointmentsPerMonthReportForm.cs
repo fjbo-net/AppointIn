@@ -25,9 +25,9 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.AttachEvents();
 
-			if (MonthDateTimePicker != null) MonthDateTimePicker.ValueChanged += (sender, e) => {
-				GenerateReport();
-			};
+			// Using lambda expression to simplify event handler due to handler's simplicity
+			if (MonthDateTimePicker != null) MonthDateTimePicker.ValueChanged += (sender, e)
+					=> GenerateReport();
 		}
 
 		protected override void Init()

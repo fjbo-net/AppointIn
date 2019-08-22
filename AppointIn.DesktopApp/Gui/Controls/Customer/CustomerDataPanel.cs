@@ -57,6 +57,7 @@ namespace AppointIn.DesktopApp.Gui
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		[EditorBrowsable(EditorBrowsableState.Never)]
+		// Using lambda expression to simplify GET only property
 		public ValidationResult IsValid { get => ValidateValue(); }
 		#endregion
 
@@ -104,6 +105,7 @@ namespace AppointIn.DesktopApp.Gui
 			Reset();
 		}
 
+		// Using lambda expression to simplify function definition
 		public void Reset() => Customer = new Customer()
 		{
 			CreateDate = DateTime.Now,

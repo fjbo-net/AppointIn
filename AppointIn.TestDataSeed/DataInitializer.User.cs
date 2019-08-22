@@ -11,14 +11,9 @@ namespace AppointIn.TestDataSeed
 {
 	public static partial class DataInitializer
 	{
-		//private static ICollection<User> Users { get; }
-
-
+		// Using lambda expression to simplify function definition due to simplicity
 		public static bool DataBaseHasInitializedUsers()
 			=> UnitOfWork.Data.Users.GetAll().Any();
-
-		//public static ICollection<User> GetUsers() => Users;
-
 
 		public class UserMockRepository : GenericMockRepository<User, int>, Domain.Repositories.IUserRepository
 		{
@@ -27,6 +22,7 @@ namespace AppointIn.TestDataSeed
 
 			}
 
+			// Using lambda expression to simplify call to an object property's method
 			public User GetByUsername(string username) => _data.Where(entity => entity.Username == username).Single();
 		}
 

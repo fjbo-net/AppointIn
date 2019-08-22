@@ -20,14 +20,8 @@ namespace AppointIn.Data.Repositories
 			var now = DateTime.Now.ToUniversalTime();
 			var timeInFifteenMinutes = now.AddMinutes(15);
 			var upcomingAppointments = UnitOfWork.Data.Appointments
+				// Using lambdas for LINQ's lambda expression notation
 				.GetAll()
-				//.Select(appointment =>
-				//{
-				//	appointment.Start = appointment.Start;
-				//	appointment.End = appointment.End;
-				//	appointment.CreateDate = appointment.CreateDate;
-				//	return appointment;
-				//})
 				.Where(appointment =>
 					appointment.Start <= timeInFifteenMinutes
 					&& appointment.Start > now)
@@ -36,6 +30,7 @@ namespace AppointIn.Data.Repositories
 			if (user == null) return upcomingAppointments;
 
 			return upcomingAppointments
+				// Using lambdas for LINQ's lambda expression notation
 				.Where(appointment => appointment.User.Id == user.Id);
 		}
 	}

@@ -22,12 +22,12 @@ namespace AppointIn.Domain.Entities
 		public string LastUpdateBy { get; set; }
 
 		#region Non-Mapped Properties
+		// Using lambda expressino to simplify GET only property
 		public string FullAddress => $"{StreetName}{(!string.IsNullOrWhiteSpace(BuildingOrInterior) ? $" {BuildingOrInterior}" : string.Empty)}, {City.Name}, {City.Country.Name}";
 		#endregion
 
 		#region Navigation Properties
 		public virtual City City { get; set; }
-		//public virtual ICollection<Customer> Customers { get; set; }
 		#endregion
 	}
 }

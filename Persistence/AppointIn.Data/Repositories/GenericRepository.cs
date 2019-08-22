@@ -22,15 +22,18 @@ namespace AppointIn.Data.Repositories
 			_entityDbSet = context.Set<TypeOfEntity>();
 		}
 
-
+		// Using lambda expression to simplify call to an object property's method
 		public virtual void Delete(TypeOfKey id) => Delete(GetById(id));
 		public virtual void Delete(TypeOfEntity entity)
 		{
 			_entityDbSet.Remove(entity);
 			_context.Entry(entity).State = EntityState.Deleted;
 		}
+		// Using lambda expression to simplify call to an object property's method
 		public virtual IEnumerable<TypeOfEntity> GetAll() => _entityDbSet.ToList();
+		// Using lambda expression to simplify call to an object property's method
 		public virtual TypeOfEntity GetById(TypeOfKey id) => _entityDbSet.Find(id);
+		// Using lambda expression to simplify call to an object property's method
 		public virtual void Insert(TypeOfEntity entity) => _entityDbSet.Add(entity);
 	}
 }

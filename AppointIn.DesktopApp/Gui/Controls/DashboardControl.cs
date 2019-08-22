@@ -27,6 +27,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public override string Text
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => TitleLabel.Text;
 			set => TitleLabel.Text = value;
 		}

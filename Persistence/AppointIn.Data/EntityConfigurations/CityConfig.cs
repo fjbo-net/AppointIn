@@ -9,6 +9,7 @@ namespace AppointIn.Data.EntityConfigurations
 	{
 		public CityConfig()
 		{
+			// Using lambda expressions to define EF's entity configuration using EF's fluid API
 			Property(city => city.Id)
 				.IsRequired()
 				.HasColumnName("cityId");
@@ -41,10 +42,6 @@ namespace AppointIn.Data.EntityConfigurations
 				.HasMaxLength(40);
 
 			HasRequired(city => city.Country);
-
-			//HasMany(city => city.Addresses)
-			//	.WithRequired(address => address.City)
-			//	.HasForeignKey(address => address.Id);
 
 			HasKey(city => city.Id);
 			

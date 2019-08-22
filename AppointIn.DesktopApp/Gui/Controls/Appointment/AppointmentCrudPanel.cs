@@ -26,8 +26,11 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 		#region Properties
 		protected static List<AppointmentCrudPanel> AppointmentCrudPanels = new List<AppointmentCrudPanel>();
 		protected AppointmentForm AppointmentForm = new AppointmentForm();
-		protected Func<IEnumerable<Domain.Entities.Appointment>> _dataSource = () => UnitOfWork.Data.Appointments.GetAll();
+		// Using lambda expressino to simplify function return value reference
+		protected Func<IEnumerable<Domain.Entities.Appointment>> _dataSource = ()
+			=> UnitOfWork.Data.Appointments.GetAll();
 		protected internal Func<IEnumerable<Domain.Entities.Appointment>> DataSource {
+			// Using lambda expression to simplify property getter
 			get => _dataSource;
 			set
 			{

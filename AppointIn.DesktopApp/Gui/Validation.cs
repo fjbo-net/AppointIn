@@ -9,6 +9,7 @@ namespace AppointIn.DesktopApp.Gui
 {
 	internal static class Validation
 	{
+		// Using lambda expression to simplify function definition due to simplicity
 		public static DialogResult ShowValidationError(string message)
 			=> MessageBox.Show(
 				message,

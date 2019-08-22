@@ -26,13 +26,13 @@ namespace AppointIn.Domain.Entities
 
 		#region Navigation Properties
 		public virtual Address Address { get; set; }
-		//public virtual ICollection<Appointment> Appointments { get; set; }
 		#endregion
 			
 			
 		#region Validation Rules
 		public static List<ValidationCondition<string>> NameValidationConditions = new List<ValidationCondition<string>>()
 		{
+			// Using lambda expression to get a computed result for a validation condition
 			new ValidationCondition<string>(
 				name => name.Length <= 40,
 				$"{nameof(Customer)}'s name must not exceed 40 characters long.")
@@ -40,6 +40,7 @@ namespace AppointIn.Domain.Entities
 
 		public static List<ValidationCondition<int>> AddressIdValidationConditions = new List<ValidationCondition<int>>()
 		{
+			// Using lambda expression to get a computed result for a validation condition
 			new ValidationCondition<int>(
 				addressId => addressId > 0,
 				$"{nameof(Customer)}'s Address ID must be a positive integer.")

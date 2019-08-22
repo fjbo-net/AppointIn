@@ -30,6 +30,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		public override string Text
 		{
+			// Using lambda expression to simplify property getter
 			get => base.Text;
 			set
 			{
@@ -44,7 +45,8 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			base.AttachEvents();
 
-			if(CloseActionButton != null) CloseActionButton.Click += (sender, e) => Close();
+			// Using lambda expression to simplify event handlers due to handlers' simplicity
+			if (CloseActionButton != null) CloseActionButton.Click += (sender, e) => Close();
 			if (SaveAsActionButton != null) SaveAsActionButton.Click += SaveAsButtonClickHandler;
 		}
 

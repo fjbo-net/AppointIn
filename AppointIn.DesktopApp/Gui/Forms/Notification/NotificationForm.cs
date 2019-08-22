@@ -29,6 +29,7 @@ namespace AppointIn.DesktopApp.Gui
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public override string Text {
+			// Using lambda expression to simplify property getter
 			get => base.Text;
 			set
 			{
@@ -47,6 +48,7 @@ namespace AppointIn.DesktopApp.Gui
 		#region Methods
 		public void AttachEvents()
 		{
+			// Using lambda expression to simplify event handler due to handler's simplicity
 			ViewActionButton.Click += (sender, e) =>
 			{
 				AppointmentForm.SharedInstance.ReadOnly = true;

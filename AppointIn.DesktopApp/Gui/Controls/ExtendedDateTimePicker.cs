@@ -25,6 +25,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		protected new bool Enabled
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => DateTimePicker.Enabled;
 			set => DateTimePicker.Enabled = value;
 		}
@@ -35,6 +36,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public string LabelText
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => Label.Text;
 			set => Label.Text = value;
 		}
@@ -44,6 +46,7 @@ namespace AppointIn.DesktopApp.Gui
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public DateTime MinDate {
+			// Using lambda expressions to simplify property's getter and setter
 			get => DateTimePicker.MinDate;
 			set => DateTimePicker.MinDate = value;
 		}
@@ -54,6 +57,7 @@ namespace AppointIn.DesktopApp.Gui
 		[EditorBrowsable(EditorBrowsableState.Always)]
 		public DateTime Value
 		{
+			// Using lambda expressions to simplify property's getter and setter
 			get => DateTimePicker.Value;
 			set => DateTimePicker.Value = value;
 		}

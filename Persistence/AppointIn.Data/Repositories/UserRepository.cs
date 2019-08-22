@@ -13,23 +13,17 @@ namespace AppointIn.Data.Repositories
 		{
 		}
 
-		public User GetByUsername(string username) => _entityDbSet.Where(user => user.Username == username).SingleOrDefault();
+		// Using lambda expression to simplify call to an object property's method
+		public User GetByUsername(string username)
+			=> _entityDbSet
+				// Using lambdas for LINQ's lambda expression notation
+				.Where(user => user.Username == username)
+				.SingleOrDefault();
+		
+		// Using lambda expression to simplify call to an object property's method
+		public override IEnumerable<User> GetAll() => _entityDbSet.ToList();
 
-		public override IEnumerable<User> GetAll()
-		{
-			var users = _entityDbSet.ToList();
-			foreach (var user in users)
-			{
-				//user.CreateDate = user.CreateDate;
-			}
-
-			return users;
-		}
-		public override User GetById(int id)
-		{
-			var user = _entityDbSet.Find(id);
-			//user.CreateDate = user.CreateDate;
-			return user;
-		}
+		// Using lambda expression to simplify call to an object property's method
+		public override User GetById(int id) => _entityDbSet.Find(id);
 	}
 }

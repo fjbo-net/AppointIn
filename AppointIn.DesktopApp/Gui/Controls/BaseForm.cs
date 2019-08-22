@@ -18,16 +18,19 @@ namespace AppointIn.DesktopApp.Gui
 			Init();
 		}
 
+		// Using lambda expression to simplify constructor definition
 		public BaseForm(string title) : base() => Text = title;
 		#endregion
 
 
 		#region Properties
 		protected static string _appName = "AppointIn";
+		// Using lambda expression to simplify GET only property
 		protected string AppName { get => _appName; }
 
 		protected string _title = string.Empty;
 		public override string Text {
+			// Using lambda expression to simplify property getter
 			get => _title;
 
 			set

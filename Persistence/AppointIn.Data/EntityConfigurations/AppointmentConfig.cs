@@ -9,6 +9,7 @@ namespace AppointIn.Data.EntityConfigurations
 	{
 		public AppointmentConfig()
 		{
+			// Using lambda expressions to define EF's entity configuration using EF's fluid API
 			Property(appointment => appointment.Id)
 				.IsRequired()
 				.HasColumnName("appointmentId");
