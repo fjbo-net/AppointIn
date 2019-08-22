@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.Data;
+using AppointIn.Domain.Classes;
 using AppointIn.Domain.Entities;
+using AppointIn.Domain.Extensions;
 using AppointIn.DesktopApp.Gui.Extensions;
 using AppointIn.DesktopApp.Gui.Interfaces;
 
@@ -62,6 +64,12 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				BindGui();
 			}
 		}
+
+		[Bindable(false)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public ValidationResult IsValid { get => ValidateValue(); }
 
 		private Interfaces.DataPanelMode mode = Interfaces.DataPanelMode.Edit;
 		public Interfaces.DataPanelMode Mode
@@ -230,6 +238,42 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		{
 			CustomerComboBox.ComboBox.Bind(UnitOfWork.Data.Customers.GetAll(), "Name");
 			UserComboBox.ComboBox.Bind(UnitOfWork.Data.Users.GetAll(), "Username");
+		}
+
+		public ValidationResult ValidateValue()
+		{
+			var errorMessages = new List<string>();
+			var errorFound = false;
+			
+
+			var start = Appointment.Start.ToLocalTime();
+			var end = Appointment.End.ToLocalTime();
+
+
+			var hours = Dashboard.BusinessHours;
+
+			if(hours.ContainsKey(start.DayOfWeek))
+			{
+				var businessDay = hours[start.DayOfWeek];
+				
+				if(!businessDay.ContainsTimeRange(start, end))
+				{
+					errorFound = true;
+					errorMessages.Add(string.Format(
+						Resources.AppointmentDataPanelStrings.OutOfBusinessHoursErrorMessage,
+						businessDay.AsString(start)));
+				}
+			} else
+			{
+				errorFound = true;
+				errorMessages.Add(string.Format(
+					Resources.AppointmentDataPanelStrings.NoBusinessHoursErrorMessage,
+					start.ToLongDateString(),
+					Environment.NewLine,
+					hours.AsString()));
+			}
+
+			return new ValidationResult(!errorFound, errorMessages);
 		}
 		#endregion
 	}

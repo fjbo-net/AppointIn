@@ -106,6 +106,24 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No business hours available on {0}.{1}Business hours are:{1}{2}.
+        /// </summary>
+        internal static string NoBusinessHoursErrorMessage {
+            get {
+                return ResourceManager.GetString("NoBusinessHoursErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appointment is scheduled outside busines hours for {0}.
+        /// </summary>
+        internal static string OutOfBusinessHoursErrorMessage {
+            get {
+                return ResourceManager.GetString("OutOfBusinessHoursErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start date and time.
         /// </summary>
         internal static string StartLabelText {

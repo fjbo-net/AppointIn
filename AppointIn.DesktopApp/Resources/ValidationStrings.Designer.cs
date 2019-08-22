@@ -22,14 +22,14 @@ namespace AppointIn.DesktopApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppointmentFormStrings {
+    internal class ValidationStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppointmentFormStrings() {
+        internal ValidationStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AppointIn.DesktopApp.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.AppointmentFormStrings", typeof(AppointmentFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.ValidationStrings", typeof(ValidationStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,11 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t save new appointment due to the following errors:{0}{0}{1}.
+        ///   Looks up a localized string similar to Error: Invalid Data Found.
         /// </summary>
-        internal static string InvalidDataFoundMessage {
+        internal static string InvalidDataFoundCaption {
             get {
-                return ResourceManager.GetString("InvalidDataFoundMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Appointment.
-        /// </summary>
-        internal static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New Appointment.
-        /// </summary>
-        internal static string TitleAdd {
-            get {
-                return ResourceManager.GetString("TitleAdd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit Appointment.
-        /// </summary>
-        internal static string TitleEdit {
-            get {
-                return ResourceManager.GetString("TitleEdit", resourceCulture);
+                return ResourceManager.GetString("InvalidDataFoundCaption", resourceCulture);
             }
         }
     }

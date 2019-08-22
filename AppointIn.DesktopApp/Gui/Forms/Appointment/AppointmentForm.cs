@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Domain.Classes;
 using AppointIn.DesktopApp.Gui.Controls;
 using AppointIn.Domain.Entities;
 
@@ -28,6 +29,12 @@ namespace AppointIn.DesktopApp.Gui
 			get => DataPanel.Appointment;
 			set => DataPanel.Appointment = value;
 		}
+
+		[Bindable(false)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public ValidationResult IsValid { get => DataPanel.IsValid; }
 
 		private static AppointmentForm sharedInstance;
 		public static AppointmentForm SharedInstance
@@ -56,11 +63,7 @@ namespace AppointIn.DesktopApp.Gui
 
 			if(SaveActionButton != null)
 			{
-				SaveActionButton.Click += (sender, e) =>
-				{
-					Hide();
-					DialogResult = DialogResult.OK;
-				};
+				SaveActionButton.Click += SaveButtonClickHandler;
 			}
 		}
 
@@ -86,6 +89,23 @@ namespace AppointIn.DesktopApp.Gui
 		}
 
 		public void Reset() => DataPanel.Reset();
+		#endregion
+
+		#region Event Handlers
+		protected void SaveButtonClickHandler(object sender, EventArgs e)
+		{
+			if (!IsValid)
+			{
+				Validation.ShowValidationError(string.Format(
+					Resources.AppointmentFormStrings.InvalidDataFoundMessage,
+					Environment.NewLine,
+					IsValid.ErrorMessagesAsString()));
+				return;
+			}
+
+			Hide();
+			DialogResult = DialogResult.OK;
+		}
 		#endregion
 	}
 }

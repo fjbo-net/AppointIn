@@ -159,6 +159,7 @@
     </Compile>
     <Compile Include="Gui\Extensions\AddressExtensions.cs" />
     <Compile Include="Gui\Extensions\AppointmentExtensions.cs" />
+    <Compile Include="Gui\Extensions\BusinessHoursExtensions.cs" />
     <Compile Include="Gui\Extensions\CityExtensions.cs" />
     <Compile Include="Gui\Extensions\ComboboxExtensions.cs" />
     <Compile Include="Gui\Extensions\CountryExtensions.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="Gui\Interfaces\ISyncable.cs" />
     <Compile Include="Gui\Localizables.cs" />
     <Compile Include="Gui\Syncables.cs" />
+    <Compile Include="Gui\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppointmentsPerMonthReportFormStrings.Designer.cs">
@@ -335,6 +337,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserScheduleReportFormStrings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ValidationStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ValidationStrings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationStrings.es.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Gui\Controls\ActionButton.resx">
       <DependentUpon>ActionButton.cs</DependentUpon>
@@ -882,6 +894,14 @@
     <EmbeddedResource Include="Resources\UserScheduleReportFormStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UserScheduleReportFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationStrings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationStrings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

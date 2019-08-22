@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.Data;
+using AppointIn.Domain.Classes;
 
 using AppointIn.Domain.Entities;
 
@@ -42,7 +43,7 @@ namespace AppointIn.DesktopApp.Gui
 					CheckForNextAppointments();
 				};
 			}
-			
+
 			CustomersForm = new AllCustomersForm();
 		}
 		#endregion
@@ -70,6 +71,48 @@ namespace AppointIn.DesktopApp.Gui
 		};
 
 		protected List<Appointment> NotifiedAppointments = new List<Appointment>();
+
+		public static Dictionary<DayOfWeek, List<TimeRange>> BusinessHours { get; } = new Dictionary<DayOfWeek, List<TimeRange>>() {
+			{
+				DayOfWeek.Monday,
+				new List<TimeRange>()
+				{
+					new TimeRange() {Start = new Time(8,0), End = new Time(12, 0) },
+					new TimeRange() {Start = new Time(14,0), End = new Time(18, 0) }
+				}
+			},
+			{
+				DayOfWeek.Tuesday,
+				new List<TimeRange>()
+				{
+					new TimeRange() {Start = new Time(8,0), End = new Time(12, 0) },
+					new TimeRange() {Start = new Time(14,0), End = new Time(18, 0) }
+				}
+			},
+			{
+				DayOfWeek.Wednesday,
+				new List<TimeRange>()
+				{
+					new TimeRange() {Start = new Time(8,0), End = new Time(12, 0) },
+					new TimeRange() {Start = new Time(14,0), End = new Time(18, 0) }
+				}
+			},
+			{
+				DayOfWeek.Thursday,
+				new List<TimeRange>()
+				{
+					new TimeRange() {Start = new Time(8,0), End = new Time(12, 0) },
+					new TimeRange() {Start = new Time(14,0), End = new Time(18, 0) }
+				}
+			},
+			{
+				DayOfWeek.Friday,
+				new List<TimeRange>()
+				{
+					new TimeRange() {Start = new Time(8,0), End = new Time(12, 0) }
+				}
+			}
+		};
 		#endregion
 
 

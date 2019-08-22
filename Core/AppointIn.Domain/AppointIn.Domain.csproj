@@ -52,6 +52,7 @@
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Extensions\TimeRangeExtensions.cs" />
     <Compile Include="Extensions\ValidationConditionExtensions.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />

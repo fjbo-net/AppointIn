@@ -132,6 +132,12 @@
   <data name="LocationLabelText" xml:space="preserve">
     <value>Ubicación</value>
   </data>
+  <data name="NoBusinessHoursErrorMessage" xml:space="preserve">
+    <value>No hay horas laborales en {0}.{1}Las horas laborales son:{1}{2}</value>
+  </data>
+  <data name="OutOfBusinessHoursErrorMessage" xml:space="preserve">
+    <value>La cita esta programada fuera de los horarios laborales de {0}</value>
+  </data>
   <data name="StartLabelText" xml:space="preserve">
     <value>Fecha y hora de inicio</value>
   </data>
