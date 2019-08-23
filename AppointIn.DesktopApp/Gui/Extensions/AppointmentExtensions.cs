@@ -29,7 +29,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				appointment.End.ToLocalTime().ToShortDateAndTimeString(),
 				appointment.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				appointment.CreatedBy,
-				appointment.LastUpdate.ToString(),
+				appointment.LastUpdate.AsString(),
 				appointment.LastUpdateBy
 			};
 

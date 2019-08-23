@@ -22,7 +22,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				customer.IsActive ? "Active" : "Inactive",
 				customer.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				customer.CreatedBy,
-				customer.LastUpdate.ToString(),
+				customer.LastUpdate.AsString(),
 				customer.LastUpdateBy
 			};
 

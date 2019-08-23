@@ -191,7 +191,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			EndDateTimePicker.Value = _appointment.End;
 			CreateDateDateTimePicker.Value = _appointment.CreateDate;
 			CreatedByExtendedTextbox.Text = _appointment.CreatedBy;
-			//LastUpdateExtendedTextbox.Text = _appointment.LastUpdate.ToString();
+			//LastUpdateExtendedTextbox.Text = _appointment.LastUpdate.AsString();
 			LastUpdateByExtendedTextbox.Text = _appointment.LastUpdateBy;
 
 			LimitDates();

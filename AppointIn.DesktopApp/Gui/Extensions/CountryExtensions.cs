@@ -15,7 +15,7 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				country.Name,
 				country.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				country.CreatedBy,
-				country.LastUpdate.ToString(),
+				country.LastUpdate.AsString(),
 				country.LastUpdateBy
 			};
 

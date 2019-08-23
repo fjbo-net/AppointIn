@@ -53,6 +53,7 @@
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Extensions\AppointmentExtensions.cs" />
+    <Compile Include="Extensions\ByteExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TimeRangeExtensions.cs" />

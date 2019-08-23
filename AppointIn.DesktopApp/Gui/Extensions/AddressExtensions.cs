@@ -19,12 +19,12 @@ namespace AppointIn.DesktopApp.Gui.Extensions
 				address.Id.ToString(),
 				address.StreetName,
 				address.BuildingOrInterior,
-				address.City.Name,
+				$"{address.City.Name}, {address.City.Country.Name}",
 				address.PostalCode,
 				address.Phone,
 				address.CreateDate.ToLocalTime().ToLongDateAndTimeString(),
 				address.CreatedBy,
-				address.LastUpdate.ToString(),
+				address.LastUpdate.AsString(),
 				address.LastUpdateBy
 			};
 

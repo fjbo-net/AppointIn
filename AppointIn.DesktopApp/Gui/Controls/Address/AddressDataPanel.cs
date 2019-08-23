@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using AppointIn.Data;
 using AppointIn.Domain.Entities;
+using AppointIn.Domain.Extensions;
 using AppointIn.DesktopApp.Gui.Extensions;
 using AppointIn.DesktopApp.Gui.Interfaces;
 
@@ -81,7 +82,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			CityComboBox.ComboBox.SelectedItem = _address.City;
 			CreateDateDateTimePicker.Value = _address.CreateDate;
 			CreatedByExtendedTextbox.Text = _address.CreatedBy;
-			if(_address.LastUpdate != null) LastUpdateExtendedTextbox.Text = _address.LastUpdate.ToString();
+			if(_address.LastUpdate != null) LastUpdateExtendedTextbox.Text = _address.LastUpdate.AsString();
 			LastUpdateByExtendedTextbox.Text = _address.LastUpdateBy;
 		}
 
