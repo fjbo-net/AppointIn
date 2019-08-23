@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Domain.Extensions;
+
 namespace AppointIn.DesktopApp.Gui.Extensions
 {
 	public static class CustomerExtensions

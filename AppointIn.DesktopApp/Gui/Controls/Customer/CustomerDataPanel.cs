@@ -12,7 +12,7 @@ using AppointIn.Data;
 using AppointIn.DesktopApp.Gui.Extensions;
 using AppointIn.Domain.Classes;
 using AppointIn.Domain.Entities;
-using AppointIn.Core.Extensions;
+using AppointIn.Domain.Extensions;
 
 namespace AppointIn.DesktopApp.Gui
 {

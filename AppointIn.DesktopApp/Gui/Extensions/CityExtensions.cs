@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 
+using AppointIn.Domain.Extensions;
 using AppointIn.Domain.Entities;
 
 namespace AppointIn.DesktopApp.Gui.Extensions

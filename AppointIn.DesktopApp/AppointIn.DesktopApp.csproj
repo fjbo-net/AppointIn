@@ -164,7 +164,6 @@
     <Compile Include="Gui\Extensions\ComboboxExtensions.cs" />
     <Compile Include="Gui\Extensions\CountryExtensions.cs" />
     <Compile Include="Gui\Extensions\CustomerExtensions.cs" />
-    <Compile Include="Gui\Extensions\DateTimeExtensions.cs" />
     <Compile Include="Gui\Extensions\UserExtensions.cs" />
     <Compile Include="Gui\FontStyles.cs" />
     <Compile Include="Gui\Forms\Address\AddressForm.cs">

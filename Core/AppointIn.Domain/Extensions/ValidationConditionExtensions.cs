@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using AppointIn.Domain.Classes;
 
-namespace AppointIn.Core.Extensions
+namespace AppointIn.Domain.Extensions
 {
 	public static class ValidationConditionExtensions
 	{

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppointIn.DesktopApp.Gui.Extensions
+namespace AppointIn.Domain.Extensions
 {
 	public static class DateTimeExtensions
 	{

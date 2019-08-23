@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Domain.Extensions;
 using AppointIn.Data;
 using AppointIn.Domain.Classes;
 using AppointIn.Domain.Entities;
@@ -30,7 +31,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 		public AppointmentDataPanel(Interfaces.DataPanelMode mode) : this()
 		{
-			
+
 		}
 		#endregion
 
@@ -46,6 +47,26 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			{
 				BindEntity();
 
+				var originalStart = _appointment.Start;
+				var originalEnd = _appointment.End;
+
+				// Create new DateTime objects to clean the seconds for better calculations
+				_appointment.Start = new DateTime(
+					originalStart.Year,
+					originalStart.Month,
+					originalStart.Day,
+					originalStart.Hour,
+					originalStart.Minute,
+					0);
+
+				_appointment.End = new DateTime(
+					originalEnd.Year,
+					originalEnd.Month,
+					originalEnd.Day,
+					originalEnd.Hour,
+					originalEnd.Minute,
+					0);
+
 				_appointment.CreateDate = _appointment.CreateDate.ToUniversalTime();
 				_appointment.Start = _appointment.Start.ToUniversalTime();
 				_appointment.End = _appointment.End.ToUniversalTime();
@@ -55,11 +76,31 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 			set
 			{
+				ClearDateLimits();
+
 				_appointment = value;
 
+				var originalStart = _appointment.Start.ToLocalTime();
+				var originalEnd = _appointment.End.ToLocalTime();
+
 				_appointment.CreateDate = _appointment.CreateDate.ToLocalTime();
-				_appointment.Start = _appointment.Start.ToLocalTime();
-				_appointment.End = _appointment.End.ToLocalTime();
+
+				// Create new DateTime objects to clean the seconds for better calculations
+				_appointment.Start = new DateTime(
+					originalStart.Year,
+					originalStart.Month,
+					originalStart.Day,
+					originalStart.Hour,
+					originalStart.Minute,
+					0);
+
+				_appointment.End = new DateTime(
+					originalEnd.Year,
+					originalEnd.Month,
+					originalEnd.Day,
+					originalEnd.Hour,
+					originalEnd.Minute,
+					0);
 
 				BindGui();
 			}
@@ -111,11 +152,12 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			// Using lambda expression to simplify event handler due to handler's simplicity
 			if (StartDateTimePicker != null) StartDateTimePicker.DateTimePicker.ValueChanged += (sender, e) =>
 			{
-				if(((DateTimePicker) sender).Focused) LimitDates();
+				if (((DateTimePicker)sender).Focused) LimitDates();
 			};
 		}
 
-		private void BindEntity() {
+		private void BindEntity()
+		{
 			_appointment.Id = int.Parse(IdExtendedTextbox.Text);
 			_appointment.Customer = (Customer)CustomerComboBox.ComboBox.SelectedValue;
 			_appointment.User = (User)UserComboBox.ComboBox.SelectedValue;
@@ -132,7 +174,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			_appointment.LastUpdateBy = LastUpdateByExtendedTextbox.Text;
 		}
 
-		private void BindGui() {
+		private void BindGui()
+		{
 			SyncData();
 
 			IdExtendedTextbox.Text = _appointment.Id.ToString();
@@ -154,7 +197,14 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			LimitDates();
 		}
 
-		private void Init() {
+		private void ClearDateLimits()
+		{
+			StartDateTimePicker.MinDate = DateTimePicker.MinimumDateTime;
+			EndDateTimePicker.MinDate = DateTimePicker.MinimumDateTime;
+		}
+
+		private void Init()
+		{
 			InitializeComponent();
 
 			AttachEvents();
@@ -173,7 +223,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			EndDateTimePicker.MinDate = StartDateTimePicker.Value.AddMinutes(15);
 		}
 
-		public void LocalizeText(string culture ="")
+		public void LocalizeText(string culture = "")
 		{
 			IdExtendedTextbox.LabelText = Resources.DataPanelStrings.IdLabelText;
 			CustomerComboBox.LabelText = Resources.AppointmentDataPanelStrings.CustomerLabelText;
@@ -247,26 +297,25 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		{
 			var errorMessages = new List<string>();
 			var errorFound = false;
-			
 
+			// Validate Business Hours
 			var start = Appointment.Start.ToLocalTime();
 			var end = Appointment.End.ToLocalTime();
-
-
 			var hours = Dashboard.BusinessHours;
 
-			if(hours.ContainsKey(start.DayOfWeek))
+			if (hours.ContainsKey(start.DayOfWeek))
 			{
 				var businessDay = hours[start.DayOfWeek];
-				
-				if(!businessDay.ContainsTimeRange(start, end))
+
+				if (!businessDay.ContainsTimeRange(start, end))
 				{
 					errorFound = true;
 					errorMessages.Add(string.Format(
 						Resources.AppointmentDataPanelStrings.OutOfBusinessHoursErrorMessage,
 						businessDay.AsString(start)));
 				}
-			} else
+			}
+			else
 			{
 				errorFound = true;
 				errorMessages.Add(string.Format(
@@ -276,7 +325,28 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					hours.AsString()));
 			}
 
-			return new ValidationResult(!errorFound, errorMessages);
+			// Check for overlapping appointments
+			var appointmentsThatOverlap = Appointment.FindOverlappingAppointments(UnitOfWork.Data.Appointments);
+			//UnitOfWork.Data.Appointments.GetAll()
+			//.Where(appointment
+			//	=> (Appointment.Start >= appointment.Start &&
+			//		Appointment.Start < appointment.End)
+			//	|| (Appointment.End > appointment.Start &&
+			//		Appointment.End <= appointment.End))
+			//.Select(appointment => $"\"{appointment.Title}\": {appointment.Start.ToShortDateAndTimeString()}-{appointment.End.ToShortDateAndTimeString()}.");
+
+			if (appointmentsThatOverlap.Any())
+			{
+				errorFound = true;
+				errorMessages.Add(appointmentsThatOverlap.AsMultilineString());
+			}
+
+			var appointmentResult = Appointment.Validate();
+
+			return new ValidationResult(
+				!errorFound && appointmentResult.IsValid,
+				appointmentResult.ErrorMessages
+					.Concat(errorMessages).ToList());
 		}
 		#endregion
 	}

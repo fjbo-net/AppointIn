@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Domain.Extensions;
 using AppointIn.Data;
 using AppointIn.Domain.Entities;
 using AppointIn.DesktopApp.Gui.Extensions;

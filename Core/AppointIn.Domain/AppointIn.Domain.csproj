@@ -52,6 +52,9 @@
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Extensions\AppointmentExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TimeRangeExtensions.cs" />
     <Compile Include="Extensions\ValidationConditionExtensions.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
@@ -60,7 +63,12 @@
     <Compile Include="Repositories\IAppointmentRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Resources\AppointmentStrings.Designer.cs" />
+    <Compile Include="Resources\AppointmentStrings.es.Designer.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppointmentStrings.es.resx" />
+    <EmbeddedResource Include="Resources\AppointmentStrings.resx" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
