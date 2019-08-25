@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CountryRequiredValidationMessage" xml:space="preserve">
-    <value>Un país tiene que estar seleccionado.</value>
+    <value>Un país valido tiene que estar seleccionado.</value>
   </data>
   <data name="NameMaxLengthValidationMessage" xml:space="preserve">
     <value>El nombre de la ciudad no debe de exceder 50 caracteres.</value>

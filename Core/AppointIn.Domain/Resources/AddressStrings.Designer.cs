@@ -88,7 +88,7 @@ namespace AppointIn.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A city must be selected..
+        ///   Looks up a localized string similar to A valid city must be selected..
         /// </summary>
         internal static string CityRequiredValidationMessage {
             get {

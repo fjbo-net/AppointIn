@@ -121,7 +121,7 @@
     <value>Contact information is required.</value>
   </data>
   <data name="CustomerIdValidationMessage" xml:space="preserve">
-    <value>Appointment must have a customer selected. Customer ID must be a positive whole number.</value>
+    <value>Appointment must have a valid customer selected.</value>
   </data>
   <data name="TitleMaxLengthValidationMessage" xml:space="preserve">
     <value>Title must not exceed 255 characters long.</value>
@@ -133,6 +133,6 @@
     <value>URL must not exceed 255 characters long.</value>
   </data>
   <data name="UserIdValidationMessage" xml:space="preserve">
-    <value>Appointment must have a user selected. User ID must be a positive whole number.</value>
+    <value>Appointment must have a valid user selected.</value>
   </data>
 </root>

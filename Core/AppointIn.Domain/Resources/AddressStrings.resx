@@ -127,7 +127,7 @@
     <value>Street name is required.</value>
   </data>
   <data name="CityRequiredValidationMessage" xml:space="preserve">
-    <value>A city must be selected.</value>
+    <value>A valid city must be selected.</value>
   </data>
   <data name="PhoneMaxLengthValidationMessage" xml:space="preserve">
     <value>Phone must not exceed 20 characters long.</value>

@@ -121,7 +121,7 @@
     <value>Información de contacto es obligatoria.</value>
   </data>
   <data name="CustomerIdValidationMessage" xml:space="preserve">
-    <value>La cita tiene que tener un cliente seleccionad. El número de cliente tiene que ser un número entero  positivo.</value>
+    <value>La cita tiene que tener un cliente valido seleccionado.</value>
   </data>
   <data name="TitleMaxLengthValidationMessage" xml:space="preserve">
     <value>El título no debe de exceder 255 caracteres.</value>
@@ -133,6 +133,6 @@
     <value>El URL no debe de exceder 255 caracteres.</value>
   </data>
   <data name="UserIdValidationMessage" xml:space="preserve">
-    <value>La cita tiene que tener un usuario seleccionado. El número de usuario tiene que ser un número entero positivo.</value>
+    <value>La cita tiene que tener un usuario valido seleccionado.</value>
   </data>
 </root>

@@ -44,8 +44,9 @@
 			// 
 			// ComboBox
 			// 
+			this.ComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.ComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.ComboBox.FormattingEnabled = true;
 			this.ComboBox.Location = new System.Drawing.Point(150, 0);
 			this.ComboBox.Name = "ComboBox";

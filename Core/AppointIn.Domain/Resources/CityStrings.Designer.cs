@@ -61,7 +61,7 @@ namespace AppointIn.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A country must be selected..
+        ///   Looks up a localized string similar to A valid country must be selected..
         /// </summary>
         internal static string CountryRequiredValidationMessage {
             get {

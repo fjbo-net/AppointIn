@@ -127,7 +127,7 @@
     <value>El nombre de calle es obligatorio.</value>
   </data>
   <data name="CityRequiredValidationMessage" xml:space="preserve">
-    <value>Una ciudad debe de estar seleccionada.</value>
+    <value>Una ciudad valida debe de estar seleccionada.</value>
   </data>
   <data name="PhoneMaxLengthValidationMessage" xml:space="preserve">
     <value>El número telefónico no debe de exceder 20 caracteres.</value>

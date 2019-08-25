@@ -61,7 +61,7 @@ namespace AppointIn.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An address must be selected..
+        ///   Looks up a localized string similar to A valid address must be selected..
         /// </summary>
         internal static string AddressRequiredValidationMessage {
             get {

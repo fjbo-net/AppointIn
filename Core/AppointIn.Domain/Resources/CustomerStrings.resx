@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddressRequiredValidationMessage" xml:space="preserve">
-    <value>An address must be selected.</value>
+    <value>A valid address must be selected.</value>
   </data>
   <data name="NameMaxLengthValidationMessage" xml:space="preserve">
     <value>Name must not exceed 45 characters long.</value>
