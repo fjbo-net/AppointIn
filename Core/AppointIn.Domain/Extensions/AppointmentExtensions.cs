@@ -38,6 +38,7 @@ namespace AppointIn.Domain.Extensions
 			var overlappingAppointments = savedAppointments.GetAll()
 				.Where(savedAppointment
 					=> appointment.User.Id == savedAppointment.User.Id
+					&& appointment.Id != savedAppointment.Id
 					&& ((appointment.Start >= savedAppointment.Start &&
 						appointment.Start < savedAppointment.End)
 					|| (appointment.End > savedAppointment.Start &&
