@@ -35,5 +35,10 @@ namespace AppointIn.Data.Repositories
 		public virtual TypeOfEntity GetById(TypeOfKey id) => _entityDbSet.Find(id);
 		// Using lambda expression to simplify call to an object property's method
 		public virtual void Insert(TypeOfEntity entity) => _entityDbSet.Add(entity);
+
+		public virtual void Reset(TypeOfEntity entity)
+		{
+			_context.Entry(entity).Reload();
+		}
 	}
 }

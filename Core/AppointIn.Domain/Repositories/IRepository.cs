@@ -15,5 +15,6 @@ namespace AppointIn.Domain.Repositories
 		IEnumerable<TypeOfEntity> GetAll();
 		TypeOfEntity GetById(TypeOfKey id);
 		void Insert(TypeOfEntity entity);
+		void Reset(TypeOfEntity entity);
 	}
 }

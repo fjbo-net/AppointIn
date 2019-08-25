@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using AppointIn.Data;
+using AppointIn.Domain.Classes;
 using AppointIn.Domain.Entities;
+using AppointIn.Domain.Extensions;
 using AppointIn.DesktopApp.Gui.Extensions;
 
 namespace AppointIn.DesktopApp.Gui
@@ -50,6 +52,13 @@ namespace AppointIn.DesktopApp.Gui
 				BindGui();
 			}
 		}
+
+		[Bindable(false)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		// Using lambda expression to simplify GET only property
+		public ValidationResult IsValid { get => ValidateValue(); }
 		#endregion
 
 		#region Methods
@@ -102,6 +111,9 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			CountryExtendedComboBox.ComboBox.Bind(UnitOfWork.Data.Countries.GetAll(), "Name");
 		}
+
+		public ValidationResult ValidateValue()
+			=> City.Validate();
 		#endregion
 	}
 }

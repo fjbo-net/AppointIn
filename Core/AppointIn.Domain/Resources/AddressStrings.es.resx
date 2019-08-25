@@ -117,16 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InvalidDataFoundMessage" xml:space="preserve">
-    <value>No se puede guardar la ciudad por los siguientes errores:{0}{0}{1}</value>
+  <data name="Address2MaxLengthValidationMessage" xml:space="preserve">
+    <value>Edificio o interior no debe exceder 50 caracteres</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Ciudad</value>
+  <data name="AddressMaxLengthValidationMessage" xml:space="preserve">
+    <value>El nombre de calle no debe exceder 50 caracteres.</value>
   </data>
-  <data name="TitleAdd" xml:space="preserve">
-    <value>Nueva Ciudad</value>
+  <data name="AddressRequiredValidationMessage" xml:space="preserve">
+    <value>El nombre de calle es obligatorio.</value>
   </data>
-  <data name="TitleEdit" xml:space="preserve">
-    <value>Editar Ciudad</value>
+  <data name="CityRequiredValidationMessage" xml:space="preserve">
+    <value>Una ciudad debe de estar seleccionada.</value>
+  </data>
+  <data name="PhoneMaxLengthValidationMessage" xml:space="preserve">
+    <value>El número telefónico no debe de exceder 20 caracteres.</value>
+  </data>
+  <data name="PhoneRequiredValidationMessage" xml:space="preserve">
+    <value>El número telefónico es obligatorio.</value>
+  </data>
+  <data name="PostalCodeMaxLengthValidationMessage" xml:space="preserve">
+    <value>El código postal no debe de exceder 10 caracteres.</value>
+  </data>
+  <data name="PostalCodeRequiredValidationMessage" xml:space="preserve">
+    <value>El código postal es obligatorio.</value>
   </data>
 </root>

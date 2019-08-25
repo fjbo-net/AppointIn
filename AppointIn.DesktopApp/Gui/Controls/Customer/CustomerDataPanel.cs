@@ -118,25 +118,7 @@ namespace AppointIn.DesktopApp.Gui
 		}
 
 		public ValidationResult ValidateValue()
-		{
-			var errorMessages = new List<string>();
-			var errorFound = false;
-
-			var nameValidationResult = Customer.NameValidationConditions.Validate(NameExtendedTextbox.Text);
-
-			if(AddressExtendedCombobox.ComboBox.SelectedValue == null)
-			{
-				errorMessages.Add("An address must be selected.");
-				return new ValidationResult(false, nameValidationResult.ErrorMessages.Concat(errorMessages).ToList());
-			}
-			var addressValidationResult = Customer.AddressIdValidationConditions.Validate(((Address)AddressExtendedCombobox.ComboBox.SelectedValue).Id);
-
-			return new ValidationResult(
-				nameValidationResult.IsValid && addressValidationResult.IsValid && !errorFound,
-				errorMessages
-					.Concat(nameValidationResult.ErrorMessages).ToList()
-					.Concat(addressValidationResult.ErrorMessages).ToList());
-		}
+			=> Customer.Validate();
 		#endregion
 	}
 }

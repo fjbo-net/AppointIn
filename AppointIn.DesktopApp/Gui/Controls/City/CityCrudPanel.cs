@@ -66,13 +66,11 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			if(int.TryParse(ListView.SelectedItems[0].Text, out int cityId))
 			{
 				CityForm.City = Data.UnitOfWork.Data.Cities.GetById(cityId);
-
+				var city = CityForm.City;
 				var result = CityForm.ShowDialog();
 
 				if(result == DialogResult.OK)
 				{
-					var city = CityForm.City;
-
 					city.LastUpdateBy = Dashboard.Username;
 
 					city.CreateDate = city.CreateDate;
@@ -80,6 +78,12 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					Data.UnitOfWork.Data.Save();
 
 					CityForm.Reset();
+				} else
+				{
+					if(city.Id > 0)
+					{
+						Data.UnitOfWork.Data.Cities.Reset(city);
+					}
 				}
 			}
 

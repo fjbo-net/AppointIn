@@ -9,12 +9,6 @@ namespace AppointIn.Domain.Extensions
 	public static class ByteExtensions
 	{
 		public static string AsString(this byte[] array)
-		{
-			var output = new StringBuilder();
-
-			foreach (var item in array) output.Append(item.ToString());
-
-			return output.ToString();
-		}
+			=> BitConverter.ToString(array);
 	}
 }

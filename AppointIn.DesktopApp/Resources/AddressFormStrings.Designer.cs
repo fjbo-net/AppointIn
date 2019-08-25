@@ -61,6 +61,15 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t save address due to the following errors:{0}{0}{1}.
+        /// </summary>
+        internal static string InvalidDataFoundMessage {
+            get {
+                return ResourceManager.GetString("InvalidDataFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dirección.
         /// </summary>
         internal static string Title {

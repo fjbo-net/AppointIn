@@ -79,18 +79,19 @@ namespace AppointIn.DesktopApp.Gui.Controls.Appointment
 			if(int.TryParse(ListView.SelectedItems[0].Text, out int appointmentId))
 			{
 				AppointmentForm.Appointment = UnitOfWork.Data.Appointments.GetById(appointmentId);
-
+				var appointment = AppointmentForm.Appointment;
 				var result = AppointmentForm.ShowDialog();
 
 				if(result == DialogResult.OK)
 				{
-					var appointment = AppointmentForm.Appointment;
-
 					appointment.LastUpdateBy = Dashboard.Username;
 
 					UnitOfWork.Data.Save();
 
 					AppointmentForm.Reset();
+				} else
+				{
+					UnitOfWork.Data.Appointments.Reset(appointment);
 				}
 			}
 

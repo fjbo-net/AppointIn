@@ -117,16 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InvalidDataFoundMessage" xml:space="preserve">
-    <value>No se puede guardar la ciudad por los siguientes errores:{0}{0}{1}</value>
+  <data name="CountryRequiredValidationMessage" xml:space="preserve">
+    <value>Un país tiene que estar seleccionado.</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Ciudad</value>
+  <data name="NameMaxLengthValidationMessage" xml:space="preserve">
+    <value>El nombre de la ciudad no debe de exceder 50 caracteres.</value>
   </data>
-  <data name="TitleAdd" xml:space="preserve">
-    <value>Nueva Ciudad</value>
-  </data>
-  <data name="TitleEdit" xml:space="preserve">
-    <value>Editar Ciudad</value>
+  <data name="NameRequiredValidationMessage" xml:space="preserve">
+    <value>El nombre de la ciudad es obligatorio.</value>
   </data>
 </root>

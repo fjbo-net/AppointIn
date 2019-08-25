@@ -71,13 +71,11 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			if(int.TryParse(ListView.SelectedItems[0].Text, out int customerId))
 			{
 				CustomerForm.Customer = UnitOfWork.Data.Customers.GetById(customerId);
-
+				var customer = CustomerForm.Customer;
 				var result = CustomerForm.ShowDialog();
 
 				if(result == DialogResult.OK)
 				{
-					var customer = CustomerForm.Customer;
-
 					customer.LastUpdateBy = Dashboard.Username;
 
 					customer.CreateDate = customer.CreateDate;
@@ -85,6 +83,9 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					UnitOfWork.Data.Save();
 
 					CustomerForm.Reset();
+				} else
+				{
+					UnitOfWork.Data.Customers.Reset(customer);
 				}
 			}
 

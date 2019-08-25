@@ -42,20 +42,7 @@ namespace AppointIn.DesktopApp.Gui
 			if(SaveActionButton != null)
 			{
 				// Using lambda expression to simplify event handler due to handler's simplicity
-				SaveActionButton.Click += (sender, e) =>
-				{
-					if (!IsValid)
-					{
-						MessageBox.Show(
-							$"Can't save new customer due to the following errors:{Environment.NewLine}{IsValid.ErrorMessagesAsString(true)}",
-							"Invalid Data Found",
-							MessageBoxButtons.OK,
-							MessageBoxIcon.Error);
-						return;
-					}
-					Hide();
-					DialogResult = DialogResult.OK;
-				};
+				SaveActionButton.Click += SaveButtonClickHandler;
 			}
 		}
 
@@ -81,6 +68,24 @@ namespace AppointIn.DesktopApp.Gui
 		}
 
 		public void Reset() => DataPanel.Reset();
+		#endregion
+
+
+		#region Event Handlers
+		protected void SaveButtonClickHandler(object sender, EventArgs e)
+		{
+			if (!IsValid)
+			{
+				Validation.ShowValidationError(string.Format(
+					Resources.CustomerFormStrings.InvalidDataFoundMessage,
+					Environment.NewLine,
+					IsValid.ErrorMessagesAsString()));
+				return;
+			}
+
+			Hide();
+			DialogResult = DialogResult.OK;
+		}
 		#endregion
 	}
 }

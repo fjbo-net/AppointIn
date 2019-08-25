@@ -138,6 +138,9 @@
   <data name="OutOfBusinessHoursErrorMessage" xml:space="preserve">
     <value>La cita esta programada fuera de los horarios laborales de {0}</value>
   </data>
+  <data name="OverlappingAppointmentsErrorMessage" xml:space="preserve">
+    <value>La cita se encima con las siguientes citas programadas:</value>
+  </data>
   <data name="StartLabelText" xml:space="preserve">
     <value>Fecha y hora de inicio</value>
   </data>

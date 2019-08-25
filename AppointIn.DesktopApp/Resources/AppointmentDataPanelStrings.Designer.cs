@@ -124,6 +124,15 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appointment overlaps with the following scheduled appointments:.
+        /// </summary>
+        internal static string OverlappingAppointmentsErrorMessage {
+            get {
+                return ResourceManager.GetString("OverlappingAppointmentsErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start date and time.
         /// </summary>
         internal static string StartLabelText {

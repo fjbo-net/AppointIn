@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AppointIn.DesktopApp.Resources {
+namespace AppointIn.Domain.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace AppointIn.DesktopApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class CustomerFormStrings {
+    internal class AddressStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CustomerFormStrings() {
+        internal AddressStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AppointIn.DesktopApp.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.CustomerFormStrings", typeof(CustomerFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.Domain.Resources.AddressStrings", typeof(AddressStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,74 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t save new country due to the following errors:{0}{0}{1}.
+        ///   Looks up a localized string similar to Building or interior must not exceed 50 characters long..
         /// </summary>
-        internal static string InvalidDataFoundMessage {
+        internal static string Address2MaxLengthValidationMessage {
             get {
-                return ResourceManager.GetString("InvalidDataFoundMessage", resourceCulture);
+                return ResourceManager.GetString("Address2MaxLengthValidationMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer.
+        ///   Looks up a localized string similar to Street name must not exceed 50 characters long..
         /// </summary>
-        internal static string Title {
+        internal static string AddressMaxLengthValidationMessage {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("AddressMaxLengthValidationMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Customer.
+        ///   Looks up a localized string similar to Street name is required..
         /// </summary>
-        internal static string TitleAdd {
+        internal static string AddressRequiredValidationMessage {
             get {
-                return ResourceManager.GetString("TitleAdd", resourceCulture);
+                return ResourceManager.GetString("AddressRequiredValidationMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit Customer.
+        ///   Looks up a localized string similar to A city must be selected..
         /// </summary>
-        internal static string TitleEdit {
+        internal static string CityRequiredValidationMessage {
             get {
-                return ResourceManager.GetString("TitleEdit", resourceCulture);
+                return ResourceManager.GetString("CityRequiredValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone must not exceed 20 characters long..
+        /// </summary>
+        internal static string PhoneMaxLengthValidationMessage {
+            get {
+                return ResourceManager.GetString("PhoneMaxLengthValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone is required..
+        /// </summary>
+        internal static string PhoneRequiredValidationMessage {
+            get {
+                return ResourceManager.GetString("PhoneRequiredValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postal Code must not exceed 10 characters long..
+        /// </summary>
+        internal static string PostalCodeMaxLengthValidationMessage {
+            get {
+                return ResourceManager.GetString("PostalCodeMaxLengthValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postal Code is required..
+        /// </summary>
+        internal static string PostalCodeRequiredValidationMessage {
+            get {
+                return ResourceManager.GetString("PostalCodeRequiredValidationMessage", resourceCulture);
             }
         }
     }

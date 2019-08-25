@@ -12,7 +12,6 @@ using AppointIn.Domain.Extensions;
 using AppointIn.Data;
 using AppointIn.Domain.Classes;
 using AppointIn.Domain.Entities;
-using AppointIn.Domain.Extensions;
 using AppointIn.DesktopApp.Gui.Extensions;
 using AppointIn.DesktopApp.Gui.Interfaces;
 
@@ -298,6 +297,10 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			var errorMessages = new List<string>();
 			var errorFound = false;
 
+			var appointmentResult = Appointment.Validate();
+
+			if (!appointmentResult.IsValid) return appointmentResult;
+
 			// Validate Business Hours
 			var start = Appointment.Start.ToLocalTime();
 			var end = Appointment.End.ToLocalTime();
@@ -327,21 +330,12 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 			// Check for overlapping appointments
 			var appointmentsThatOverlap = Appointment.FindOverlappingAppointments(UnitOfWork.Data.Appointments);
-			//UnitOfWork.Data.Appointments.GetAll()
-			//.Where(appointment
-			//	=> (Appointment.Start >= appointment.Start &&
-			//		Appointment.Start < appointment.End)
-			//	|| (Appointment.End > appointment.Start &&
-			//		Appointment.End <= appointment.End))
-			//.Select(appointment => $"\"{appointment.Title}\": {appointment.Start.ToShortDateAndTimeString()}-{appointment.End.ToShortDateAndTimeString()}.");
 
 			if (appointmentsThatOverlap.Any())
 			{
 				errorFound = true;
-				errorMessages.Add(appointmentsThatOverlap.AsMultilineString());
+				errorMessages.Add($"{Resources.AppointmentDataPanelStrings.OverlappingAppointmentsErrorMessage}{Environment.NewLine}{appointmentsThatOverlap.AsString()}");
 			}
-
-			var appointmentResult = Appointment.Validate();
 
 			return new ValidationResult(
 				!errorFound && appointmentResult.IsValid,

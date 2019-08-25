@@ -38,10 +38,10 @@ namespace AppointIn.Domain.Extensions
 			var overlappingAppointments = savedAppointments.GetAll()
 				.Where(savedAppointment
 					=> appointment.User.Id == savedAppointment.User.Id
-					&& (appointment.Start >= savedAppointment.Start &&
+					&& ((appointment.Start >= savedAppointment.Start &&
 						appointment.Start < savedAppointment.End)
 					|| (appointment.End > savedAppointment.Start &&
-						appointment.End <= savedAppointment.End));
+						appointment.End <= savedAppointment.End)));
 
 			var output = overlappingAppointments.Select(savedAppointment => $"\"{savedAppointment.Title}\": {savedAppointment.Start.ToLocalTime().ToShortDateAndTimeString()}-{savedAppointment.End.ToLocalTime().ToShortDateAndTimeString()}.");
 

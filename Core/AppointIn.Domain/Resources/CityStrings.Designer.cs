@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AppointIn.DesktopApp.Resources {
+namespace AppointIn.Domain.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace AppointIn.DesktopApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class CustomerFormStrings {
+    internal class CityStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal CustomerFormStrings() {
+        internal CityStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AppointIn.DesktopApp.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.DesktopApp.Resources.CustomerFormStrings", typeof(CustomerFormStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppointIn.Domain.Resources.CityStrings", typeof(CityStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,29 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t save new country due to the following errors:{0}{0}{1}.
+        ///   Looks up a localized string similar to A country must be selected..
         /// </summary>
-        internal static string InvalidDataFoundMessage {
+        internal static string CountryRequiredValidationMessage {
             get {
-                return ResourceManager.GetString("InvalidDataFoundMessage", resourceCulture);
+                return ResourceManager.GetString("CountryRequiredValidationMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer.
+        ///   Looks up a localized string similar to City name must not exceed 50 characters..
         /// </summary>
-        internal static string Title {
+        internal static string NameMaxLengthValidationMessage {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("NameMaxLengthValidationMessage", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Customer.
+        ///   Looks up a localized string similar to City name is required..
         /// </summary>
-        internal static string TitleAdd {
+        internal static string NameRequiredValidationMessage {
             get {
-                return ResourceManager.GetString("TitleAdd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit Customer.
-        /// </summary>
-        internal static string TitleEdit {
-            get {
-                return ResourceManager.GetString("TitleEdit", resourceCulture);
+                return ResourceManager.GetString("NameRequiredValidationMessage", resourceCulture);
             }
         }
     }

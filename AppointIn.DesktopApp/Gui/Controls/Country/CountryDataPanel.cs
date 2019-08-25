@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using AppointIn.Domain.Classes;
 using AppointIn.Domain.Entities;
+using AppointIn.Domain.Extensions;
 
 namespace AppointIn.DesktopApp.Gui
 {
@@ -49,7 +51,12 @@ namespace AppointIn.DesktopApp.Gui
 			}
 		}
 
-
+		[Bindable(false)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		// Using lambda expression to simplify GET only property
+		public ValidationResult IsValid { get => ValidateValue(); }
 		#endregion
 
 		#region Methods
@@ -87,10 +94,15 @@ namespace AppointIn.DesktopApp.Gui
 			Reset();
 		}
 
+		//Using lambda expression to simplify function definition due to function simplicity
 		public void Reset() => Country = new Country() {
 			CreateDate = DateTime.Now,
 			CreatedBy = Dashboard.Username
 		};
+
+		//Using lambda expression to simplify property's method reference
+		public ValidationResult ValidateValue()
+			=> Country.Validate();
 		#endregion
 	}
 }

@@ -43,6 +43,7 @@
 			this.CreateDateExtendedDateTimePicker.Enabled = false;
 			this.CreateDateExtendedDateTimePicker.LabelText = "Create Date";
 			this.CreateDateExtendedDateTimePicker.Location = new System.Drawing.Point(13, 82);
+			this.CreateDateExtendedDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
 			this.CreateDateExtendedDateTimePicker.Name = "CreateDateExtendedDateTimePicker";
 			this.CreateDateExtendedDateTimePicker.Size = new System.Drawing.Size(315, 20);
 			this.CreateDateExtendedDateTimePicker.TabIndex = 2;
@@ -55,8 +56,10 @@
 			this.LastUpdateByExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.LastUpdateByExtendedTextbox.LabelText = "Last Update By";
 			this.LastUpdateByExtendedTextbox.Location = new System.Drawing.Point(10, 134);
+			this.LastUpdateByExtendedTextbox.MultiLine = false;
 			this.LastUpdateByExtendedTextbox.Name = "LastUpdateByExtendedTextbox";
 			this.LastUpdateByExtendedTextbox.Readonly = true;
+			this.LastUpdateByExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.LastUpdateByExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.LastUpdateByExtendedTextbox.TabIndex = 4;
 			this.LastUpdateByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
@@ -68,8 +71,10 @@
 			this.CreatedByExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.CreatedByExtendedTextbox.LabelText = "Created By";
 			this.CreatedByExtendedTextbox.Location = new System.Drawing.Point(10, 108);
+			this.CreatedByExtendedTextbox.MultiLine = false;
 			this.CreatedByExtendedTextbox.Name = "CreatedByExtendedTextbox";
 			this.CreatedByExtendedTextbox.Readonly = true;
+			this.CreatedByExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.CreatedByExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.CreatedByExtendedTextbox.TabIndex = 3;
 			this.CreatedByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
@@ -81,8 +86,10 @@
 			this.NameExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.NameExtendedTextbox.LabelText = "Name";
 			this.NameExtendedTextbox.Location = new System.Drawing.Point(10, 56);
+			this.NameExtendedTextbox.MultiLine = false;
 			this.NameExtendedTextbox.Name = "NameExtendedTextbox";
 			this.NameExtendedTextbox.Readonly = false;
+			this.NameExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.NameExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.NameExtendedTextbox.TabIndex = 1;
 			this.NameExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
@@ -94,8 +101,10 @@
 			this.IdExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.IdExtendedTextbox.LabelText = "Id";
 			this.IdExtendedTextbox.Location = new System.Drawing.Point(10, 30);
+			this.IdExtendedTextbox.MultiLine = false;
 			this.IdExtendedTextbox.Name = "IdExtendedTextbox";
 			this.IdExtendedTextbox.Readonly = true;
+			this.IdExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.IdExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.IdExtendedTextbox.TabIndex = 0;
 			this.IdExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Int;

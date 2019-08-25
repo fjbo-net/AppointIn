@@ -73,13 +73,11 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			if(int.TryParse(ListView.SelectedItems[0].Text, out int countryId))
 			{
 				CountryForm.Country = repository.GetById(countryId);
-
+				var country = CountryForm.Country;
 				var result = CountryForm.ShowDialog();
 
 				if (result == DialogResult.OK)
 				{
-					var country = CountryForm.Country;
-
 					country.LastUpdateBy = Dashboard.Username;
 
 					country.CreateDate = country.CreateDate.ToUniversalTime();
@@ -87,6 +85,12 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					UnitOfWork.Data.Save();
 						
 					CountryForm.Reset();
+				} else
+				{
+					if(country.Id > 0)
+					{
+						UnitOfWork.Data.Countries.Reset(country);
+					}
 				}
 			}
 

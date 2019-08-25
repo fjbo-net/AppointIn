@@ -1,5 +1,15 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
+using AppointIn.Domain.Classes;
+using AppointIn.DesktopApp.Gui.Controls;
 using AppointIn.Domain.Entities;
 
 namespace AppointIn.DesktopApp.Gui
@@ -20,6 +30,13 @@ namespace AppointIn.DesktopApp.Gui
 			get => DataPanel.Address;
 			set => DataPanel.Address = value;
 		}
+
+		[Bindable(false)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		// Using lambda expression to simplify GET only property
+		public ValidationResult IsValid { get => DataPanel.IsValid; }
 		#endregion
 
 		#region Methods
@@ -30,11 +47,7 @@ namespace AppointIn.DesktopApp.Gui
 			if(SaveActionButton != null)
 			{
 				// Using lambda expression to simplify event handler due to handler's simplicity
-				SaveActionButton.Click += (sender, e) =>
-				{
-					Hide();
-					DialogResult = DialogResult.OK;
-				};
+				SaveActionButton.Click += SaveButtonClickHandler;
 			}
 		}
 
@@ -61,6 +74,23 @@ namespace AppointIn.DesktopApp.Gui
 
 		// Using lambda expression to simplify call to an object property's method
 		public void Reset() => DataPanel.Reset();
+		#endregion
+
+		#region Event Handlers
+		protected void SaveButtonClickHandler(object sender, EventArgs e)
+		{
+			if (!IsValid)
+			{
+				Validation.ShowValidationError(string.Format(
+					Resources.AddressFormStrings.InvalidDataFoundMessage,
+					Environment.NewLine,
+					IsValid.ErrorMessagesAsString()));
+				return;
+			}
+
+			Hide();
+			DialogResult = DialogResult.OK;
+		}
 		#endregion
 	}
 }

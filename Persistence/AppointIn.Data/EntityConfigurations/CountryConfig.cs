@@ -39,10 +39,6 @@ namespace AppointIn.Data.EntityConfigurations
 
 			HasKey(country => country.Id);
 
-			//HasMany(country => country.Cities)
-			//	.WithRequired(city => city.Country)
-			//	.HasForeignKey(city => city.CountryId);
-
 			ToTable("country");
 		}
 	}

@@ -120,6 +120,9 @@
   <data name="CancelButtonText" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="InvalidDataFoundMessage" xml:space="preserve">
+    <value>Can't save new country due to the following errors:{0}{0}{1}</value>
+  </data>
   <data name="SaveButtonText" xml:space="preserve">
     <value>Save</value>
   </data>

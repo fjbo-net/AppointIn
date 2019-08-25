@@ -27,23 +27,26 @@ namespace AppointIn.Domain.Entities
 		#region Navigation Properties
 		public virtual Address Address { get; set; }
 		#endregion
-			
-			
+
+
 		#region Validation Rules
 		public static List<ValidationCondition<string>> NameValidationConditions = new List<ValidationCondition<string>>()
 		{
 			// Using lambda expression to get a computed result for a validation condition
 			new ValidationCondition<string>(
+				name => !string.IsNullOrEmpty(name),
+				Resources.CustomerStrings.NameRequiredValidationMessage),
+			new ValidationCondition<string>(
 				name => name.Length <= 40,
-				$"{nameof(Customer)}'s name must not exceed 40 characters long.")
+				Resources.CustomerStrings.NameMaxLengthValidationMessage)
 		};
 
-		public static List<ValidationCondition<int>> AddressIdValidationConditions = new List<ValidationCondition<int>>()
+		public static List<ValidationCondition<Address>> AddressIdValidationConditions = new List<ValidationCondition<Address>>()
 		{
 			// Using lambda expression to get a computed result for a validation condition
-			new ValidationCondition<int>(
-				addressId => addressId > 0,
-				$"{nameof(Customer)}'s Address ID must be a positive integer.")
+			new ValidationCondition<Address>(
+				address => address != null,
+				Resources.CustomerStrings.AddressRequiredValidationMessage)
 		};
 		#endregion
 	}

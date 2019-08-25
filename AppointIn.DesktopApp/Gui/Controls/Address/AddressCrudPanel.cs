@@ -67,13 +67,11 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			if(int.TryParse(ListView.SelectedItems[0].Text, out int addressId))
 			{
 				AddressForm.Address = UnitOfWork.Data.Addresses.GetById(addressId);
-
+				var address = AddressForm.Address;
 				var result = AddressForm.ShowDialog();
 
 				if(result == DialogResult.OK)
 				{
-					var address = AddressForm.Address;
-
 					address.LastUpdateBy = Dashboard.Username;
 
 					address.CreateDate = address.CreateDate;
@@ -81,6 +79,9 @@ namespace AppointIn.DesktopApp.Gui.Controls
 					UnitOfWork.Data.Save();
 
 					AddressForm.Reset();
+				} else
+				{
+					UnitOfWork.Data.Addresses.Reset(address);
 				}
 			}
 
