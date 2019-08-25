@@ -138,7 +138,10 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 		protected override void SyncListView()
 		{
-			foreach(var customer in UnitOfWork.Data.Customers.GetAll())
+			foreach(var customer in UnitOfWork.Data.Customers
+				.GetAll()
+				.OrderBy(customer => customer.Name)
+				.ToList())
 			{
 				ListView.Items.Add(customer.ToListViewItem());
 			}

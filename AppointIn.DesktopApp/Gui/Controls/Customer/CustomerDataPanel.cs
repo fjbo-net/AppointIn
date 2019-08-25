@@ -62,6 +62,11 @@ namespace AppointIn.DesktopApp.Gui
 		#endregion
 
 		#region Methods
+		private void AttachEvents()
+		{
+			if (AddAddressButton != null) AddAddressButton.Click += AddAddressButtonClickHandler;
+		}
+
 		private void BindEntity()
 		{
 			_customer.Id = int.Parse(IdExtendedTextbox.Text);
@@ -101,7 +106,7 @@ namespace AppointIn.DesktopApp.Gui
 		private void Init()
 		{
 			InitializeComponent();
-
+			AttachEvents();
 			Reset();
 		}
 
@@ -109,7 +114,8 @@ namespace AppointIn.DesktopApp.Gui
 		public void Reset() => Customer = new Customer()
 		{
 			CreateDate = DateTime.Now,
-			CreatedBy = Dashboard.Username
+			CreatedBy = Dashboard.Username,
+			LastUpdateBy = Dashboard.Username
 		};
 
 		public void SyncData()
@@ -119,6 +125,37 @@ namespace AppointIn.DesktopApp.Gui
 
 		public ValidationResult ValidateValue()
 			=> Customer.Validate();
+		#endregion
+
+
+		#region Event Handlers
+		private void AddAddressButtonClickHandler(object sender, EventArgs e)
+		{
+			var now = DateTime.Now;
+			var nowUtc = now.ToUniversalTime();
+
+			using (var addressForm = new AddressForm())
+			{
+				addressForm.Text = Resources.AddressFormStrings.TitleAdd;
+				var result = addressForm.ShowDialog();
+
+				if (result == DialogResult.OK)
+				{
+					var repository = UnitOfWork.Data.Addresses;
+
+					var address = addressForm.Address;
+
+					address.CreateDate = nowUtc;
+
+					repository.Insert(address);
+
+					UnitOfWork.Data.Save();
+
+					Syncables.SyncAll();
+					CrudPanel.RefreshAll();
+				}
+			}
+		}
 		#endregion
 	}
 }

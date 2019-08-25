@@ -97,7 +97,8 @@ namespace AppointIn.DesktopApp.Gui
 		//Using lambda expression to simplify function definition due to function simplicity
 		public void Reset() => Country = new Country() {
 			CreateDate = DateTime.Now,
-			CreatedBy = Dashboard.Username
+			CreatedBy = Dashboard.Username,
+			LastUpdateBy = Dashboard.Username
 		};
 
 		//Using lambda expression to simplify property's method reference

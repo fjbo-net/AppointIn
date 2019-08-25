@@ -70,7 +70,7 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dirección.
+        ///   Looks up a localized string similar to Address.
         /// </summary>
         internal static string Title {
             get {
@@ -79,7 +79,7 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nueva Dirección.
+        ///   Looks up a localized string similar to New Address.
         /// </summary>
         internal static string TitleAdd {
             get {
@@ -88,7 +88,7 @@ namespace AppointIn.DesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Editar Dirección.
+        ///   Looks up a localized string similar to Edit Address.
         /// </summary>
         internal static string TitleEdit {
             get {

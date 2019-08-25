@@ -65,12 +65,17 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		#endregion
 
 		#region Methods
+		private void AttachEvents()
+		{
+			if (AddCityButton != null) AddCityButton.Click += AddCityButtonClickHandler;
+		}
+
 		private void BindEntity()
 		{
 			_address.Id = int.Parse(IdExtendedTextbox.Text);
 			_address.StreetName = AddressExtendedTextbox.Text;
 			_address.BuildingOrInterior = Address2ExtendedTextbox.Text;
-			_address.City = (City) CityComboBox.ComboBox.SelectedValue;
+			_address.City = (City)CityComboBox.ComboBox.SelectedValue;
 			_address.PostalCode = PostalCodeExtendedTextBox.Text;
 			_address.CreateDate = CreateDateDateTimePicker.Value;
 			_address.Phone = PhoneExtendedTextbox.Text;
@@ -90,13 +95,16 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			CityComboBox.ComboBox.SelectedItem = _address.City;
 			CreateDateDateTimePicker.Value = _address.CreateDate;
 			CreatedByExtendedTextbox.Text = _address.CreatedBy;
-			if(_address.LastUpdate != null) LastUpdateExtendedTextbox.Text = _address.LastUpdate.AsString();
+			if (_address.LastUpdate != null) LastUpdateExtendedTextbox.Text = _address.LastUpdate.AsString();
 			LastUpdateByExtendedTextbox.Text = _address.LastUpdateBy;
+			LastUpdateExtendedTextbox.Text = _address.LastUpdate.AsString();
 		}
 
 		private void Init()
 		{
 			InitializeComponent();
+
+			AttachEvents();
 
 			Reset();
 		}
@@ -118,7 +126,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		public void Reset() => Address = new Address()
 		{
 			CreateDate = DateTime.Now,
-			CreatedBy = Dashboard.Username
+			CreatedBy = Dashboard.Username,
+			LastUpdateBy = Dashboard.Username
 		};
 
 		public void SyncData()
@@ -129,6 +138,37 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		// Using lambda expression to simplify reference to property's method
 		public ValidationResult ValidateValue()
 			=> Address.Validate();
+		#endregion
+
+
+		#region Event Handlers
+		private void AddCityButtonClickHandler(object sender, EventArgs e)
+		{
+			var now = DateTime.Now;
+			var nowInUtc = now.ToUniversalTime();
+
+			using (var cityForm = new CityForm())
+			{
+				cityForm.Text = Resources.CityFormStrings.TitleAdd;
+				var result = cityForm.ShowDialog();
+
+				if (result == DialogResult.OK)
+				{
+					var repository = UnitOfWork.Data.Cities;
+
+					var city = cityForm.City;
+
+					city.CreateDate = nowInUtc;
+
+					repository.Insert(city);
+
+					UnitOfWork.Data.Save();
+
+					Syncables.SyncAll();
+					CrudPanel.RefreshAll();
+				}
+			}
+		}
 		#endregion
 	}
 }

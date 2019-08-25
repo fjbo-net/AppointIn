@@ -71,6 +71,10 @@ namespace AppointIn.DesktopApp.Gui
 			{
 				if (HasSelection) Edit();
 			};
+			ListView.KeyPress += (sender, e) =>
+			{
+				if (e.KeyChar == (char)Keys.Enter && HasSelection) Edit();
+			};
 		}
 
 		// Using lambda expression to simplify function definition due to simplicity
@@ -98,7 +102,7 @@ namespace AppointIn.DesktopApp.Gui
 
 		}
 
-		protected void RefreshAll()
+		public static void RefreshAll()
 		{
 			foreach (var instance in Instances) instance.ReloadData();
 		}

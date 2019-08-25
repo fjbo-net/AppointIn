@@ -43,6 +43,7 @@
 			this.LastUpdateByExtendedTextbox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
 			this.TitleExtendedTextbox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
 			this.TypeExtendedTextbox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
+			this.AddCustomerButton = new AppointIn.DesktopApp.Gui.ActionButton();
 			this.SuspendLayout();
 			// 
 			// UserComboBox
@@ -64,7 +65,7 @@
 			this.CustomerComboBox.LabelText = "CustomerLabel";
 			this.CustomerComboBox.Location = new System.Drawing.Point(13, 56);
 			this.CustomerComboBox.Name = "CustomerComboBox";
-			this.CustomerComboBox.Size = new System.Drawing.Size(374, 20);
+			this.CustomerComboBox.Size = new System.Drawing.Size(347, 20);
 			this.CustomerComboBox.TabIndex = 1;
 			// 
 			// DescriptionExtendedTextBox
@@ -149,6 +150,7 @@
 			this.StartDateTimePicker.BackColor = System.Drawing.Color.Transparent;
 			this.StartDateTimePicker.LabelText = "StartLabel";
 			this.StartDateTimePicker.Location = new System.Drawing.Point(13, 396);
+			this.StartDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
 			this.StartDateTimePicker.Name = "StartDateTimePicker";
 			this.StartDateTimePicker.Size = new System.Drawing.Size(374, 20);
 			this.StartDateTimePicker.TabIndex = 9;
@@ -161,6 +163,7 @@
 			this.EndDateTimePicker.BackColor = System.Drawing.Color.Transparent;
 			this.EndDateTimePicker.LabelText = "EndLabel";
 			this.EndDateTimePicker.Location = new System.Drawing.Point(13, 422);
+			this.EndDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
 			this.EndDateTimePicker.Name = "EndDateTimePicker";
 			this.EndDateTimePicker.Size = new System.Drawing.Size(374, 20);
 			this.EndDateTimePicker.TabIndex = 10;
@@ -174,6 +177,7 @@
 			this.CreateDateDateTimePicker.Enabled = false;
 			this.CreateDateDateTimePicker.LabelText = "CreateDateLabel";
 			this.CreateDateDateTimePicker.Location = new System.Drawing.Point(13, 448);
+			this.CreateDateDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
 			this.CreateDateDateTimePicker.Name = "CreateDateDateTimePicker";
 			this.CreateDateDateTimePicker.Size = new System.Drawing.Size(374, 20);
 			this.CreateDateDateTimePicker.TabIndex = 11;
@@ -254,12 +258,23 @@
 			this.TypeExtendedTextbox.TabIndex = 7;
 			this.TypeExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
 			// 
+			// AddCustomerButton
+			// 
+			this.AddCustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.AddCustomerButton.Location = new System.Drawing.Point(366, 56);
+			this.AddCustomerButton.Name = "AddCustomerButton";
+			this.AddCustomerButton.Size = new System.Drawing.Size(21, 20);
+			this.AddCustomerButton.TabIndex = 15;
+			this.AddCustomerButton.Text = "+";
+			this.AddCustomerButton.UseVisualStyleBackColor = true;
+			// 
 			// AppointmentDataPanel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.AddCustomerButton);
 			this.Controls.Add(this.CreateDateDateTimePicker);
 			this.Controls.Add(this.EndDateTimePicker);
 			this.Controls.Add(this.StartDateTimePicker);
@@ -299,5 +314,6 @@
 		private ExtendedTextbox LastUpdateByExtendedTextbox;
 		private ExtendedTextbox TitleExtendedTextbox;
 		private ExtendedTextbox TypeExtendedTextbox;
+		private ActionButton AddCustomerButton;
 	}
 }

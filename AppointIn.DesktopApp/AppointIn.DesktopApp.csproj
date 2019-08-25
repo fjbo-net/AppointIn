@@ -368,6 +368,9 @@
     <EmbeddedResource Include="Gui\Controls\City\CityDataPanel.resx">
       <DependentUpon>CityDataPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\Country\CountryCrudPanel.resx">
+      <DependentUpon>CountryCrudPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\Controls\Country\CountryDataPanel.resx">
       <DependentUpon>CountryDataPanel.cs</DependentUpon>
     </EmbeddedResource>

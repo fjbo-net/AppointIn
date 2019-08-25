@@ -136,7 +136,10 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 		protected override void SyncListView()
 		{
-			foreach(var address in UnitOfWork.Data.Addresses.GetAll())
+			foreach(var address in UnitOfWork.Data.Addresses
+				.GetAll()
+				.OrderBy(address => address.StreetName)
+				.ToList())
 			{
 				ListView.Items.Add(address.ToListViewItem());
 			}

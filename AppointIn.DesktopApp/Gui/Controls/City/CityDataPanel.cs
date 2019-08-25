@@ -62,6 +62,11 @@ namespace AppointIn.DesktopApp.Gui
 		#endregion
 
 		#region Methods
+		private void AttachEvents()
+		{
+			if (AddCountryButton != null) AddCountryButton.Click += AddCountryButtonClickHandler;
+		}
+
 		private void BindEntity()
 		{
 			_city.Id = int.Parse(IdExtendedTextBox.Text);
@@ -88,6 +93,8 @@ namespace AppointIn.DesktopApp.Gui
 		{
 			InitializeComponent();
 
+			AttachEvents();
+
 			Reset();
 		}
 
@@ -104,16 +111,51 @@ namespace AppointIn.DesktopApp.Gui
 		// Using lambda expression to simplify function definition
 		public void Reset() => City = new City() {
 			CreateDate = DateTime.Now,
-			CreatedBy = Dashboard.Username
+			CreatedBy = Dashboard.Username,
+			LastUpdateBy = Dashboard.Username
 		};
 
 		public void SyncData()
 		{
-			CountryExtendedComboBox.ComboBox.Bind(UnitOfWork.Data.Countries.GetAll(), "Name");
+			CountryExtendedComboBox.ComboBox.Bind(
+				UnitOfWork.Data.Countries
+					.GetAll()
+					.OrderBy(country => country.Name)
+					.ToList(),
+				"Name");
 		}
 
 		public ValidationResult ValidateValue()
 			=> City.Validate();
+		#endregion
+
+
+		#region EventHandlers
+		protected void AddCountryButtonClickHandler(object sender, EventArgs e)
+		{
+			var now = DateTime.Now;
+			var nowInUtc = now.ToUniversalTime();
+
+			using (var countryForm = new CountryForm())
+			{
+				countryForm.Text = Resources.CountryFormStrings.TitleAdd;
+				var result = countryForm.ShowDialog();
+
+				if (result == DialogResult.OK)
+				{
+					var repository = UnitOfWork.Data.Countries;
+
+					countryForm.Country.CreateDate = nowInUtc;
+
+					repository.Insert(countryForm.Country);
+
+					UnitOfWork.Data.Save();
+
+					Syncables.SyncAll();
+					CrudPanel.RefreshAll();
+				}
+			}
+		}
 		#endregion
 	}
 }

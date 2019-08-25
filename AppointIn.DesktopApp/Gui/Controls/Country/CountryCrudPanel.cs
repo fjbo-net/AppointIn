@@ -146,7 +146,10 @@ namespace AppointIn.DesktopApp.Gui.Controls
 		{
 			var repository = UnitOfWork.Data.Countries;
 
-			foreach(var country in repository.GetAll())
+			foreach(var country in repository
+				.GetAll()
+				.OrderBy(country => country.Name)
+				.ToList())
 			{
 				ListView.Items.Add(country.ToListViewItem());
 			}

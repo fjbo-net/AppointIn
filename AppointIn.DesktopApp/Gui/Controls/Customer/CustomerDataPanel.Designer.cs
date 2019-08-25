@@ -36,6 +36,7 @@
 			this.LastUpdateExtendedTextbox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
 			this.LastUpdateByExtendedTextbox = new AppointIn.DesktopApp.Gui.ExtendedTextbox();
 			this.AddressExtendedCombobox = new AppointIn.DesktopApp.Gui.ExtendedComboBox();
+			this.AddAddressButton = new AppointIn.DesktopApp.Gui.ActionButton();
 			this.SuspendLayout();
 			// 
 			// IdExtendedTextbox
@@ -45,8 +46,10 @@
 			this.IdExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.IdExtendedTextbox.LabelText = "IdLabel";
 			this.IdExtendedTextbox.Location = new System.Drawing.Point(10, 30);
+			this.IdExtendedTextbox.MultiLine = false;
 			this.IdExtendedTextbox.Name = "IdExtendedTextbox";
 			this.IdExtendedTextbox.Readonly = true;
+			this.IdExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.IdExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.IdExtendedTextbox.TabIndex = 0;
 			this.IdExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Int;
@@ -58,8 +61,10 @@
 			this.NameExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.NameExtendedTextbox.LabelText = "NameLabel";
 			this.NameExtendedTextbox.Location = new System.Drawing.Point(10, 56);
+			this.NameExtendedTextbox.MultiLine = false;
 			this.NameExtendedTextbox.Name = "NameExtendedTextbox";
 			this.NameExtendedTextbox.Readonly = false;
+			this.NameExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.NameExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.NameExtendedTextbox.TabIndex = 0;
 			this.NameExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
@@ -80,8 +85,10 @@
 			this.CreatedDateDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.CreatedDateDateTimePicker.BackColor = System.Drawing.Color.Transparent;
+			this.CreatedDateDateTimePicker.Enabled = false;
 			this.CreatedDateDateTimePicker.LabelText = "CreatedDateLabel";
 			this.CreatedDateDateTimePicker.Location = new System.Drawing.Point(10, 138);
+			this.CreatedDateDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
 			this.CreatedDateDateTimePicker.Name = "CreatedDateDateTimePicker";
 			this.CreatedDateDateTimePicker.Size = new System.Drawing.Size(318, 20);
 			this.CreatedDateDateTimePicker.TabIndex = 4;
@@ -94,8 +101,10 @@
 			this.CreatedByExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.CreatedByExtendedTextbox.LabelText = "CreatedByLabel";
 			this.CreatedByExtendedTextbox.Location = new System.Drawing.Point(10, 164);
+			this.CreatedByExtendedTextbox.MultiLine = false;
 			this.CreatedByExtendedTextbox.Name = "CreatedByExtendedTextbox";
 			this.CreatedByExtendedTextbox.Readonly = true;
+			this.CreatedByExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.CreatedByExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.CreatedByExtendedTextbox.TabIndex = 0;
 			this.CreatedByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
@@ -107,8 +116,10 @@
 			this.LastUpdateExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.LastUpdateExtendedTextbox.LabelText = "LastUpdateLabel";
 			this.LastUpdateExtendedTextbox.Location = new System.Drawing.Point(10, 190);
+			this.LastUpdateExtendedTextbox.MultiLine = false;
 			this.LastUpdateExtendedTextbox.Name = "LastUpdateExtendedTextbox";
 			this.LastUpdateExtendedTextbox.Readonly = true;
+			this.LastUpdateExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.LastUpdateExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.LastUpdateExtendedTextbox.TabIndex = 0;
 			this.LastUpdateExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
@@ -120,8 +131,10 @@
 			this.LastUpdateByExtendedTextbox.BackColor = System.Drawing.Color.Transparent;
 			this.LastUpdateByExtendedTextbox.LabelText = "LastUpdateByLabel";
 			this.LastUpdateByExtendedTextbox.Location = new System.Drawing.Point(10, 216);
+			this.LastUpdateByExtendedTextbox.MultiLine = false;
 			this.LastUpdateByExtendedTextbox.Name = "LastUpdateByExtendedTextbox";
 			this.LastUpdateByExtendedTextbox.Readonly = true;
+			this.LastUpdateByExtendedTextbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.LastUpdateByExtendedTextbox.Size = new System.Drawing.Size(318, 20);
 			this.LastUpdateByExtendedTextbox.TabIndex = 0;
 			this.LastUpdateByExtendedTextbox.Type = AppointIn.DesktopApp.Gui.ExtendedTextboxType.Text;
@@ -134,14 +147,25 @@
 			this.AddressExtendedCombobox.LabelText = "AddressLabel";
 			this.AddressExtendedCombobox.Location = new System.Drawing.Point(10, 82);
 			this.AddressExtendedCombobox.Name = "AddressExtendedCombobox";
-			this.AddressExtendedCombobox.Size = new System.Drawing.Size(318, 20);
+			this.AddressExtendedCombobox.Size = new System.Drawing.Size(291, 20);
 			this.AddressExtendedCombobox.TabIndex = 5;
+			// 
+			// AddAddressButton
+			// 
+			this.AddAddressButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.AddAddressButton.Location = new System.Drawing.Point(307, 82);
+			this.AddAddressButton.Name = "AddAddressButton";
+			this.AddAddressButton.Size = new System.Drawing.Size(21, 20);
+			this.AddAddressButton.TabIndex = 7;
+			this.AddAddressButton.Text = "+";
+			this.AddAddressButton.UseVisualStyleBackColor = true;
 			// 
 			// CustomerDataPanel
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.AddAddressButton);
 			this.Controls.Add(this.AddressExtendedCombobox);
 			this.Controls.Add(this.CreatedDateDateTimePicker);
 			this.Controls.Add(this.ActiveCheckbox);
@@ -167,5 +191,6 @@
 		private ExtendedTextbox LastUpdateExtendedTextbox;
 		private ExtendedTextbox LastUpdateByExtendedTextbox;
 		private ExtendedComboBox AddressExtendedCombobox;
+		private ActionButton AddAddressButton;
 	}
 }

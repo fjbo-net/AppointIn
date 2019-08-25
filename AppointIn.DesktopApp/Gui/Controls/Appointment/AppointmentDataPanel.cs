@@ -153,6 +153,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			{
 				if (((DateTimePicker)sender).Focused) LimitDates();
 			};
+
+			if (AddCustomerButton != null) AddCustomerButton.Click += AddCustomerButtonClickHandler;
 		}
 
 		private void BindEntity()
@@ -190,7 +192,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 			EndDateTimePicker.Value = _appointment.End;
 			CreateDateDateTimePicker.Value = _appointment.CreateDate;
 			CreatedByExtendedTextbox.Text = _appointment.CreatedBy;
-			//LastUpdateExtendedTextbox.Text = _appointment.LastUpdate.AsString();
+			LastUpdateExtendedTextbox.Text = _appointment.LastUpdate.AsString();
 			LastUpdateByExtendedTextbox.Text = _appointment.LastUpdateBy;
 
 			LimitDates();
@@ -279,7 +281,8 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				Start = defaultStart,
 				End = defaultEnd,
 				CreateDate = DateTime.Now,
-				CreatedBy = Dashboard.Username
+				CreatedBy = Dashboard.Username,
+				LastUpdateBy = Dashboard.Username
 			};
 
 			StartDateTimePicker.MinDate = DateTimePicker.MinimumDateTime;
@@ -341,6 +344,37 @@ namespace AppointIn.DesktopApp.Gui.Controls
 				!errorFound && appointmentResult.IsValid,
 				appointmentResult.ErrorMessages
 					.Concat(errorMessages).ToList());
+		}
+		#endregion
+
+
+		#region Event Handlers
+		private void AddCustomerButtonClickHandler(object sender, EventArgs e)
+		{
+			var now = DateTime.Now;
+			var nowUtc = now.ToUniversalTime();
+
+			using (var customerForm = new CustomerForm())
+			{
+				customerForm.Text = Resources.CustomerFormStrings.TitleAdd;
+				var result = customerForm.ShowDialog();
+
+				if (result == DialogResult.OK)
+				{
+					var repository = UnitOfWork.Data.Customers;
+
+					var customer = customerForm.Customer;
+
+					customer.CreateDate = nowUtc;
+
+					repository.Insert(customer);
+
+					UnitOfWork.Data.Save();
+
+					Syncables.SyncAll();
+					CrudPanel.RefreshAll();
+				}
+			}
 		}
 		#endregion
 	}

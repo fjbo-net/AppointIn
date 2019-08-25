@@ -47,7 +47,7 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 				var city = CityForm.City;
 
-				city.CreateDate = city.CreateDate;
+				city.CreateDate = city.CreateDate.ToUniversalTime();
 
 				repository.Insert(city);
 
@@ -135,7 +135,10 @@ namespace AppointIn.DesktopApp.Gui.Controls
 
 		protected override void SyncListView()
 		{
-			foreach(var city in Data.UnitOfWork.Data.Cities.GetAll())
+			foreach(var city in Data.UnitOfWork.Data.Cities
+				.GetAll()
+				.OrderBy(city => city.Name)
+				.ToList())
 			{
 				ListView.Items.Add(city.ToListViewItem());
 			}

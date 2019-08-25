@@ -121,12 +121,12 @@
     <value>Can't save address due to the following errors:{0}{0}{1}</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Dirección</value>
+    <value>Address</value>
   </data>
   <data name="TitleAdd" xml:space="preserve">
-    <value>Nueva Dirección</value>
+    <value>New Address</value>
   </data>
   <data name="TitleEdit" xml:space="preserve">
-    <value>Editar Dirección</value>
+    <value>Edit Address</value>
   </data>
 </root>
