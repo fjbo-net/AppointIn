@@ -44,8 +44,30 @@ namespace AppointIn.TestDataSeed
 				new User()
 				{
 					Id = 2,
-					Username = "fjbo",
-					Password = "MyPass123",
+					Username = "sales",
+					Password = "test",
+					CreateDate = DateTime.Now.ToUniversalTime(),
+					CreatedBy = "DataInitializer",
+					IsActive = true,
+					LastUpdateBy = "DataInitializer"
+				},
+
+				new User()
+				{
+					Id = 3,
+					Username = "marketing",
+					Password = "test",
+					CreateDate = DateTime.Now.ToUniversalTime(),
+					CreatedBy = "DataInitializer",
+					IsActive = true,
+					LastUpdateBy = "DataInitializer"
+				},
+
+				new User()
+				{
+					Id = 4,
+					Username = "management",
+					Password = "test",
 					CreateDate = DateTime.Now.ToUniversalTime(),
 					CreatedBy = "DataInitializer",
 					IsActive = true,
